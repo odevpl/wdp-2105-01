@@ -16,7 +16,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
-      favorite: false,
+      favorite: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -27,7 +28,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
-      favorite: true,
+      favorite: false,
+      compare: true,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -38,7 +40,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
-      favorite: false,
+      favorite: true,
+      compare: true,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -50,6 +53,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -61,6 +65,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -72,6 +77,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -83,6 +89,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -94,6 +101,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -105,6 +113,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -116,6 +125,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -127,6 +137,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -138,6 +149,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -149,6 +161,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -160,6 +173,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -171,6 +185,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -182,6 +197,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -193,6 +209,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -204,6 +221,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -215,6 +233,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -226,6 +245,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -237,6 +257,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -248,6 +269,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -259,6 +281,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -270,6 +293,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
       favorite: false,
+      compare: false,
     },
   ],
   cart: {

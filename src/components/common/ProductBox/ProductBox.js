@@ -19,6 +19,7 @@ const ProductBox = ({
   image,
   id,
   favorite,
+  compare,
   handleFavoriteClick,
 }) => (
   <div className={styles.root}>
@@ -50,13 +51,13 @@ const ProductBox = ({
     <div className={styles.actions}>
       <div className={styles.outlines}>
         <Button
-          className={favorite ? styles.favoriteBtnYes : ''}
+          className={favorite ? styles.selected : styles.state}
           onClick={() => handleFavoriteClick(id, favorite)}
           variant='outline'
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button className={compare ? styles.selected : styles.state} variant='outline'>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -65,6 +66,9 @@ const ProductBox = ({
           $ {price}
         </Button>
       </div>
+    </div>
+    <div className={styles.price_old}>
+      Old price:<span> $ 60</span>
     </div>
   </div>
 );
@@ -79,6 +83,7 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   handleFavoriteClick: PropTypes.func,
   favorite: PropTypes.bool,
+  compare: PropTypes.bool,
 };
 
 export default ProductBox;
