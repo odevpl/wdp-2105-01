@@ -76,6 +76,10 @@
     }
   }
 
+  .priceBtn{
+    @extend %hover;
+  }
+
   .actions {
     padding: 15px 10px 10px 10px;
     display: flex;
@@ -87,5 +91,6 @@
   }
   &:hover .price .priceBtn{
     background-color: $primary;
+    background-position: 0 100%;
   }
 }
