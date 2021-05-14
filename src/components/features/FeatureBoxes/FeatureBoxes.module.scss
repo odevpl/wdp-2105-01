@@ -3,3 +3,9 @@
 .root {
   padding: 5rem 0;
 }
+
+@media(max-width: 540px){
+  .root {
+    width: 95%;
+  }
+}

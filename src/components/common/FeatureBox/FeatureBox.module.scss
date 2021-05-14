@@ -47,7 +47,7 @@
 
   .content {
     text-transform: uppercase;
-    color: rgb(42, 42, 42);
+    color: $text-color;
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
@@ -60,7 +60,7 @@
     p {
     }
   }
-
+  &:hover,
   &.active {
     .iconWrapper {
       color: $feature-bg;
@@ -74,5 +74,11 @@
     .content {
       color: $primary;
     }
+  }
+}
+
+@media(max-width: 540px){
+  .root {
+    height: 150px;
   }
 }
