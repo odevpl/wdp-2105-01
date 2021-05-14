@@ -93,6 +93,7 @@ $desktop-width: 1200px;
       &.active {
         color: $menubar-bg;
         background-position: 0 100%;       
+        border-color: $primary;
       }
 
       &.active {

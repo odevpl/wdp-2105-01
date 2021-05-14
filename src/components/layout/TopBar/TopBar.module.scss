@@ -21,11 +21,13 @@ $tablet-width: 768px;
 
       a {
         color: $header-topbar-color;
+        @extend %hover-text;
         font-size: 13px;
 
         &:hover {
           color: $primary;
           text-decoration: none;
+          background-position: 0 100%;
         }
 
         @include mobile {

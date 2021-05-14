@@ -72,24 +72,34 @@ $base-padding: 24px;
 $form-border-color: #292929;
 
 %hover{
-    background-image: linear-gradient(60deg, $primary 50%, transparent 50%);
+    background-image: linear-gradient(90deg, $primary 50%, transparent 50%);
     background-position: 100% 0;
     background-size: 300%;
     transition: 0.25s;
   }
   
   %hover-outline{
-    background-image: linear-gradient(60deg, $text-color 50%, transparent 50%);
+    background-image: linear-gradient(90deg, $text-color 50%, transparent 50%);
     background-position: 100% 0;
     background-size: 300%;
     transition: 0.25s;
   }
 
   %hover-cartIcon{
-    background-image: linear-gradient(60deg, lighten($primary, 10%), transparent 50%);
+    background-image: linear-gradient(90deg, lighten($primary, 10%), transparent 50%);
     background-position: 100% 0;
     background-size: 300%;
     transition: 0.25s;
+  }
+
+  %hover-text{
+    background: linear-gradient(to right, $primary, $primary 50%, #ffffff 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: 0.25s ease;
   }
   
 
