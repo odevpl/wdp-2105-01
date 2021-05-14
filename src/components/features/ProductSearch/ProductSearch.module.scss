@@ -34,10 +34,19 @@
       position: relative;
       z-index: 1;
       outline: none;
-      transition: 1s;
+
       &:hover {
-        color: $primary;
+        color: #ffffff;
       }
+    }
+
+    &:hover {
+      transition: 1s;
+      background-color: $primary;
+    }
+
+    &:hover .icon {
+      color: #ffffff;
     }
   }
 
