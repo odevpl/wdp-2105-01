@@ -3,7 +3,9 @@
 // .root {
 // }
 
+
 .main {
+  @extend %hover;
   background-color: $button-bg;
   color: $button-color;
   font-size: 16px;
@@ -11,10 +13,12 @@
   font-weight: 600;
   padding: 10px 30px;
 
+
   &:not(.noHover):hover {
     color: $button-color !important;
-    background-color: $primary;
     text-decoration: none;
+    background-position: 0 100%;
+  
   }
 }
 
@@ -27,6 +31,7 @@
 }
 
 .outline {
+  @extend %hover-outline;
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-bg;
@@ -35,7 +40,7 @@
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: $button-bg;
     color: $button-color;
+    background-position: 0 100%;
   }
 }

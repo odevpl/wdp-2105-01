@@ -50,6 +50,7 @@ $tablet-width: 768px;
       color: $company-cartbox-color;
 
       .cartIcon {
+        @extend %hover-cartIcon;
         background-color: $primary;
         width: 55px;
         height: 50px;
@@ -91,7 +92,7 @@ $tablet-width: 768px;
 
       &:hover {
         .cartIcon {
-          background-color: lighten($primary, 10%);
+          background-position: 0 100%;
         }
       }
     }

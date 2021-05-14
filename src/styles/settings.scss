@@ -49,6 +49,7 @@ $feature-border-color:	$gray-5;
 $feature-dots-color:	$gray-3;
 $feature-bg:	$white;
 
+
 $furniture-border-color:	$gray-2;
 $furniture-menu-color:	$darkGray;
 $furniture-dots-bg: $white;
@@ -67,3 +68,28 @@ $productbox-stars-color:	$darkGray;
 $productbox-bg:	$white;
 
 $base-padding: 24px;
+
+$form-border-color: #292929;
+
+%hover{
+    background-image: linear-gradient(60deg, $primary 50%, transparent 50%);
+    background-position: 100% 0;
+    background-size: 300%;
+    transition: 0.25s;
+  }
+  
+  %hover-outline{
+    background-image: linear-gradient(60deg, $text-color 50%, transparent 50%);
+    background-position: 100% 0;
+    background-size: 300%;
+    transition: 0.25s;
+  }
+
+  %hover-cartIcon{
+    background-image: linear-gradient(60deg, lighten($primary, 10%), transparent 50%);
+    background-position: 100% 0;
+    background-size: 300%;
+    transition: 0.25s;
+  }
+  
+
