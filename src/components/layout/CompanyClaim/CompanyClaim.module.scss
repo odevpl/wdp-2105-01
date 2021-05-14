@@ -25,7 +25,7 @@ $tablet-width: 768px;
       margin: 0;
       font-size: 17px;
       line-height: 42px;
-      color: rgb(216, 216, 216);
+      color: $company-phone-color;
       font-weight: 500;
 
       @include mobile {
@@ -47,7 +47,7 @@ $tablet-width: 768px;
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $company-cartbox-color;
 
       .cartIcon {
         background-color: $primary;
@@ -71,9 +71,9 @@ $tablet-width: 768px;
         background-color: $header-bg;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         font-size: 14px;
-        color: rgb(224, 227, 237);
+        color: $company-cartcount-color;
         position: absolute;
         top: 50%;
         right: 0;
@@ -86,7 +86,8 @@ $tablet-width: 768px;
         -moz-transform: translate(50%, -50%);
         -ms-transform: translate(50%, -50%);
         -o-transform: translate(50%, -50%);
-}
+        padding-left: 8px;
+      }
 
       &:hover {
         .cartIcon {

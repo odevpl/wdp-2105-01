@@ -20,7 +20,7 @@ $tablet-width: 768px;
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $header-topbar-color;
         font-size: 13px;
 
         &:hover {
