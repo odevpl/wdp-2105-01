@@ -1,23 +1,15 @@
 @import "../../../styles/settings.scss";
 
 .stars {
-  a {
-    text-decoration: none;
+  p {
+    display: inline;
     color: $productbox-stars-color;
   }
-  /*
-  &:hover a {
-    color:red;
-  }
-  a:hover ~ a {
-    color: blue;
-  }
-  */
+
   &_customStars {
-    a {
+    p {
       color: $productbox-customStars-color;
-    }
-    
+    }    
   }
 }
 

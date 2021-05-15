@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stars from '../../features/Stars/Stars';
+import Stars from '../../features/Stars/StarsContainer';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,7 +33,7 @@ const ProductBox = ({
     </div>
     <div className={styles.content}>
       <h5>{name}</h5>
-      <Stars customStars={customStars} stars={stars} />
+      <Stars id={id} customStars={customStars} stars={stars} />
     </div>
     <div className={styles.line}></div>
     <div className={styles.actions}>

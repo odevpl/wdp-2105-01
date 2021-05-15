@@ -17,6 +17,8 @@ class Stars extends React.Component {
   static propTypes = {
     stars: PropTypes.number,
     customStars: PropTypes.number,
+    id: PropTypes.string,
+    setCustomStars: PropTypes.func,
   };
 
   handleMouseOver = starLink => {
@@ -26,6 +28,12 @@ class Stars extends React.Component {
 
   handleMouseLeave = () => {
     this.setState({ hover: false });
+  };
+
+  handleClick = starLink => {
+    const id = this.props.id;
+    const starNb = starLink.getAttribute('data-star-nb');
+    this.props.setCustomStars({ id, starNb });
   };
 
   render = () => {
@@ -42,20 +50,19 @@ class Stars extends React.Component {
           }
         >
           {[1, 2, 3, 4, 5].map(i => (
-            <a
+            <p
               onClick={e => this.handleClick(e.currentTarget)}
               onMouseOver={e => this.handleMouseOver(e.currentTarget)}
               onMouseLeave={() => this.handleMouseLeave()}
               data-star-nb={i}
               key={i}
-              href='#'
             >
               {i <= stars ? (
                 <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
               ) : (
                 <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
               )}
-            </a>
+            </p>
           ))}
         </div>
       </div>
