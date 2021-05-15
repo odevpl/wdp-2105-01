@@ -27,6 +27,15 @@ class NewFurniture extends React.Component {
     }
   };
 
+  handleCompareClick = (id, compare) => {
+    const { addToCompare, removeFromCompare } = this.props;
+    if (!compare) {
+      addToCompare(id);
+    } else {
+      removeFromCompare(id);
+    }
+  };
+
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
@@ -38,7 +47,8 @@ class NewFurniture extends React.Component {
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
         <li key={i}>
-          <a href='/#'
+          <a
+            href='/#'
             onClick={() => this.handlePageChange(i)}
             className={i === activePage ? styles.active : ''}
           >
@@ -60,8 +70,11 @@ class NewFurniture extends React.Component {
                 <ul>
                   {categories.map(item => (
                     <li key={item.id}>
-                      <a href='/#'
-                        className={item.id === activeCategory ? styles.active : undefined}
+                      <a
+                        href='/#'
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -78,7 +91,11 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                <ProductBox {...item} handleFavoriteClick={this.handleFavoriteClick} />
+                <ProductBox
+                  {...item}
+                  handleFavoriteClick={this.handleFavoriteClick}
+                  handleCompareClick={this.handleCompareClick}
+                />
               </div>
             ))}
           </div>
@@ -106,10 +123,13 @@ NewFurniture.propTypes = {
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
       favorite: PropTypes.bool,
+      compare: PropTypes.bool,
     })
   ),
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
+  addToCompare: PropTypes.func,
+  removeFromCompare: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {

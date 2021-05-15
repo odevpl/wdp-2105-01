@@ -29,7 +29,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
       favorite: false,
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -41,7 +41,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
       favorite: true,
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-4',
