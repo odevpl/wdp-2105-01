@@ -18,6 +18,15 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
+  handleFavoriteClick = (id, favorite) => {
+    const { addToFavorites, removeFromFavorites } = this.props;
+    if (!favorite) {
+      addToFavorites(id);
+    } else {
+      removeFromFavorites(id);
+    }
+  };
+
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
@@ -69,7 +78,7 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                <ProductBox {...item} />
+                <ProductBox {...item} handleFavoriteClick={this.handleFavoriteClick} />
               </div>
             ))}
           </div>
@@ -96,8 +105,11 @@ NewFurniture.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
+      favorite: PropTypes.bool,
     })
   ),
+  addToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {
