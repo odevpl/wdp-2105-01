@@ -311,6 +311,10 @@ const initialState = {
       'https://media.istockphoto.com/photos/interior-of-modern-living-room-with-white-fabric-sofa-over-blue-wall-picture-id1136363292?k=6&m=1136363292&s=612x612&w=0&h=4DjPA8KlSLP6l75B7Bh0zZXbmTjjYLS5KThkvDn86Rs=',
     rightDownDescription: ['Special', 'collection', 'Save up', '45%', 'of furniture'],
   },
+
+  promoted: {
+    image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+  },
 };
 
 export default initialState;
