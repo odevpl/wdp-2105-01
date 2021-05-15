@@ -15,8 +15,10 @@ const ProductBox = ({
   stars,
   customStars,
   image,
+  id,
   favorite,
   compare,
+  handleFavoriteClick,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -36,24 +38,16 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        {favorite === true ? (
-          <Button variant='outline' className={styles.selected}>
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-          </Button>
-        ) : (
-          <Button variant='outline' className={styles.state}>
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-          </Button>
-        )}
-        {compare === true ? (
-          <Button variant='outline' className={styles.selected}>
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
-        ) : (
-          <Button variant='outline' className={styles.state}>
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
-        )}
+        <Button
+          className={favorite ? styles.selected : styles.state}
+          onClick={() => handleFavoriteClick(id, favorite)}
+          variant='outline'
+        >
+          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+        </Button>
+        <Button className={compare ? styles.selected : styles.state} variant='outline'>
+          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+        </Button>
       </div>
       <div className={styles.price}>
         <Button className={styles.priceBtn} noHover variant='small'>
@@ -75,6 +69,8 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   customStars: PropTypes.number,
   image: PropTypes.node,
+  id: PropTypes.string,
+  handleFavoriteClick: PropTypes.func,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
 };
