@@ -1,0 +1,24 @@
+@import "../../../styles/settings.scss";
+
+.stars {
+  a {
+    text-decoration: none;
+    color: $productbox-stars-color;
+  }
+  /*
+  &:hover a {
+    color:red;
+  }
+  a:hover ~ a {
+    color: blue;
+  }
+  */
+  &_customStars {
+    a {
+      color: $productbox-customStars-color;
+    }
+    
+  }
+}
+
+  

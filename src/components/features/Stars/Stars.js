@@ -1,0 +1,65 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import styles from './Stars.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+
+class Stars extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hover: false,
+      hoveredStar: 0,
+    };
+  }
+  static propTypes = {
+    stars: PropTypes.number,
+    customStars: PropTypes.number,
+  };
+
+  handleMouseOver = starLink => {
+    const starNb = starLink.getAttribute('data-star-nb');
+    this.setState({ hover: true, hoveredStar: starNb });
+  };
+
+  handleMouseLeave = () => {
+    this.setState({ hover: false });
+  };
+
+  render = () => {
+    let { stars, customStars } = this.props;
+    stars = customStars ? customStars : stars;
+    stars = this.state.hover ? this.state.hoveredStar : stars;
+    return (
+      <div className={styles.root}>
+        <div
+          className={
+            customStars || this.state.hover
+              ? styles.stars + ' ' + styles.stars_customStars
+              : styles.stars
+          }
+        >
+          {[1, 2, 3, 4, 5].map(i => (
+            <a
+              onClick={e => this.handleClick(e.currentTarget)}
+              onMouseOver={e => this.handleMouseOver(e.currentTarget)}
+              onMouseLeave={() => this.handleMouseLeave()}
+              data-star-nb={i}
+              key={i}
+              href='#'
+            >
+              {i <= stars ? (
+                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+              ) : (
+                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  };
+}
+export default Stars;
