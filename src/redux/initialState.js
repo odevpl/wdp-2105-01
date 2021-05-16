@@ -313,7 +313,10 @@ const initialState = {
   },
 
   promoted: {
+    name: 'Blanditiis Rerum Incidunt',
     image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+    oldPrice: 350,
+    price: 300,
   },
 };
 
