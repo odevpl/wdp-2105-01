@@ -32,7 +32,15 @@
       border-radius: 50%;
       color: $productbox-sale-color;
       padding: 30px 15px 5px 15px;
-    }
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+}
 
     .buttons {
       display: flex;
@@ -66,7 +74,11 @@
       width: 30px;
       border-bottom: 4px solid $primary;
       transform: translateX(-50%);
-    }
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+}
   }
 
   .actions {
