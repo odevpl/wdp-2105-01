@@ -304,6 +304,18 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  promotion: {
+    leftImage:
+      'https://media.istockphoto.com/photos/interior-with-armchair-and-coffee-table-3d-rendering-picture-id1158575634?k=6&m=1158575634&s=612x612&w=0&h=Fkh9dLz9W8TKkKwJstagndsCu92badT0y6m-w8iqB-g=',
+    leftDescription: ['Guest room', 'Sofa', '-20%'],
+    rightUpImage:
+      'https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_1280.jpg',
+    rightUpDescription: ['Office', 'chair', 'Collection', '$200.00'],
+    rightDownImage:
+      'https://media.istockphoto.com/photos/interior-of-modern-living-room-with-white-fabric-sofa-over-blue-wall-picture-id1136363292?k=6&m=1136363292&s=612x612&w=0&h=4DjPA8KlSLP6l75B7Bh0zZXbmTjjYLS5KThkvDn86Rs=',
+    rightDownDescription: ['Special', 'collection', 'Save up', '45%', 'of furniture'],
+  },
 };
 
 export default initialState;

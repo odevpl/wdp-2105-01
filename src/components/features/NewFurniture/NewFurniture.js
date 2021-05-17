@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { SIZE_TYPES } from '../../../settings';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
@@ -46,6 +46,20 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productPerPage[screenType]);
 
+    const rightAction = () => {
+      const newPage = activePage - 1;
+      if (newPage >= 0) {
+        this.setState({ activePage: newPage });
+      }
+    };
+
+    const leftAction = () => {
+      const newPage = activePage + 1;
+      if (newPage < pagesCount) {
+        this.setState({ activePage: newPage });
+      }
+    };
+
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -62,52 +76,54 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-12 col-md-auto ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col-auto col-md ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      <a
-                        href='/#'
-                        className={
-                          item.id === activeCategory ? styles.active : undefined
-                        }
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
+      <Swipeable leftAction={leftAction} rightAction={rightAction}>
+        <div className={styles.root}>
+          <div className='container'>
+            <div className={styles.panelBar}>
+              <div className='row no-gutters align-items-end'>
+                <div className={'col-12 col-md-auto ' + styles.heading}>
+                  <h3>New furniture</h3>
+                </div>
+                <div className={'col-auto col-md ' + styles.menu}>
+                  <ul>
+                    {categories.map(item => (
+                      <li key={item.id}>
+                        <a
+                          href='/#'
+                          className={
+                            item.id === activeCategory ? styles.active : undefined
+                          }
+                          onClick={() => this.handleCategoryChange(item.id)}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(
-                activePage * productPerPage[screenType],
-                (activePage + 1) * productPerPage[screenType]
-              )
-              .map(item => (
-                <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                  <ProductBox
-                    {...item}
-                    handleFavoriteClick={this.handleFavoriteClick}
-                  />
-                </div>
-              ))}
+            <div className='row'>
+              {categoryProducts
+                .slice(
+                  activePage * productPerPage[screenType],
+                  (activePage + 1) * productPerPage[screenType]
+                )
+                .map(item => (
+                  <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                    <ProductBox
+                      {...item}
+                      handleFavoriteClick={this.handleFavoriteClick}
+                    />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Swipeable>
     );
   }
 }
