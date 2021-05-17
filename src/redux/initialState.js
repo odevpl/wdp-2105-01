@@ -311,6 +311,33 @@ const initialState = {
       'https://media.istockphoto.com/photos/interior-of-modern-living-room-with-white-fabric-sofa-over-blue-wall-picture-id1136363292?k=6&m=1136363292&s=612x612&w=0&h=4DjPA8KlSLP6l75B7Bh0zZXbmTjjYLS5KThkvDn86Rs=',
     rightDownDescription: ['Special', 'collection', 'Save up', '45%', 'of furniture'],
   },
+
+  feedbacks: [
+    {
+      id: 'feedback1',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
+      foto: '',
+      name: 'John Doe',
+      description: 'Furniture client',
+    },
+    {
+      id: 'feedback2',
+      text:
+        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta',
+      foto: '',
+      name: 'John Smith',
+      description: 'New bed owner',
+    },
+    {
+      id: 'feedback3',
+      text:
+        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident',
+      foto: '',
+      name: 'Kristoff Koloski',
+      description: 'Kitchen designer',
+    },
+  ],
 };
 
 export default initialState;
