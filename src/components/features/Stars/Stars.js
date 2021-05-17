@@ -32,7 +32,7 @@ class Stars extends React.Component {
 
   handleClick = starLink => {
     const id = this.props.id;
-    const starNb = starLink.getAttribute('data-star-nb');
+    const starNb = parseInt(starLink.getAttribute('data-star-nb'));
     this.props.setCustomStars({ id, starNb });
   };
 
