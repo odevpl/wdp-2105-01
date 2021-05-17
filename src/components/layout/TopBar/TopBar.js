@@ -35,11 +35,13 @@ const TopBar = () => (
               <a href='/#'>
                 <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
                 <span>Login</span>
+                <span>Login</span>
               </a>
             </li>
             <li>
               <a href='/#'>
                 <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                <span>Login</span>
                 <span>Register</span>
               </a>
             </li>
