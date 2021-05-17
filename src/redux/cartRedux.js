@@ -21,6 +21,7 @@ export default function reducer(statePart = [], action = {}) {
         products: [...statePart.products, action.payload],
       };
     }
+
     default:
       return statePart;
   }
