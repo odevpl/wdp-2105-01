@@ -95,7 +95,7 @@ const Promoted = stars => {
                     ${initialState.promoted.oldPrice}.00
                   </div>
                   <div className={styles.price}>
-                    <Button className={styles.priceBtn} variant='small'>
+                    <Button className={styles.priceBtn} noHover variant='small'>
                       ${initialState.promoted.price}.00
                     </Button>
                   </div>
@@ -115,14 +115,14 @@ const Promoted = stars => {
                 <h5>SAVE UP 50% OF ALL FURNITURE</h5>
               </div>
               <div className={styles.shopBtn}>
-                <Button variant='small'> SHOP NOW </Button>
+                <Button>SHOP NOW</Button>
               </div>
             </div>
-            <div className={styles.navBtn}>
-              <Button className={styles.button}>
+            <div className={styles.navBtns}>
+              <Button className={styles.navBtn}>
                 <FontAwesomeIcon icon={faChevronLeft} className={styles.icon} />
               </Button>
-              <Button className={styles.button}>
+              <Button className={styles.navBtn}>
                 <FontAwesomeIcon icon={faChevronRight} className={styles.icon} />
               </Button>
             </div>
