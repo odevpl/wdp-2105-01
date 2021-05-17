@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import NewFurniture from './NewFurniture';
 
 import { getAll } from '../../../redux/categoriesRedux.js';
+import { getScreenType } from '../../../redux/screenRedux';
 import {
   getNew,
   addToFavorites,
@@ -12,6 +13,7 @@ import {
 const mapStateToProps = state => ({
   categories: getAll(state),
   products: getNew(state),
+  screenType: getScreenType(state),
 });
 
 const mapDispatcherToProps = dispatcher => ({

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import { SIZE_TYPES } from '../../../settings';
 
 class NewFurniture extends React.Component {
   state = {
@@ -26,19 +27,31 @@ class NewFurniture extends React.Component {
       removeFromFavorites(id);
     }
   };
+  handleSizeChange = () => {
+    return;
+  };
+  componentDidMount() {
+    console.log('starting screen type is: ', this.props.screenType);
+  }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, screenType } = this.props;
     const { activeCategory, activePage } = this.state;
+    const productPerPage = {
+      [SIZE_TYPES.MOBILE]: 2,
+      [SIZE_TYPES.TABLET]: 3,
+      [SIZE_TYPES.DESKTOP]: 8,
+    };
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / productPerPage[screenType]);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
         <li key={i}>
-          <a href='/#'
+          <a
+            href='/#'
             onClick={() => this.handlePageChange(i)}
             className={i === activePage ? styles.active : ''}
           >
@@ -60,8 +73,11 @@ class NewFurniture extends React.Component {
                 <ul>
                   {categories.map(item => (
                     <li key={item.id}>
-                      <a href='/#'
-                        className={item.id === activeCategory ? styles.active : undefined}
+                      <a
+                        href='/#'
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -76,11 +92,19 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                <ProductBox {...item} handleFavoriteClick={this.handleFavoriteClick} />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(
+                activePage * productPerPage[screenType],
+                (activePage + 1) * productPerPage[screenType]
+              )
+              .map(item => (
+                <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                  <ProductBox
+                    {...item}
+                    handleFavoriteClick={this.handleFavoriteClick}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -89,6 +113,7 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  screenType: PropTypes.string,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({

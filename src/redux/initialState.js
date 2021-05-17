@@ -1,3 +1,5 @@
+import { SIZE_TYPES } from '../settings';
+
 const initialState = {
   categories: [
     { id: 'bed', name: 'Bed' },
@@ -6,6 +8,9 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+
+  screenType: SIZE_TYPES.MOBILE,
+
   products: [
     {
       id: 'aenean-ru-bristique-1',
