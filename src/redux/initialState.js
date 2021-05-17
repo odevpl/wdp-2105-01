@@ -16,6 +16,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+      favorite: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -26,6 +28,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
+      favorite: false,
+      compare: true,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -36,6 +40,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
+      favorite: true,
+      compare: true,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -46,6 +52,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -56,6 +64,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -66,6 +76,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -76,6 +88,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -86,6 +100,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -96,6 +112,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -106,6 +124,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -116,6 +136,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -126,6 +148,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -136,6 +160,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -146,6 +172,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -156,6 +184,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -166,6 +196,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -176,6 +208,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -186,6 +220,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -196,6 +232,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -206,6 +244,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -216,6 +256,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -226,6 +268,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -236,6 +280,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -246,11 +292,45 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg',
+      favorite: false,
+      compare: false,
     },
   ],
   cart: {
     products: [],
   },
+  brands: [
+    {
+      id: 'brand1',
+      name: 'Brand 1',
+      logo: './images/1logo.png',
+    },
+    {
+      id: 'brand2',
+      name: 'Brand 2',
+      logo: './images/2logo.png',
+    },
+    {
+      id: 'brand3',
+      name: 'Brand 3',
+      logo: './images/3logo.png',
+    },
+    {
+      id: 'brand4',
+      name: 'Brand 4',
+      logo: './images/4logo.png',
+    },
+    {
+      id: 'brand5',
+      name: 'Brand 5',
+      logo: './images/5logo.png',
+    },
+    {
+      id: 'brand6',
+      name: 'Brand 6',
+      logo: './images/6logo.png',
+    },
+  ],
 };
 
 export default initialState;
