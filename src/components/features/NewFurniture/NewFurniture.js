@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareBox from '../CompareBox/CompareBoxContainer.js';
 
 class NewFurniture extends React.Component {
   state = {
@@ -37,7 +38,7 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, handleCompareClick, getCompared } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -95,10 +96,17 @@ class NewFurniture extends React.Component {
                   {...item}
                   handleFavoriteClick={this.handleFavoriteClick}
                   handleCompareClick={this.handleCompareClick}
+                  getCompared={this.getCompared}
                 />
               </div>
             ))}
           </div>
+        </div>
+        <div className={styles.compareBox}>
+          <CompareBox
+            handleCompareClick={handleCompareClick}
+            getCompared={getCompared}
+          />
         </div>
       </div>
     );
@@ -130,6 +138,8 @@ NewFurniture.propTypes = {
   removeFromFavorites: PropTypes.func,
   addToCompare: PropTypes.func,
   removeFromCompare: PropTypes.func,
+  handleCompareClick: PropTypes.func,
+  getCompared: PropTypes.array,
 };
 
 NewFurniture.defaultProps = {

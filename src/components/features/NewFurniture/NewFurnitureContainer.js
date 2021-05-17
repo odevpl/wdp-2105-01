@@ -9,11 +9,13 @@ import {
   removeFromFavorites,
   addToCompare,
   removeFromCompare,
+  getCompared,
 } from '../../../redux/productsRedux.js';
 
 const mapStateToProps = state => ({
   categories: getAll(state),
   products: getNew(state),
+  getCompared: getCompared(state),
 });
 
 const mapDispatcherToProps = dispatcher => ({
