@@ -75,21 +75,21 @@ $form-border-color: #292929;
     background-image: linear-gradient(90deg, $primary 50%, transparent 50%);
     background-position: 100% 0;
     background-size: 300%;
-    transition: 0.25s;
+    transition: 0.25s ease;
   }
   
   %hover-outline{
     background-image: linear-gradient(90deg, $text-color 50%, transparent 50%);
     background-position: 100% 0;
     background-size: 300%;
-    transition: 0.25s;
+    transition: 0.25s ease;
   }
 
   %hover-cartIcon{
     background-image: linear-gradient(90deg, lighten($primary, 10%), transparent 50%);
     background-position: 100% 0;
     background-size: 300%;
-    transition: 0.25s;
+    transition: 0.25s ease;
   }
 
   %hover-text{
@@ -101,5 +101,6 @@ $form-border-color: #292929;
     background-position: 100%;
     transition: 0.25s ease;
   }
+
   
 
