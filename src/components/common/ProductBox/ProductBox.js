@@ -20,6 +20,7 @@ const ProductBox = ({
   compare,
   handleFavoriteClick,
 }) => (
+
   <div className={styles.root}>
     <div className={styles.photo}>
       <img className={styles.image} src={image} alt={name} />
@@ -38,6 +39,7 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
+
         <Button
           className={favorite ? styles.selected : styles.state}
           onClick={() => handleFavoriteClick(id, favorite)}
@@ -69,6 +71,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   customStars: PropTypes.number,
   image: PropTypes.node,
+
   id: PropTypes.string,
   handleFavoriteClick: PropTypes.func,
   favorite: PropTypes.bool,
