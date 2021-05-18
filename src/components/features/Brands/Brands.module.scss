@@ -1,0 +1,21 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  .image {
+    display: flex;
+    flex-direction: row;
+    height: 148px;
+    padding-bottom: 27px;
+    padding-top: 27px;
+    border-top: 1px solid $feature-border-color;
+    border-bottom: 1px solid $feature-border-color;
+    img {
+      height: 90px;
+      max-width: 135px;
+      border: 1px solid $feature-border-color;
+      padding: 20px;
+
+    }
+  }
+
+}
