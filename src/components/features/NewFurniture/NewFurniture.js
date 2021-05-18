@@ -27,24 +27,45 @@ class NewFurniture extends React.Component {
       removeFromFavorites(id);
     }
   };
-  handleSizeChange = () => {
-    return;
+  selectActualScreenType = () => {
+    const width = window.innerWidth;
+    if (width < 768) {
+      return SIZE_TYPES.MOBILE;
+    } else if (width < 992) {
+      return SIZE_TYPES.TABLET;
+    } else {
+      return SIZE_TYPES.DESKTOP;
+    }
+  };
+  handleSizeChange = storedType => {
+    const actualType = this.selectActualScreenType();
+    if (actualType !== storedType) {
+      this.props.setScreenType(actualType);
+    }
   };
   componentDidMount() {
-    console.log('starting screen type is: ', this.props.screenType);
+    this.handleSizeChange(this.props.screenType);
+    window.addEventListener('resize', () =>
+      this.handleSizeChange(this.props.screenType)
+    );
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', () =>
+      this.handleSizeChange(this.props.screenType)
+    );
   }
 
   render() {
     const { categories, products, screenType } = this.props;
     const { activeCategory, activePage } = this.state;
-    const productPerPage = {
+    const productsPerPage = {
       [SIZE_TYPES.MOBILE]: 2,
       [SIZE_TYPES.TABLET]: 3,
       [SIZE_TYPES.DESKTOP]: 8,
     };
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / productPerPage[screenType]);
+    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage[screenType]);
 
     const rightAction = () => {
       const newPage = activePage - 1;
@@ -109,8 +130,8 @@ class NewFurniture extends React.Component {
             <div className='row'>
               {categoryProducts
                 .slice(
-                  activePage * productPerPage[screenType],
-                  (activePage + 1) * productPerPage[screenType]
+                  activePage * productsPerPage[screenType],
+                  (activePage + 1) * productsPerPage[screenType]
                 )
                 .map(item => (
                   <div key={item.id} className='col-6 col-md-4 col-lg-3'>
@@ -149,6 +170,7 @@ NewFurniture.propTypes = {
       favorite: PropTypes.bool,
     })
   ),
+  setScreenType: PropTypes.func,
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
 };

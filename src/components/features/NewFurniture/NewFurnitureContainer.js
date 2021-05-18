@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import NewFurniture from './NewFurniture';
 
 import { getAll } from '../../../redux/categoriesRedux.js';
-import { getScreenType } from '../../../redux/screenRedux';
+import { getScreenType, setScreenType } from '../../../redux/screenTypeRedux';
 import {
   getNew,
   addToFavorites,
@@ -19,6 +19,7 @@ const mapStateToProps = state => ({
 const mapDispatcherToProps = dispatcher => ({
   addToFavorites: payload => dispatcher(addToFavorites(payload)),
   removeFromFavorites: payload => dispatcher(removeFromFavorites(payload)),
+  setScreenType: payload => dispatcher(setScreenType(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatcherToProps)(NewFurniture);

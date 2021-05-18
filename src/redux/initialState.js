@@ -9,7 +9,7 @@ const initialState = {
     { id: 'dining', name: 'Dining' },
   ],
 
-  screenType: SIZE_TYPES.MOBILE,
+  screenType: SIZE_TYPES.DESKTOP,
 
   products: [
     {
