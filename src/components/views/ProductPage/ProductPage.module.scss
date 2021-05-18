@@ -1,5 +1,67 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  padding: $base-padding 0;
+  padding-bottom: $base-padding;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 990px;
+  margin-left: 4%;
+
+  .bannerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 170px;
+    background-color: $gray-7;
+    color: $white;
+
+    h1 {
+      font-weight: 300;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    h5 {
+      font-weight: 300;
+      font-stretch: ultra-expanded;
+
+      span {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .bannerNav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: $gray-4;
+    font-size: 14px;
+
+    .navBtn {
+      margin: 12px;
+      color: $text-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+
+    .icon {
+      font-size: 10px;
+      color: $text-color;
+    }
+  }
 }
