@@ -1,0 +1,14 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .button {
+    background-color: $primary;
+    text-align: center;
+    padding: 7px;
+
+    a{
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
