@@ -8,20 +8,15 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 import Promotions from '../../features/Promotions/PromotionsContainer';
 import Promoted from '../../features/Promoted/Promoted';
-import Chatbot from '../../features/Chatbot/Chatbot';
+//import Chatbot from '../../features/Chatbot/Chatbot';
 
 const Homepage = () => (
   <div className={styles.root}>
-    <div className={styles.chatbot}>
-      <Chatbot />
-    </div>
-    <div className={styles.home}>
-      <Promoted />
-      <FeatureBoxes />
-      <NewFurniture />
-      <Brands />
-      <Promotions />
-    </div>
+    <Promoted />
+    <FeatureBoxes />
+    <NewFurniture />
+    <Brands />
+    <Promotions />
   </div>
 );
 
