@@ -1,16 +1,31 @@
 @import '../../../styles/settings.scss';
 
+$tablet-width: 768px;
+$desktop-width: 1200px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
 .root {
   .image {
     display: flex;
     flex-direction: row;
-    height: 148px;
+    height: 134px;
     padding-bottom: 27px;
     padding-top: 27px;
     border-top: 1px solid $feature-border-color;
     border-bottom: 1px solid $feature-border-color;
     img {
-      height: 90px;
+      height: 80px;
       max-width: 135px;
       border: 1px solid $feature-border-color;
       padding: 20px;

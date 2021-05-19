@@ -16,7 +16,7 @@ const Brands = ({ brands }) => (
             </a>
           </button>
           {brands.map(brand => (
-            <div key={brand.id}>
+            <div className='col-2' key={brand.id}>
               <img src={brand.logo} alt='' />
             </div>
           ))}
@@ -32,7 +32,7 @@ const Brands = ({ brands }) => (
 );
 
 Brands.propTypes = {
-  brands: PropTypes.object,
+  brands: PropTypes.array,
   logo: PropTypes.string,
 };
 
