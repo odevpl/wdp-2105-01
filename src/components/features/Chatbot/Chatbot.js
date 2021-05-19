@@ -12,7 +12,7 @@ import {
 
 const Chatbot = () => (
   <div className={styles.root}>
-    <div className={styles.chat}>
+    <div className={styles.unactive}>
       <div className={styles.top}>
         <a href='#'>
           <FontAwesomeIcon icon={faSync}></FontAwesomeIcon>
@@ -24,7 +24,7 @@ const Chatbot = () => (
       <div className={styles.chatBody}>
         <div className={styles.robot}>
           <img
-            src='https://img-premium.flaticon.com/png/512/3774/3774694.png?token=exp=1621423716~hmac=a4a30ce28e182faa22181dbd43ec51b8'
+            src='https://img-premium.flaticon.com/png/512/3421/3421082.png?token=exp=1621430936~hmac=a4b8542f74c140eba120e9ed902e5352'
             alt=''
           />
           <p>Welcome in our shop! How can I help You?</p>

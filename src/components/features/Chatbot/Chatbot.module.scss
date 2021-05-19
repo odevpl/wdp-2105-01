@@ -5,23 +5,26 @@
   flex-direction: column;
 
   .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $primary;
+    padding: 10px;
     text-align: center;
-    padding: 7px;
-    border-radius: 3px;
-    width: 20%;
+    border-radius: 20px;
+    width: 30%;
 
     a{
+      display: block;
       color: $white;
       text-decoration: none;
     }
   }
 
-  // .active {
-  //   display: inherit;
-  // }
+  .unactive{
+    display: none;
+  }
   .chat{
-    //display: none;
     margin: 10px 0;
     border-radius: 3px;
     background-color: $white;
