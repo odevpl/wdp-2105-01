@@ -15,7 +15,7 @@ class NewFurniture extends React.Component {
     this.setState({ activePageStyle: styles.fadeOut });
     setTimeout(() => {
       this.setState({ activePage: newPage, activePageStyle: styles.fadeIn });
-    }, 3000);
+    }, 1000);
   }
 
   handleCategoryChange(newCategory) {
@@ -109,7 +109,7 @@ class NewFurniture extends React.Component {
               {categoryProducts
                 .slice(activePage * 8, (activePage + 1) * 8)
                 .map(item => (
-                  <div key={item.id} className={`col-6 col-md-4 col-lg-3}`}>
+                  <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                     <ProductBox
                       {...item}
                       handleFavoriteClick={this.handleFavoriteClick}
