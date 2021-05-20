@@ -368,6 +368,33 @@ const initialState = {
     rightDownDescription: ['Special', 'collection', 'Save up', '45%', 'of furniture'],
   },
 
+  feedbacks: [
+    {
+      id: 'feedback1',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
+      foto: '',
+      name: 'John Doe',
+      description: 'Furniture client',
+    },
+    {
+      id: 'feedback2',
+      text:
+        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta',
+      foto: '',
+      name: 'John Smith',
+      description: 'New bed owner',
+    },
+    {
+      id: 'feedback3',
+      text:
+        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident',
+      foto: '',
+      name: 'Kristoff Koloski',
+      description: 'Kitchen designer',
+    },
+  ],
+
   promoted: {
     name: 'Blanditiis Rerum Incidunt',
     image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',

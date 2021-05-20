@@ -11,6 +11,7 @@
 
     .heading {
       position: relative;
+      border-bottom: 4px solid $furniture-border-color;
 
       h3 {
         color: $primary;
