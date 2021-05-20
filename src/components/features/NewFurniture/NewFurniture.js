@@ -2,20 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareBox from '../CompareBox/CompareBoxContainer.js';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    activePageStyle: styles.fadeIn,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ activePageStyle: styles.fadeOut });
+    setTimeout(() => {
+      this.setState({ activePage: newPage, activePageStyle: styles.fadeIn });
+    }, 1000);
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ activePageStyle: styles.fadeOut });
+    setTimeout(() => {
+      this.setState({ activeCategory: newCategory, activePageStyle: styles.fadeIn });
+    }, 1000);
   }
 
   handleFavoriteClick = (id, favorite) => {
@@ -27,9 +35,24 @@ class NewFurniture extends React.Component {
     }
   };
 
+  handleCompareClick = (id, compare) => {
+    const { addToCompare, removeFromCompare } = this.props;
+    if (!compare) {
+      addToCompare(id);
+    } else {
+      removeFromCompare(id);
+    }
+  };
+
   render() {
-    const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const {
+      categories,
+      products,
+      productsOnPage,
+      handleCompareClick,
+      getCompared,
+    } = this.props;
+    const { activeCategory, activePage, activePageStyle } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -54,7 +77,9 @@ class NewFurniture extends React.Component {
         <li key={i}>
           <a
             href='/#'
-            onClick={() => this.handlePageChange(i)}
+            onClick={() => {
+              this.handlePageChange(i);
+            }}
             className={i === activePage ? styles.active : ''}
           >
             page {i}
@@ -81,7 +106,9 @@ class NewFurniture extends React.Component {
                           className={
                             item.id === activeCategory ? styles.active : undefined
                           }
-                          onClick={() => this.handleCategoryChange(item.id)}
+                          onClick={() => {
+                            this.handleCategoryChange(item.id);
+                          }}
                         >
                           {item.name}
                         </a>
@@ -94,17 +121,25 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div className={'row ' + activePageStyle}>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
                 .map(item => (
                   <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                     <ProductBox
                       {...item}
                       handleFavoriteClick={this.handleFavoriteClick}
+                      handleCompareClick={this.handleCompareClick}
+                      getCompared={this.getCompared}
                     />
                   </div>
                 ))}
+            </div>
+            <div className={styles.compareBox}>
+              <CompareBox
+                handleCompareClick={handleCompareClick}
+                getCompared={getCompared}
+              />
             </div>
           </div>
         </div>
@@ -131,15 +166,22 @@ NewFurniture.propTypes = {
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
       favorite: PropTypes.bool,
+      compare: PropTypes.bool,
     })
   ),
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
+  productsOnPage: PropTypes.number,
+  addToCompare: PropTypes.func,
+  removeFromCompare: PropTypes.func,
+  handleCompareClick: PropTypes.func,
+  getCompared: PropTypes.array,
 };
 
 NewFurniture.defaultProps = {
   categories: [],
   products: [],
+  productsOnPage: 8,
 };
 
 export default NewFurniture;
