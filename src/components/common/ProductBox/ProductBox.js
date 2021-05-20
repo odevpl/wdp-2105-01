@@ -19,6 +19,7 @@ const ProductBox = ({
   favorite,
   compare,
   handleFavoriteClick,
+  handleCompareClick,
 }) => (
 
   <div className={styles.root}>
@@ -47,7 +48,11 @@ const ProductBox = ({
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button className={compare ? styles.selected : styles.state} variant='outline'>
+        <Button
+          className={compare ? styles.selected : styles.state}
+          onClick={() => handleCompareClick(id, compare)}
+          variant='outline'
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -76,6 +81,7 @@ ProductBox.propTypes = {
   handleFavoriteClick: PropTypes.func,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  handleCompareClick: PropTypes.func,
 };
 
 export default ProductBox;
