@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Stars from '../../features/Stars/StarsContainer';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
 const ProductBox = ({
@@ -16,11 +13,13 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  customStars,
   image,
   id,
   favorite,
   compare,
   handleFavoriteClick,
+  handleCompareClick,
 }) => (
 
   <div className={styles.root}>
@@ -36,17 +35,7 @@ const ProductBox = ({
     </div>
     <div className={styles.content}>
       <h5>{name}</h5>
-      <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='/#'>
-            {i <= stars ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
-      </div>
+      <Stars id={id} customStars={customStars} stars={stars} />
     </div>
     <div className={styles.line}></div>
     <div className={styles.actions}>
@@ -59,7 +48,11 @@ const ProductBox = ({
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button className={compare ? styles.selected : styles.state} variant='outline'>
+        <Button
+          className={compare ? styles.selected : styles.state}
+          onClick={() => handleCompareClick(id, compare)}
+          variant='outline'
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -81,12 +74,14 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  customStars: PropTypes.number,
   image: PropTypes.node,
 
   id: PropTypes.string,
   handleFavoriteClick: PropTypes.func,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  handleCompareClick: PropTypes.func,
 };
 
 export default ProductBox;
