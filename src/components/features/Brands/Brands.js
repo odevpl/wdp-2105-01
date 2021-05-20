@@ -16,7 +16,7 @@ const Brands = ({ brands }) => (
             </a>
           </button>
           {brands.map(brand => (
-            <div key={brand.id}>
+            <div className={styles.logo} key={brand.id}>
               <img src={brand.logo} alt='' />
             </div>
           ))}
