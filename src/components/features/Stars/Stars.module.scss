@@ -1,0 +1,16 @@
+@import "../../../styles/settings.scss";
+
+.stars {
+  p {
+    display: inline;
+    color: $productbox-stars-color;
+  }
+
+  &_customStars {
+    p {
+      color: $productbox-customStars-color;
+    }    
+  }
+}
+
+  
