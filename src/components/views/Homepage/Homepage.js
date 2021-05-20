@@ -9,6 +9,7 @@ import Brands from '../../features/Brands/BrandsContainer';
 import Promotions from '../../features/Promotions/PromotionsContainer';
 import Feedbacks from '../../features/Feedbacks/FeedbacksContainer';
 import Promoted from '../../features/Promoted/Promoted';
+import BlogHomepage from '../../features/BlogHomepage/BlogHomepageContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -18,6 +19,7 @@ const Homepage = () => (
     <NewFurniture />
     <Brands />
     <Promotions />
+    <BlogHomepage />
     <Feedbacks />
   </div>
 );

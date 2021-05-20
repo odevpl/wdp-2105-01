@@ -701,6 +701,45 @@ const initialState = {
     },
   ],
 
+  blogPosts: [
+    {
+      id: 'post1',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+      foto: '',
+      author: 'John Doe',
+      title: 'Products That Fight Static',
+      date: '15 JAN 2016',
+      comments: '4',
+      image:
+        'https://images.pexels.com/photos/1676037/pexels-photo-1676037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'post2',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+      foto: '',
+      author: 'John Smith',
+      title: 'Products That Fight Static',
+      date: '15 JAN 2016',
+      comments: '4',
+      image:
+        'https://images.pexels.com/photos/1676037/pexels-photo-1676037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'post3',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+      foto: '',
+      author: 'Kristoff Koloski',
+      title: 'Products That Fight Static',
+      date: '15 JAN 2016',
+      comments: '4',
+      image:
+        'https://images.pexels.com/photos/1676037/pexels-photo-1676037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+  ],
+
   promoted: {
     name: 'Blanditiis Rerum Incidunt',
     image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
