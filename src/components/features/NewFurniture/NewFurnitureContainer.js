@@ -7,16 +7,22 @@ import {
   getNew,
   addToFavorites,
   removeFromFavorites,
+  addToCompare,
+  removeFromCompare,
+  getCompared,
 } from '../../../redux/productsRedux.js';
 
 const mapStateToProps = state => ({
   categories: getAll(state),
   products: getNew(state),
+  getCompared: getCompared(state),
 });
 
 const mapDispatcherToProps = dispatcher => ({
   addToFavorites: payload => dispatcher(addToFavorites(payload)),
   removeFromFavorites: payload => dispatcher(removeFromFavorites(payload)),
+  addToCompare: payload => dispatcher(addToCompare(payload)),
+  removeFromCompare: payload => dispatcher(removeFromCompare(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatcherToProps)(NewFurniture);

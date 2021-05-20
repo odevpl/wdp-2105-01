@@ -6,7 +6,7 @@ const Promotions = ({ promotion }) => (
   <div className={styles.root}>
     <div className='container pb-3'>
       <div className='row'>
-        <div className='col-md-6 col-sm-12'>
+        <div className='col-12 col-md-6'>
           <div className={styles.image}>
             <img src={promotion.leftImage} alt='' className='p-1' />
             <div className={styles.description + ' ' + styles.descriptionLeft}>
@@ -17,7 +17,7 @@ const Promotions = ({ promotion }) => (
           </div>
         </div>
 
-        <div className='col-md-6 col-sm-12'>
+        <div className='col-12 col-md-6'>
           <div className={styles.image + ' ' + styles.right}>
             <img src={promotion.rightUpImage} alt='' className='p-1 ' />
             <div className={styles.description + ' ' + styles.descriptionRightUp}>
@@ -47,7 +47,7 @@ const Promotions = ({ promotion }) => (
         </div>
       </div>
     </div>
-  </div >
+  </div>
 );
 
 Promotions.propTypes = {
