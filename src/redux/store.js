@@ -7,7 +7,6 @@ import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import promotionsReducer from './promotionsRedux';
 
-
 // define reducers
 const reducers = {
   cart: cartReducer,

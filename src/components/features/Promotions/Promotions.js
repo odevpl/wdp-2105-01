@@ -47,7 +47,7 @@ const Promotions = ({ promotion }) => (
         </div>
       </div>
     </div>
-  </div >
+  </div>
 );
 
 Promotions.propTypes = {
