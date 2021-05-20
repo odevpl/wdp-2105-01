@@ -34,7 +34,10 @@ class NewFurniture extends React.Component {
       removeFromFavorites(id);
     }
   };
-
+  handlePopupClick = id => {
+    const { openProductPopup } = this.props;
+    openProductPopup(id);
+  };
   handleCompareClick = (id, compare) => {
     const { addToCompare, removeFromCompare } = this.props;
     if (!compare) {
@@ -130,6 +133,7 @@ class NewFurniture extends React.Component {
                       {...item}
                       handleFavoriteClick={this.handleFavoriteClick}
                       handleCompareClick={this.handleCompareClick}
+                      handlePopupClick={this.handlePopupClick}
                       getCompared={this.getCompared}
                     />
                   </div>
@@ -169,6 +173,7 @@ NewFurniture.propTypes = {
       compare: PropTypes.bool,
     })
   ),
+  openProductPopup: PropTypes.func,
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
   productsOnPage: PropTypes.number,

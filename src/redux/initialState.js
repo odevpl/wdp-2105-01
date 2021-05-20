@@ -675,7 +675,7 @@ const initialState = {
   },
 
   prodPopup: {
-    isShown: true,
+    isShown: false,
     productId: 'aenean-ru-bristique-23',
   },
   feedbacks: [

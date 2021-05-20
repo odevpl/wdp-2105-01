@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProductPopup from './ProductPopup';
-import { getProdPopup } from '../../../redux/prodPopupRedux';
+import { getProdPopup, closeProductPopup } from '../../../redux/prodPopupRedux';
 import { getProduct } from '../../../redux/productsRedux';
 
 const mapStateToProps = state => {
@@ -10,4 +10,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(ProductPopup);
+const mapDispatcherToProps = dispatcher => {
+  return {
+    closeProductPopup: payload => dispatcher(closeProductPopup(payload)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatcherToProps)(ProductPopup);

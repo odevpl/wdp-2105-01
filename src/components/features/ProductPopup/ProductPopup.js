@@ -6,7 +6,7 @@ import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
-const ProductPopup = ({ product }) => {
+const ProductPopup = ({ product, closeProductPopup }) => {
   const { id, customStars, stars, image, name, price } = product;
   return (
     <div className={styles.root}>
@@ -19,7 +19,7 @@ const ProductPopup = ({ product }) => {
         <div className='col-6'>
           <div className={styles.content}>
             <div className={styles.content_upper}>
-              <Button>
+              <Button onClick={() => closeProductPopup()}>
                 <FontAwesomeIcon icon={faWindowClose}></FontAwesomeIcon>
               </Button>
             </div>
@@ -48,11 +48,7 @@ const ProductPopup = ({ product }) => {
 
 ProductPopup.propTypes = {
   product: PropTypes.object,
-  //hideProdPopup: PropTypes.func,
-
-  //to razem z funkcją openProdPopup idzie do ProductBox
-  //popupShown: PropTypes.bool,
-  //showProdPopup: PropTypes.func,
+  closeProductPopup: PropTypes.func,
 };
 
 export default ProductPopup;
