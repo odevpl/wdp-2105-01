@@ -48,6 +48,15 @@
       height: 95px;
     }
 
+    .empty{
+      p{
+        margin: 0;
+        color: $footer-copyright-color;
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+
     .copyright {
       p {
         margin: 0;

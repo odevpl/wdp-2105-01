@@ -1,5 +1,5 @@
 /* selectors */
-export const getAllPromotions = ({ promotion }) => promotion;
+export const getAllBrands = ({ brands }) => brands;
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
