@@ -22,7 +22,6 @@ const ProductBox = ({
   handleFavoriteClick,
   handleCompareClick,
 }) => (
-
   <div className={styles.root}>
     <div className={styles.photo}>
       <Link to={`/product/${name}`}>
@@ -45,7 +44,6 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-
         <Button
           className={favorite ? styles.selected : styles.state}
           onClick={() => handleFavoriteClick(id, favorite)}
