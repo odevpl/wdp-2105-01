@@ -45,7 +45,7 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, handleCompareClick, getCompared } = this.props;
+    const { categories, products, productsOnPage, handleCompareClick, getCompared } = this.props;
     const { activeCategory, activePage, activePageStyle } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -117,7 +117,7 @@ class NewFurniture extends React.Component {
             </div>
             <div className={'row ' + activePageStyle}>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
                 .map(item => (
                   <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                     <ProductBox
@@ -165,15 +165,17 @@ NewFurniture.propTypes = {
   ),
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
+  productsOnPage: PropTypes.number,
   addToCompare: PropTypes.func,
   removeFromCompare: PropTypes.func,
   handleCompareClick: PropTypes.func,
-  getCompared: PropTypes.array,
+  getCompared: PropTypes.array
 };
 
 NewFurniture.defaultProps = {
   categories: [],
   products: [],
+  productsOnPage: 8,
 };
 
 export default NewFurniture;
