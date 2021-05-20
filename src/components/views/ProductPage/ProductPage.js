@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
+import Reviews from '../../features/Reviews/Reviews';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -22,7 +23,6 @@ import {
   faPinterestP,
 } from '@fortawesome/free-brands-svg-icons';
 import Button from '../../common/Button/Button';
-import Reviews from '../../features/Reviews/Reviews';
 
 const ProductPage = stars => {
   return (
