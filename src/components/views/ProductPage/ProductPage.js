@@ -22,6 +22,7 @@ import {
   faPinterestP,
 } from '@fortawesome/free-brands-svg-icons';
 import Button from '../../common/Button/Button';
+import Reviews from '../../features/Reviews/Reviews';
 
 const ProductPage = stars => {
   return (
@@ -155,8 +156,9 @@ const ProductPage = stars => {
               </a>
             </div>
           </div>
-          <NewFurniture productsOnPage={4} />
         </div>
+        <NewFurniture productsOnPage={4} />
+        <Reviews />
       </div>
     </div>
   );
