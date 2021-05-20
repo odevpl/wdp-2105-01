@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareBox from '../CompareBox/CompareBoxContainer.js';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
@@ -34,8 +35,17 @@ class NewFurniture extends React.Component {
     }
   };
 
+  handleCompareClick = (id, compare) => {
+    const { addToCompare, removeFromCompare } = this.props;
+    if (!compare) {
+      addToCompare(id);
+    } else {
+      removeFromCompare(id);
+    }
+  };
+
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, handleCompareClick, getCompared } = this.props;
     const { activeCategory, activePage, activePageStyle } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -113,9 +123,17 @@ class NewFurniture extends React.Component {
                     <ProductBox
                       {...item}
                       handleFavoriteClick={this.handleFavoriteClick}
+                      handleCompareClick={this.handleCompareClick}
+                      getCompared={this.getCompared}
                     />
                   </div>
                 ))}
+            </div>
+            <div className={styles.compareBox}>
+              <CompareBox
+                handleCompareClick={handleCompareClick}
+                getCompared={getCompared}
+              />
             </div>
           </div>
         </div>
@@ -142,10 +160,15 @@ NewFurniture.propTypes = {
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
       favorite: PropTypes.bool,
+      compare: PropTypes.bool,
     })
   ),
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
+  addToCompare: PropTypes.func,
+  removeFromCompare: PropTypes.func,
+  handleCompareClick: PropTypes.func,
+  getCompared: PropTypes.array,
 };
 
 NewFurniture.defaultProps = {
