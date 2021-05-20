@@ -128,3 +128,20 @@
     }
   }
 }
+
+@media (max-width: 350px) {
+  .root {
+    font-size: 10px;
+
+    .searchField {
+
+      input {
+        width: 120px;
+      }
+
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
