@@ -11,6 +11,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 class Chatbot extends React.Component {
+  state = {
+    openBot: false,
+  };
+
   render() {
     return this.state.openBot ? (
       <div className={styles.root}>
@@ -45,8 +49,10 @@ class Chatbot extends React.Component {
         </div>
       </div>
     ) : (
-      <div onClick={this.setState({ openBot: true })} className={styles.button}>
-        <a href='#'>Need help? Write!</a>
+      <div className={styles.button}>
+        <a onClick={this.setState({ openBot: true })} href='#'>
+          Need help? Write!
+        </a>
       </div>
     );
   }
