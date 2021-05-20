@@ -45,7 +45,13 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, productsOnPage, handleCompareClick, getCompared } = this.props;
+    const {
+      categories,
+      products,
+      productsOnPage,
+      handleCompareClick,
+      getCompared,
+    } = this.props;
     const { activeCategory, activePage, activePageStyle } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -169,7 +175,7 @@ NewFurniture.propTypes = {
   addToCompare: PropTypes.func,
   removeFromCompare: PropTypes.func,
   handleCompareClick: PropTypes.func,
-  getCompared: PropTypes.array
+  getCompared: PropTypes.array,
 };
 
 NewFurniture.defaultProps = {
