@@ -14,6 +14,7 @@ const Homepage = () => (
   <div className={styles.root}>
     <Promoted />
     <FeatureBoxes />
+    <Promotions />
     <NewFurniture />
     <Brands />
     <Promotions />
