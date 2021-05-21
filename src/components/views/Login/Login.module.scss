@@ -1,0 +1,60 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 0;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 14px;
+  background-color: $gray-8;
+
+  .loginBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 250px;
+    padding: 0 2%;
+    background-color: $white;
+    border-top: 5px solid $primary;
+    border-radius: 5px;
+
+    .contentBox {
+      margin-bottom: 10px;
+
+      .contentName {
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        font-size: 14px;
+        border: solid 1px #dee2e6;
+        border-radius: 3px;
+        outline: 1px solid $gray-5;
+      }
+    }
+
+    .contentBottom {
+      display: flex;
+      font-size: 12px;
+
+      p {
+        margin-right: 5px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
