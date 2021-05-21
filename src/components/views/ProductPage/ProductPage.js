@@ -1,6 +1,6 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
+import Reviews from '../../features/Reviews/Reviews';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -155,13 +155,13 @@ const ProductPage = stars => {
               </a>
             </div>
           </div>
-          <NewFurniture productsOnPage={4} />
+          <NewFurniture maxProductsOnPage={4} />
         </div>
+        <NewFurniture productsOnPage={4} />
+        <Reviews />
       </div>
     </div>
   );
 };
-
-// ProductPage.propTypes = {};
 
 export default ProductPage;
