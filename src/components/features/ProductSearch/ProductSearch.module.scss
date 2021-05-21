@@ -5,6 +5,7 @@
   display: inline-flex;
   height: 45px;
   color: $text-color;
+  margin: 0 5px;
 
   .category {
     border-right: 1px solid $form-border-color;
@@ -12,6 +13,11 @@
     align-items: center;
     position: relative;
     font-size: 14px;
+
+    &:hover {
+      background-color: $primary;
+      color: white;
+    }
 
     .icon:first-child {
       color: $primary;
@@ -33,11 +39,6 @@
       font-size: 14px;
       margin: 0;
       z-index: 1;
-
-      &:hover {
-        background-color: $primary;
-        color: white;
-      }
 
       &:hover ul {
         position: absolute;
@@ -122,10 +123,26 @@
       }
     }
 
-    button {
-      border: 0;
-      background-color: transparent;
-      outline: none;
+    a {
+      color: $text-color;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .root {
+    font-size: 10px;
+
+    .searchField {
+
+      input {
+        width: 120px;
+      }
+
+      a {
+        font-size: 14px;
+      }
     }
   }
 }

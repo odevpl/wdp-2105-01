@@ -29,8 +29,7 @@ $desktop-width: 1200px;
     }
 
     @include mobile {
-      height: 85px;
-      flex-wrap: nowrap;
+      height: 115px;
     }
 
   }
