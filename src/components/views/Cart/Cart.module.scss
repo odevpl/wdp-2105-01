@@ -199,12 +199,17 @@
       padding: 10px;
       text-align: center;
       background-color: $primary;
-      color: $white;
-      font-size: 14px;
-
       &:hover {
         text-decoration: none;
         background-color: $darkGray;
+      }
+    }
+
+    .checkoutButton{
+      color: $white;
+      font-size: 14px;
+      &:hover {
+        text-decoration: none;
       }
     }
   }

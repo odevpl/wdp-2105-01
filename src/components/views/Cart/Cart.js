@@ -4,6 +4,7 @@ import styles from './Cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   return (
@@ -45,13 +46,13 @@ const Cart = () => {
               <td className='align-middle'>
                 <div className={styles.quantity}>
                   <Button className={styles.button1} variant='outline'>
-                    +
+                    -
                   </Button>
                   <div className={styles.number}>
                     <input></input>
                   </div>
                   <Button className={styles.button2} variant='outline'>
-                    -
+                    +
                   </Button>
                 </div>
               </td>
@@ -67,13 +68,13 @@ const Cart = () => {
               <td className='align-middle'>
                 <div className={styles.quantity}>
                   <Button className={styles.button1} variant='outline'>
-                    +
+                    -
                   </Button>
                   <div className={styles.number}>
                     <input></input>
                   </div>
                   <Button className={styles.button2} variant='outline'>
-                    -
+                    +
                   </Button>
                 </div>
               </td>
@@ -89,13 +90,13 @@ const Cart = () => {
               <td className='align-middle'>
                 <div className={styles.quantity}>
                   <Button className={styles.button1} variant='outline'>
-                    +
+                    -
                   </Button>
                   <div className={styles.number}>
                     <input></input>
                   </div>
                   <Button className={styles.button2} variant='outline'>
-                    -
+                    +
                   </Button>
                 </div>
               </td>
@@ -123,7 +124,9 @@ const Cart = () => {
           <h5>Total</h5>
           <p>$92.00</p>
         </div>
-        <Button className={styles.checkout}>PROCEED TO CHECKOUT</Button>
+        <Link to={`/`} className={styles.checkout}>
+          <Button className={styles.checkoutButton}>PROCEED TO CHECKOUT</Button>
+        </Link>
       </div>
     </div>
   );
