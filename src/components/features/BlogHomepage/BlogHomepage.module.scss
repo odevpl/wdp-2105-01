@@ -6,7 +6,7 @@
   padding-top: 64px;
   font-weight: 500;
   color: $footer-copyright-color;
-  margin-bottom: 350px;
+  margin-bottom: 330px;
 
   .heading {
     position: relative;
@@ -86,7 +86,7 @@
 
     .info {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       font-size: 15px;
       padding-bottom: 10px;
@@ -95,6 +95,7 @@
       .date, .comments {
         display: flex;
         color: $gray-7;
+        margin-bottom: 10px;
 
         p {
           padding: 0 0 0 10px;
@@ -103,30 +104,31 @@
       }
 
       .date {
-        padding-left: 5px;
+        padding-left: 8px;
       }
 
       .comments {
-        padding-right: 5px;
+        padding-right: 8px;
       }
   }
 
     h3 {
       color: $gray-7;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     p {
       padding-top: 8px;
-      font-size: 15px;
+      font-size: 13px;
     }
 
     .button {
       margin-top: 8px;
       align-self: center;
+      text-align: center;
       width: 50%;
       padding: 10px 30px;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 500;
     }
 
