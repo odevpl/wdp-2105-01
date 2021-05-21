@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import { SIZE_TYPES } from '../../../settings';
 import CompareBox from '../CompareBox/CompareBoxContainer.js';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
@@ -38,6 +39,34 @@ class NewFurniture extends React.Component {
     const { openProductPopup } = this.props;
     openProductPopup(id);
   };
+  selectActualScreenType = () => {
+    const width = window.innerWidth;
+    if (width < 768) {
+      return SIZE_TYPES.MOBILE;
+    } else if (width < 992) {
+      return SIZE_TYPES.TABLET;
+    } else {
+      return SIZE_TYPES.DESKTOP;
+    }
+  };
+  handleSizeChange = storedType => {
+    const actualType = this.selectActualScreenType();
+    if (actualType !== storedType) {
+      this.props.setScreenType(actualType);
+    }
+  };
+  componentDidMount() {
+    this.handleSizeChange(this.props.screenType);
+    window.addEventListener('resize', () =>
+      this.handleSizeChange(this.props.screenType)
+    );
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', () =>
+      this.handleSizeChange(this.props.screenType)
+    );
+  }
+
   handleCompareClick = (id, compare) => {
     const { addToCompare, removeFromCompare } = this.props;
     if (!compare) {
@@ -51,14 +80,23 @@ class NewFurniture extends React.Component {
     const {
       categories,
       products,
-      productsOnPage,
+      maxProductsOnPage,
+      screenType,
       handleCompareClick,
       getCompared,
     } = this.props;
     const { activeCategory, activePage, activePageStyle } = this.state;
-
+    const productsPerPage = {
+      [SIZE_TYPES.MOBILE]: 2,
+      [SIZE_TYPES.TABLET]: 3,
+      [SIZE_TYPES.DESKTOP]: 8,
+    };
+    const actualProductsOnPage = Math.min(
+      productsPerPage[screenType],
+      maxProductsOnPage
+    );
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / actualProductsOnPage);
 
     const rightAction = () => {
       const newPage = activePage - 1;
@@ -126,7 +164,10 @@ class NewFurniture extends React.Component {
             </div>
             <div className={'row ' + activePageStyle}>
               {categoryProducts
-                .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
+                .slice(
+                  activePage * actualProductsOnPage,
+                  (activePage + 1) * actualProductsOnPage
+                )
                 .map(item => (
                   <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                     <ProductBox
@@ -153,6 +194,7 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  screenType: PropTypes.string,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
@@ -174,9 +216,10 @@ NewFurniture.propTypes = {
     })
   ),
   openProductPopup: PropTypes.func,
+  setScreenType: PropTypes.func,
   addToFavorites: PropTypes.func,
   removeFromFavorites: PropTypes.func,
-  productsOnPage: PropTypes.number,
+  maxProductsOnPage: PropTypes.number,
   addToCompare: PropTypes.func,
   removeFromCompare: PropTypes.func,
   handleCompareClick: PropTypes.func,
@@ -186,7 +229,7 @@ NewFurniture.propTypes = {
 NewFurniture.defaultProps = {
   categories: [],
   products: [],
-  productsOnPage: 8,
+  maxProductsOnPage: 8,
 };
 
 export default NewFurniture;

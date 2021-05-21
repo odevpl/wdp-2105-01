@@ -6,6 +6,7 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import promotionsReducer from './promotionsRedux';
+import screenTypeReducer from './screenTypeRedux';
 import feedbacksReducer from './feedbacksRedux';
 import prodPopupReducer from './prodPopupRedux';
 
@@ -16,6 +17,7 @@ const reducers = {
   products: productsReducer,
   brands: brandsReducer,
   promotion: promotionsReducer,
+  screenType: screenTypeReducer,
   feedbacks: feedbacksReducer,
   prodPopup: prodPopupReducer,
 };
