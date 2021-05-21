@@ -17,8 +17,8 @@ const Homepage = () => (
     <FeatureBoxes />
     <Promotions />
     <NewFurniture />
-    <Brands />
     <BlogHomepage />
+    <Brands />
     <Promotions />
     <Feedbacks />
   </div>
