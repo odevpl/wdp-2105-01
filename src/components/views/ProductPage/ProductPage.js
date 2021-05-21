@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
 import Reviews from '../../features/Reviews/Reviews';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
@@ -156,6 +155,7 @@ const ProductPage = stars => {
               </a>
             </div>
           </div>
+          <NewFurniture maxProductsOnPage={4} />
         </div>
         <NewFurniture productsOnPage={4} />
         <Reviews />
@@ -163,7 +163,5 @@ const ProductPage = stars => {
     </div>
   );
 };
-
-// ProductPage.propTypes = {};
 
 export default ProductPage;
