@@ -1,5 +1,13 @@
 @import "../../../styles/settings.scss";
 
+.chatbot {
+  width: 25%;
+  position: fixed;
+  bottom: 10px;
+  z-index: 2;
+  margin-left: 10px;
+}
+
 .root {
   display: flex;
   flex-direction: column;

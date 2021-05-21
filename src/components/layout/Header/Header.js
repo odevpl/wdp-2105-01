@@ -10,9 +10,7 @@ import Chatbot from '../../features/Chatbot/Chatbot';
 
 const Header = props => (
   <header className={styles.root}>
-    <div className={styles.chatbot}>
-      <Chatbot />
-    </div>
+    <Chatbot />
     <TopBar />
     <CompanyClaim />
     <MenuBar />

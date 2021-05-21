@@ -8,7 +8,6 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 import Promotions from '../../features/Promotions/PromotionsContainer';
 import Promoted from '../../features/Promoted/Promoted';
-//import Chatbot from '../../features/Chatbot/Chatbot';
 
 const Homepage = () => (
   <div className={styles.root}>
