@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faComments } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faComments } from '@fortawesome/free-solid-svg-icons';
 import styles from './BlogHomepage.module.scss';
 import Button from '../../common/Button/Button';
 
@@ -41,7 +41,7 @@ const BlogHomepage = ({ blogPosts }) => (
                 <div className={styles.post}>
                   <div className={styles.info}>
                     <div className={styles.date}>
-                      <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                      <FontAwesomeIcon className={styles.icon} icon={faCalendarAlt} />
                       <p>{item.date}</p>
                     </div>
                     <div className={styles.comments}>
