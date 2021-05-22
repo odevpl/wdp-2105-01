@@ -35,7 +35,8 @@
         font-size: 14px;
         border: solid 1px #dee2e6;
         border-radius: 3px;
-        outline: 1px solid $gray-5;
+        border: 1px solid $gray-5;
+        border-radius: 3px;
       }
     }
 
@@ -52,9 +53,24 @@
       text-decoration: none;
     }
 
-    .button {
+    .buttonBox {
       display: flex;
       justify-content: center;
+
+      .loginBtn {
+        background-color: $primary;
+        color: $button-color;
+        font-size: 13px;
+        line-height: 24px;
+        padding: 5px 10px;
+        font-weight: 400;
+        border: none;
+        border-radius: 3px;
+
+        &:hover {
+          background-color: lighten($primary, 10%);
+        }
+      }
     }
   }
 }
