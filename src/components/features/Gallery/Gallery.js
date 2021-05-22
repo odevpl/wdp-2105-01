@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 import Button from '../../common/Button/Button';
-import initialState from '../../../redux/initialState';
+//import initialState from '../../../redux/initialState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleLeft,
+  faAngleRight,
+  faExchangeAlt,
+  faShoppingBasket,
+} from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 
-const Gallery = ({ gallery }) => (
+const Gallery = ({ gallery, getActiveBestseller }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
@@ -35,8 +41,44 @@ const Gallery = ({ gallery }) => (
               </ul>
             </div>
             <div className={styles.tabContent}>
-              <div className={styles.image}>
-                <img src={initialState.gallery.image1} alt='top seller' />
+              {getActiveBestseller.map(item => (
+                <div key={item.id} className={styles.image}>
+                  <img alt={'topseller'} src={item.image}></img>
+                </div>
+              ))}
+
+              <div className={styles.actions}>
+                <Button
+                  className={styles.selected}
+                  variant='outline'
+                  tooltip='Favourite'
+                >
+                  <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+                </Button>
+
+                <Button
+                  className={styles.selected}
+                  variant='outline'
+                  tooltip='Add To Compare'
+                >
+                  <FontAwesomeIcon icon={faExchangeAlt}>Add To Compare</FontAwesomeIcon>
+                </Button>
+
+                <Button
+                  className={styles.selected}
+                  variant='outline'
+                  tooltip='See Details'
+                >
+                  <FontAwesomeIcon icon={faEye}>See Details</FontAwesomeIcon>
+                </Button>
+
+                <Button
+                  className={styles.selected}
+                  variant='outline'
+                  tooltip='Add To Cart'
+                >
+                  <FontAwesomeIcon icon={faShoppingBasket}>Add To Cart</FontAwesomeIcon>
+                </Button>
               </div>
             </div>
             <div className={styles.slider}>
@@ -47,7 +89,11 @@ const Gallery = ({ gallery }) => (
               </button>
               {gallery.map(item => (
                 <div key={item.id}>
-                  <img src={item.image} alt='' />
+                  <img
+                    src={item.image}
+                    className={item.active ? styles.active : styles.img}
+                    alt=''
+                  />
                 </div>
               ))}
               <button type='button' className='btn btn-dark rounded-0'>
@@ -64,8 +110,9 @@ const Gallery = ({ gallery }) => (
 );
 
 Gallery.propTypes = {
-  gallery: PropTypes.object,
+  gallery: PropTypes.array,
   image: PropTypes.string,
+  getActiveBestseller: PropTypes.array,
 };
 
 export default Gallery;
