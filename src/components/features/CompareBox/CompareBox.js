@@ -22,8 +22,7 @@ const CompareBox = ({ getCompared, removeItem, handleFavoriteClick }) => {
               <h6>{product.name}</h6>
               <p>Price: ${product.price} </p>
               <p className={styles.price_old}>
-                {' '}
-                Old price:{' '}
+                Old price:
                 {product.oldPrice ? <span> $ {product.oldPrice} </span> : '$-'}
               </p>
               <p>{product.favorite ? <FontAwesomeIcon icon={faHeart} /> : ''}</p>
