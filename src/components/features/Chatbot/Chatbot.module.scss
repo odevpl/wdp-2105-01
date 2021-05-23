@@ -1,0 +1,115 @@
+@import "../../../styles/settings.scss";
+
+.chatbot {
+  width: 25%;
+  position: fixed;
+  bottom: 10px;
+  z-index: 2;
+  margin-left: 10px;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    width: 30%;
+
+    a{
+      display: block;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .unactive{
+    display: none;
+  }
+  .chat{
+    margin: 10px 0;
+    border-radius: 3px;
+    background-color: $white;
+    .top {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      background-color: $primary;
+
+      a {
+        margin: 5px 10px;
+        color: $white;
+      }
+    }
+
+    .chatBody {
+      padding: 10px 5px 0 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: solid 4px $primary;
+      border-bottom: none;
+
+      p {
+        margin: 10px;
+        padding: 4px;
+        background-color: $gray-3;
+        border-radius: 0 5px 5px 5px;
+        width: 70%;
+        box-shadow: 0 0 5px rgb(209, 209, 209);
+      }
+
+      .robot{
+        display: flex;
+        align-items: center;
+        img {
+          height: 50px;
+          width: 50px;
+        }
+
+      }
+      a {
+        margin: 20px;
+        margin-bottom: 100px;
+        padding: 5px 30px;
+        border: solid 4px $primary;
+        border-radius: 20px;
+        align-self: center;
+      }
+    }
+
+    .message {
+      background-color: $gray-3;
+      display: flex;
+      textarea {
+        width: 85%;
+        border: none;
+        outline: none;
+        margin-bottom: 0;
+        padding: 0 10px;
+        background-color: $gray-3;
+        resize: none;
+      }
+      .sendIcon {
+        font-size: 20px;
+        color: $primary;
+        align-self: center;
+      }
+    }
+
+    .send {
+      width: 100%;
+      border-radius: 3px;
+      text-align: center;
+      color: $white;
+      background-color: $primary;
+      font-size: 40px;
+    }
+  }
+}
