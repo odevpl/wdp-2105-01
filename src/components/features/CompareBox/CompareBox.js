@@ -9,8 +9,6 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 const CompareBox = ({ getCompared, removeItem }) => {
   const isActive = getCompared.length;
 
-  //const isActive = getCompared.length > 0 && getCompared.length <= 4;
-
   if (isActive) {
     return (
       <div className={styles.root}>

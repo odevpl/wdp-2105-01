@@ -1,6 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-
 import styles from './Homepage.module.scss';
 
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
@@ -22,7 +20,5 @@ const Homepage = () => (
     <Feedbacks />
   </div>
 );
-
-// Homepage.propTypes = {};
 
 export default Homepage;
