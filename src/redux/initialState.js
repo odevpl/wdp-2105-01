@@ -679,6 +679,10 @@ const initialState = {
     rightDownDescription: ['Special', 'collection', 'Save up', '45%', 'of furniture'],
   },
 
+  prodPopup: {
+    isShown: false,
+    productId: 'aenean-ru-bristique-23',
+  },
   feedbacks: [
     {
       id: 'feedback1',

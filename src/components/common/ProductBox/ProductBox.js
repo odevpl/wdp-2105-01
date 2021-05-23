@@ -19,6 +19,7 @@ const ProductBox = ({
   id,
   favorite,
   compare,
+  handlePopupClick,
   handleFavoriteClick,
   handleCompareClick,
 }) => (
@@ -29,7 +30,9 @@ const ProductBox = ({
       </Link>
       {promo && <div className={styles.sale}>{promo}</div>}
       <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
+        <Button onClick={() => handlePopupClick(id)} variant='small'>
+          Quick View
+        </Button>
         <Button variant='small'>
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
@@ -84,6 +87,7 @@ ProductBox.propTypes = {
   handleFavoriteClick: PropTypes.func,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  handlePopupClick: PropTypes.func,
   handleCompareClick: PropTypes.func,
 };
 
