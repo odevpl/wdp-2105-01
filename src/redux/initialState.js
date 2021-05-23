@@ -680,6 +680,10 @@ const initialState = {
     rightDownDescription: ['Special', 'collection', 'Save up', '45%', 'of furniture'],
   },
 
+  prodPopup: {
+    isShown: false,
+    productId: 'aenean-ru-bristique-23',
+  },
   feedbacks: [
     {
       id: 'feedback1',
@@ -704,6 +708,45 @@ const initialState = {
       foto: '',
       name: 'Kristoff Koloski',
       description: 'Kitchen designer',
+    },
+  ],
+
+  blogPosts: [
+    {
+      id: 'post1',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+      foto: '',
+      author: 'John Doe',
+      title: 'Products That Fight Static',
+      date: '15 JAN 2016',
+      comments: '4',
+      image:
+        'https://images.pexels.com/photos/1676037/pexels-photo-1676037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'post2',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+      foto: '',
+      author: 'John Smith',
+      title: 'Products That Fight Static',
+      date: '15 JAN 2016',
+      comments: '4',
+      image:
+        'https://images.pexels.com/photos/1676037/pexels-photo-1676037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      id: 'post3',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+      foto: '',
+      author: 'Kristoff Koloski',
+      title: 'Products That Fight Static',
+      date: '15 JAN 2016',
+      comments: '4',
+      image:
+        'https://images.pexels.com/photos/1676037/pexels-photo-1676037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
 

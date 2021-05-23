@@ -1,5 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
 import styles from './Reviews.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -64,7 +63,5 @@ class Reviews extends React.Component {
     );
   }
 }
-
-// Reviews.propTypes = {};
 
 export default Reviews;
