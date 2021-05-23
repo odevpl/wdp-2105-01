@@ -1,5 +1,23 @@
 @import "../../../styles/settings.scss";
 
+$tablet-width: 768px;
+$desktop-width: 1200px;
+
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+
+
 .root {
   padding: 1rem 0;
 
@@ -8,6 +26,16 @@
     border: solid 1px $gray-6;
     border-top: none;
     height: 460px;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include desktop {
+      position: relative;
+      height: auto;
+      min-height: 100% !important;
+    }
 
     .top {
       height: 45px;
@@ -144,6 +172,11 @@
       justify-content: space-between;
       margin: 20px 10px 10px 5px;
 
+      @include desktop {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .actions {
         .selected {
           margin-left: 5px;
@@ -153,6 +186,11 @@
               border-color: $primary;
           }
         }
+
+        @include desktop {
+          padding-bottom: 5px;
+        }
+
       }
 
       .prices {
@@ -179,10 +217,18 @@
     padding: 0;
     position: relative;
 
+    @include desktop {
+      height: auto;
+      min-height: 100% !important;
+      display: flex;
+      flex-direction: column;
+    }
+
     .image {
       position: relative;
       height: 425px;
       width: 98%;
+      flex: 1 0 0;
 
       img {
         width: 100%;
@@ -218,13 +264,14 @@
       .shopBtn {
         position: absolute;
         top: 68%;
-        left: 40%;
+        left: 50%;
         height: 55px;
         width: 140px;
         padding-top: 15px;
         border-radius: 2px;
         background-color: $white;
         cursor: pointer;
+        transform: translateX(-50%);
 
         a {
           text-align: center;

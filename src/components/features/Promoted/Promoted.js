@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Promoted.module.scss';
 import initialState from '../../../redux/initialState';
 import Button from '../../common/Button/Button';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faStar,
@@ -104,7 +105,7 @@ const Promoted = stars => {
             </div>
           </div>
 
-          <div className={`col-8 ${styles.rightContainer}`}>
+          <div className={`col-12 col-md-8 ${styles.rightContainer}`}>
             <div className={styles.image}>
               <img src={initialState.promoted.image} alt='pic' />
               <div className={styles.overlay}></div>
