@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 import Button from '../../common/Button/Button';
-//import initialState from '../../../redux/initialState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleLeft,
@@ -11,8 +10,9 @@ import {
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
+import Stars from '../../features/Stars/StarsContainer';
 
-const Gallery = ({ gallery, getActiveBestseller }) => (
+const Gallery = ({ gallery, getActiveBestseller, customStars }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
@@ -22,7 +22,6 @@ const Gallery = ({ gallery, getActiveBestseller }) => (
               <h3>Furniture gallery</h3>
             </div>
           </div>
-
           <div className={styles.wrapper}>
             <div className={styles.tabs}>
               <ul>
@@ -41,12 +40,11 @@ const Gallery = ({ gallery, getActiveBestseller }) => (
               </ul>
             </div>
             <div className={styles.tabContent}>
-              {getActiveBestseller.map(item => (
-                <div key={item.id} className={styles.image}>
-                  <img alt={'topseller'} src={item.image}></img>
+              {getActiveBestseller.map(product => (
+                <div key={product.image} className={styles.image}>
+                  <img alt={'topseller'} src={product.image}></img>
                 </div>
               ))}
-
               <div className={styles.actions}>
                 <Button
                   className={styles.selected}
@@ -55,7 +53,6 @@ const Gallery = ({ gallery, getActiveBestseller }) => (
                 >
                   <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
                 </Button>
-
                 <Button
                   className={styles.selected}
                   variant='outline'
@@ -80,6 +77,22 @@ const Gallery = ({ gallery, getActiveBestseller }) => (
                   <FontAwesomeIcon icon={faShoppingBasket}>Add To Cart</FontAwesomeIcon>
                 </Button>
               </div>
+              {getActiveBestseller.map(item => (
+                <div key={item.id}>
+                  <div key={item.price} className={styles.price}>
+                    <div key={item.newPrice} className={styles.newPrice}>
+                      $ {item.price}
+                    </div>
+                    <div key={item.oldPrice} className={styles.oldPrice}>
+                      $ {item.oldPrice}
+                    </div>
+                  </div>
+                  <div key={item.details} className={styles.details}>
+                    <h5 key={item.name}>{item.name}</h5>
+                    <Stars customStars={customStars} stars={item.stars} />
+                  </div>
+                </div>
+              ))}
             </div>
             <div className={styles.slider}>
               <button type='button' className='btn btn-dark rounded-0'>
@@ -87,11 +100,11 @@ const Gallery = ({ gallery, getActiveBestseller }) => (
                   <FontAwesomeIcon className={styles.icon} icon={faAngleLeft} />
                 </a>
               </button>
-              {gallery.map(item => (
-                <div key={item.id}>
+              {gallery.map(active => (
+                <div key={active.id}>
                   <img
-                    src={item.image}
-                    className={item.active ? styles.active : styles.img}
+                    src={active.image}
+                    className={active.active ? styles.active : styles.img}
                     alt=''
                   />
                 </div>
@@ -104,6 +117,23 @@ const Gallery = ({ gallery, getActiveBestseller }) => (
             </div>
           </div>
         </div>
+        <div className={'col-6'}>
+          <div className={styles.rightSide}>
+            <img
+              src='https://media.istockphoto.com/photos/ethnic-bedroom-interior-picture-id1008574412?k=6&m=1008574412&s=612x612&w=0&h=q9Vyy0VHBxRhKWOSIf-yUrAlOg06ZOtIzn6t2Vvhv1U='
+              alt='bed'
+            ></img>
+          </div>
+          <div className={styles.text}>
+            <h3>
+              from <span>$50.80</span>
+            </h3>
+            <h2>Bedroom Bed</h2>
+            <Button className={styles.button} variant='main'>
+              Shop now
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -111,8 +141,9 @@ const Gallery = ({ gallery, getActiveBestseller }) => (
 
 Gallery.propTypes = {
   gallery: PropTypes.array,
-  image: PropTypes.string,
   getActiveBestseller: PropTypes.array,
+  stars: PropTypes.number,
+  customStars: PropTypes.number,
 };
 
 export default Gallery;
