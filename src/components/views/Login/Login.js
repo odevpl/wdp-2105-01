@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Login = () => (
   <div className={styles.root}>
     <div className={styles.loginContainer}>
-      <div className={`col-10 col-sm-7 col-md-5 col-lg-3 ${styles.loginBox}`}>
+      <div className={`col-11 ${styles.loginBox}`}>
         <div className={styles.contentBox}>
           <div className={styles.contentName}>Email</div>
           <input type='email' required></input>
