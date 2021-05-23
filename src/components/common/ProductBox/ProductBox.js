@@ -19,10 +19,10 @@ const ProductBox = ({
   id,
   favorite,
   compare,
+  handlePopupClick,
   handleFavoriteClick,
   handleCompareClick,
 }) => (
-
   <div className={styles.root}>
     <div className={styles.photo}>
       <Link to={`/product/${name}`}>
@@ -30,7 +30,9 @@ const ProductBox = ({
       </Link>
       {promo && <div className={styles.sale}>{promo}</div>}
       <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
+        <Button onClick={() => handlePopupClick(id)} variant='small'>
+          Quick View
+        </Button>
         <Button variant='small'>
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
@@ -45,7 +47,6 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-
         <Button
           className={favorite ? styles.selected : styles.state}
           onClick={() => handleFavoriteClick(id, favorite)}
@@ -86,6 +87,7 @@ ProductBox.propTypes = {
   handleFavoriteClick: PropTypes.func,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  handlePopupClick: PropTypes.func,
   handleCompareClick: PropTypes.func,
 };
 

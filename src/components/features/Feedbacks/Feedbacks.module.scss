@@ -9,7 +9,7 @@
 
   .heading {
     position: relative;
-    width: 100%;
+    width: 94%;
     border-bottom: 4px solid $furniture-border-color;
 
     h3 {
@@ -28,40 +28,6 @@
       left: 0;
       width: 45px;
       border-bottom: 4px solid $primary;
-    }
-  }
-
-  .dots {
-    position: absolute;
-    right: 0;
-    top: 0;
-    flex-direction: row;
-
-    ul {
-      margin: 0;
-      padding: 0 0 0 1rem;
-      list-style: none;
-      background-color: $furniture-dots-bg;
-      transform: translateY(15px);
-
-      li {
-        display: inline-block;
-        margin-left: 0.5rem;
-
-        a {
-          display: block;
-          width: 13px;
-          height: 13px;
-          border-radius: 6px;
-          background-color: $furniture-border-color;
-          font-size: 0;
-
-          &.active,
-          &:hover {
-            background-color: $primary;
-          }
-        }
-      }
     }
   }
 
@@ -89,6 +55,4 @@
       color: $text-color;
     }
   }
-
 }
-
