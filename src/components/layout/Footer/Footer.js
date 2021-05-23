@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './Footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import {
   faTwitter,
   faFacebookF,
@@ -22,16 +22,16 @@ const Footer = ({ children }) => (
               <h6>Information</h6>
               <ul>
                 <li>
-                  <a href='/#'>About us</a>
+                  <Link to='/#'>About us</Link>
                 </li>
                 <li>
-                  <a href='/#'>Policy</a>
+                  <Link to='/#'>Policy</Link>
                 </li>
                 <li>
-                  <a href='/#'>Conditions</a>
+                  <Link to='/#'>Conditions</Link>
                 </li>
                 <li>
-                  <a href='/#'>Online support</a>
+                  <Link to='/#'>Online support</Link>
                 </li>
               </ul>
             </div>
@@ -41,16 +41,16 @@ const Footer = ({ children }) => (
               <h6>My account</h6>
               <ul>
                 <li>
-                  <a href='/#'>Login</a>
+                  <Link to='/#'>Login</Link>
                 </li>
                 <li>
-                  <a href='/#'>My cart</a>
+                  <Link to='/#'>My cart</Link>
                 </li>
                 <li>
-                  <a href='/#'>Wishlist</a>
+                  <Link to='/#'>Wishlist</Link>
                 </li>
                 <li>
-                  <a href='/#'>Checkout</a>
+                  <Link to='/#'>Checkout</Link>
                 </li>
               </ul>
             </div>
@@ -60,16 +60,16 @@ const Footer = ({ children }) => (
               <h6>Information</h6>
               <ul>
                 <li>
-                  <a href='/#'>Specials</a>
+                  <Link to='/#'>Specials</Link>
                 </li>
                 <li>
-                  <a href='/#'>New products</a>
+                  <Link to='/#'>Specials</Link>
                 </li>
                 <li>
-                  <a href='/#'>Best Sellers</a>
+                  <Link to='/#'>Best sellers</Link>
                 </li>
                 <li>
-                  <a href='/#'>Out Stores</a>
+                  <Link to='/#'>Out stores</Link>
                 </li>
               </ul>
             </div>
@@ -79,16 +79,16 @@ const Footer = ({ children }) => (
               <h6>Orders</h6>
               <ul>
                 <li>
-                  <a href='/#'>Payment options</a>
+                  <Link to='/#'>Payment options</Link>
                 </li>
                 <li>
-                  <a href='/#'>Shipping and delivery</a>
+                  <Link to='/#'>Shipping and delivery</Link>
                 </li>
                 <li>
-                  <a href='/#'>Returns</a>
+                  <Link to='/#'>Returns</Link>
                 </li>
                 <li>
-                  <a href='/#'>Shipping</a>
+                  <Link to='/#'>Shipping</Link>
                 </li>
               </ul>
             </div>
@@ -107,34 +107,34 @@ const Footer = ({ children }) => (
           <div className={'col-6 col-md-6 col-lg-4 text-right ' + styles.socialMedia}>
             <ul>
               <li>
-                <a href='/#'>
+                <Link to='/#'>
                   <FontAwesomeIcon icon={faTwitter}>Twitter</FontAwesomeIcon>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='/#'>
+                <Link to='/#'>
                   <FontAwesomeIcon icon={faFacebookF}>Facebook</FontAwesomeIcon>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='/#'>
+                <Link to='/#'>
                   <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='/#'>
+                <Link to='/#'>
                   <FontAwesomeIcon icon={faGooglePlusG}>Google Plus</FontAwesomeIcon>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='/#'>
+                <Link to='/#'>
                   <FontAwesomeIcon icon={faLinkedinIn}>LinkedIn</FontAwesomeIcon>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='/#'>
+                <Link to='/#'>
                   <FontAwesomeIcon icon={faPinterestP}>Pinterest</FontAwesomeIcon>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
