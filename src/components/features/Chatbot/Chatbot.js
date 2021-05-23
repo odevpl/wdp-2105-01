@@ -1,6 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 import styles from './Chatbot.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -21,12 +20,12 @@ class Chatbot extends React.Component {
         <div className={styles.root}>
           <div className={styles.chat}>
             <div className={styles.top}>
-              <a href='#'>
+              <Link to='#'>
                 <FontAwesomeIcon icon={faSync}></FontAwesomeIcon>
-              </a>
-              <a href='#'>
+              </Link>
+              <Link to='#'>
                 <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </a>
+              </Link>
             </div>
             <div className={styles.chatBody}>
               <div className={styles.robot}>
@@ -36,13 +35,13 @@ class Chatbot extends React.Component {
                 />
                 <p>Welcome in our shop! How can I help You?</p>
               </div>
-              <a href='#'>Select a conversation topic</a>
+              <Link to='#'>Select a conversation topic</Link>
             </div>
             <div className={styles.message}>
               <textarea placeholder='Type your question...'></textarea>
-              <a className={styles.sendIcon} href='#'>
+              <Link className={styles.sendIcon} to='#'>
                 <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
-              </a>
+              </Link>
             </div>
             <div className={styles.send}>
               <FontAwesomeIcon icon={faCommentDots}></FontAwesomeIcon>
@@ -53,15 +52,13 @@ class Chatbot extends React.Component {
     ) : (
       <div className={styles.chatbot}>
         <div className={styles.button}>
-          <a onClick={this.setState({ openBot: true })} href='#'>
+          <Link onClick={this.setState({ openBot: true })} to='#'>
             Need help? Write!
-          </a>
+          </Link>
         </div>
       </div>
     );
   }
 }
-
-// Chatbot.propTypes = {};
 
 export default Chatbot;
