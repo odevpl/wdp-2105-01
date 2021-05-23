@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
-const CompareBox = ({ getCompared, removeItem, handleFavoriteClick }) => {
+const CompareBox = ({ getCompared, removeItem }) => {
   const isActive = getCompared.length;
 
   if (isActive) {
@@ -22,8 +22,7 @@ const CompareBox = ({ getCompared, removeItem, handleFavoriteClick }) => {
               <h6>{product.name}</h6>
               <p>Price: ${product.price} </p>
               <p className={styles.price_old}>
-                Old price:
-                {product.oldPrice ? <span> $ {product.oldPrice} </span> : '$-'}
+                {product.oldPrice ? <span> $ {product.oldPrice} </span> : ''}
               </p>
               <p>{product.favorite ? <FontAwesomeIcon icon={faHeart} /> : ''}</p>
             </div>
