@@ -1,6 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-
 import styles from './Chatbot.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,56 +10,63 @@ import {
 
 class Chatbot extends React.Component {
   state = {
-    openBot: false,
+    showChat: false,
   };
 
   render() {
-    return this.state.openBot ? (
+    return (
       <div className={styles.chatbot}>
         <div className={styles.root}>
-          <div className={styles.chat}>
-            <div className={styles.top}>
-              <a href='#'>
-                <FontAwesomeIcon icon={faSync}></FontAwesomeIcon>
-              </a>
-              <a href='#'>
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </a>
+          {!this.state.showChat && (
+            <div
+              className={styles.button}
+              onClick={() => this.setState({ showChat: true })}
+            >
+              Need help ? Contact us
             </div>
-            <div className={styles.chatBody}>
-              <div className={styles.robot}>
-                <img
-                  src='https://img-premium.flaticon.com/png/512/3421/3421082.png?token=exp=1621430936~hmac=a4b8542f74c140eba120e9ed902e5352'
-                  alt=''
-                />
-                <p>Welcome in our shop! How can I help You?</p>
+          )}
+          {this.state.showChat && (
+            <div className={styles.chat}>
+              <div className={styles.top}>
+                <FontAwesomeIcon
+                  icon={faSync}
+                  className={styles.topButton}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  icon={faTimes}
+                  className={styles.topButton}
+                  onClick={() =>
+                    this.setState({
+                      showChat: false,
+                    })
+                  }
+                ></FontAwesomeIcon>
               </div>
-              <a href='#'>Select a conversation topic</a>
+              <div className={styles.chatBody}>
+                <div className={styles.robot}>
+                  <img
+                    src='https://img-premium.flaticon.com/png/512/3421/3421082.png?token=exp=1621430936~hmac=a4b8542f74c140eba120e9ed902e5352'
+                    alt=''
+                  />
+                  <p>Welcome in our shop! How can I help You?</p>
+                </div>
+                <a href='#'>Select a conversation topic</a>
+              </div>
+              <div className={styles.message}>
+                <textarea placeholder='Type your question...'></textarea>
+                <a className={styles.sendIcon} href='#'>
+                  <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
+                </a>
+              </div>
+              <div className={styles.send}>
+                <FontAwesomeIcon icon={faCommentDots}></FontAwesomeIcon>
+              </div>
             </div>
-            <div className={styles.message}>
-              <textarea placeholder='Type your question...'></textarea>
-              <a className={styles.sendIcon} href='#'>
-                <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
-              </a>
-            </div>
-            <div className={styles.send}>
-              <FontAwesomeIcon icon={faCommentDots}></FontAwesomeIcon>
-            </div>
-          </div>
-        </div>
-      </div>
-    ) : (
-      <div className={styles.chatbot}>
-        <div className={styles.button}>
-          <a onClick={this.setState({ openBot: true })} href='#'>
-            Need help? Write!
-          </a>
+          )}
         </div>
       </div>
     );
   }
 }
-
-// Chatbot.propTypes = {};
 
 export default Chatbot;
