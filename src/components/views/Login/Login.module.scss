@@ -1,0 +1,77 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 0;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 14px;
+  background-color: $gray-8;
+
+  .loginBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 250px;
+    max-width: 400px;
+    padding: 0 2%;
+    background-color: $white;
+    border-top: 5px solid $primary;
+    border-radius: 5px;
+
+    .contentBox {
+      margin-bottom: 10px;
+
+      .contentName {
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        font-size: 14px;
+        border: solid 1px #dee2e6;
+        border-radius: 3px;
+        border: 1px solid $gray-5;
+        border-radius: 3px;
+      }
+    }
+
+    .contentBottom {
+      display: flex;
+      font-size: 12px;
+
+      p {
+        margin-right: 5px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .buttonBox {
+      display: flex;
+      justify-content: center;
+
+      .loginBtn {
+        background-color: $primary;
+        color: $button-color;
+        font-size: 13px;
+        line-height: 24px;
+        padding: 5px 10px;
+        font-weight: 400;
+        border: none;
+        border-radius: 3px;
+
+        &:hover {
+          background-color: lighten($primary, 10%);
+        }
+      }
+    }
+  }
+}
