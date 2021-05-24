@@ -20,7 +20,15 @@ class Stars extends React.Component {
     id: PropTypes.string,
     setCustomStars: PropTypes.func,
   };
-
+  setLocalStorage = (id, starNb) => {
+    let stars = JSON.parse(localStorage.getItem('stars')) || {};
+    stars = { ...stars, [id]: starNb };
+    localStorage.setItem(`stars`, JSON.stringify(stars));
+  };
+  getLocalStars = id => {
+    const localStars = JSON.parse(localStorage.getItem('stars'));
+    return localStars ? localStars[id] : null;
+  };
   handleMouseOver = starLink => {
     const starNb = starLink.getAttribute('data-star-nb');
     this.setState({ hover: true, hoveredStar: starNb });
@@ -34,10 +42,12 @@ class Stars extends React.Component {
     const id = this.props.id;
     const starNb = parseInt(starLink.getAttribute('data-star-nb'));
     this.props.setCustomStars({ id, starNb });
+    this.setLocalStorage(id, starNb);
   };
 
   render = () => {
-    let { stars, customStars } = this.props;
+    let { id, stars, customStars } = this.props;
+    customStars = this.getLocalStars(id) || customStars;
     stars = customStars ? customStars : stars;
     stars = this.state.hover ? this.state.hoveredStar : stars;
     return (
