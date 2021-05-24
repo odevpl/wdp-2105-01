@@ -1,6 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .root {
+
   .image {
     display: flex;
     flex-direction: row;
@@ -9,13 +10,33 @@
     padding-top: 27px;
     border-top: 1px solid $feature-border-color;
     border-bottom: 1px solid $feature-border-color;
-    img {
-      height: 90px;
-      max-width: 135px;
-      border: 1px solid $feature-border-color;
-      padding: 20px;
 
-    }
+
+      .rec-item-wrapper {
+        height: 90px;
+        max-width: 135px;
+        border: 1px solid $feature-border-color;
+        padding: 20px;
+
+      }
+
+
+
+
+
+
+    // img {
+    //   height: 90px;
+    //   max-width: 135px;
+    //   border: 1px solid $feature-border-color;
+    //   padding: 20px;
+
+    // }
+  }
+
+  button.rec-arrow {
+    border-radius: 0;
+
   }
 
 }
