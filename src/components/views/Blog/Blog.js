@@ -12,7 +12,7 @@ const Blog = () => (
         </div>
         <div className={`col-12 ${styles.blogContainer}`}>
           <div className={`col-9 ${styles.leftBox}`}>
-            <h4>Witamy na nowej stronie sklepu!</h4>
+            <h3>Witamy na nowej stronie sklepu!</h3>
             <div className={styles.image}></div>
             <div className={styles.blogContent}>
               <p>
