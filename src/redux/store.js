@@ -4,12 +4,13 @@ import initialState from './initialState';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
-import brandsReducer from './brandsRedux';
+
 import promotionsReducer from './promotionsRedux';
 import screenTypeReducer from './screenTypeRedux';
 import feedbacksReducer from './feedbacksRedux';
 import prodPopupReducer from './prodPopupRedux';
-
+import promotedReducer from './promotedRedux';
+import brandsReducer from './brandsRedux';
 // define reducers
 const reducers = {
   cart: cartReducer,
@@ -20,6 +21,7 @@ const reducers = {
   screenType: screenTypeReducer,
   feedbacks: feedbacksReducer,
   prodPopup: prodPopupReducer,
+  promoted: promotedReducer,
 };
 
 // add blank reducers for initial state properties without reducers

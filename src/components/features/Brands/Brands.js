@@ -8,7 +8,7 @@ const Brands = ({ brands }) => {
     <div className={styles.root}>
       <div className='container pb-3'>
         <div className='row '>
-          <div className={'col-12 justify-content-between ' + styles.image}>
+          <div className={'col-12 justify-content-between brands ' + styles.image}>
             <Carousel itemsToShow={4} enableAutoPlay={true}>
               {brands.map(brand => (
                 <div key={brand.id}>

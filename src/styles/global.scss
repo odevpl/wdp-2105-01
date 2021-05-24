@@ -9,51 +9,121 @@
 
 body {
   font-family: "Poppins", sans-serif;
-}
-.rec.rec-arrow {
-  border-radius: 0;
-  background-color: $darkGray;
-  color: $white;
-  font-size: 1rem;
-  height: 100%;
-  cursor: pointer;
 
-  &:hover {
-    color: $primary !important;
-    background-color: $darkGray !important;
-  }
-  &:focus {
-    color: $primary;
-    background-color: $darkGray !important;
-  }
-};
-
-.rec.rec-dot {
-display: none;
-};
-
-.feedback{
-  .rec.rec-dot {
-    display: block;
-      &:focus {
-      box-shadow: 0 0 1px 3px $primary;
-    }
-      &:hover {
-      box-shadow: 0 0 1px 3px $primary;
-    }
-    };
-
-    .rec.rec-dot.rec-dot_active{
-      background-color: $primary;
-      box-shadow: 0 0 1px 3px $primary;
-    };
-
-    .rec.rec-arrow {
+  .brands{
+    .rec.rec-dot{
       display: none;
     }
-    .rec.rec-pagination{
-    position: absolute;
-    top: 15px;
-    right:20px;
+    .rec.rec-arrow {
+      border-radius: 0;
+      background-color: $darkGray;
+      color: $white;
+      font-size: 1rem;
+      height: 100%;
+      cursor: pointer;
+      &:hover {
+        color: $primary !important;
+        background-color: $darkGray !important;
+      }
+      &:focus {
+        color: $primary;
+        background-color: $darkGray !important;
+      }
+    }
   }
-}
+
+    .feedback{
+      .rec.rec-dot {
+        display: block;
+          &:focus {
+          box-shadow: 0 0 1px 3px $primary;
+        }
+          &:hover {
+          box-shadow: 0 0 1px 3px $primary;
+        }
+        };
+        .rec.rec-dot.rec-dot_active{
+          background-color: $primary;
+          box-shadow: 0 0 1px 3px $primary;
+        };
+        .rec.rec-arrow {
+          display: none;
+        }
+        .rec.rec-pagination{
+        position: absolute;
+        top: 15px;
+        right:20px;
+      }
+    }
+
+    .left_promoted{
+      .rec.rec-dot {
+        display: block;
+        background-color:$white;
+        box-shadow: 0 0 1px 3px $white;
+          &:focus {
+          box-shadow: 0 0 1px 3px $primary;
+        }
+          &:hover {
+          box-shadow: 0 0 1px 3px $primary;
+        }
+        };
+        .rec.rec-dot.rec-dot_active{
+          background-color: $primary;
+          box-shadow: 0 0 1px 3px $primary;
+        };
+        .rec.rec-arrow {
+          display: none;
+        }
+        .rec.rec-pagination{
+        position: absolute;
+        top: -2px;
+        right:50px;
+      }
+    }
+    .right_promoted {
+      .rec.rec-dot{
+        display: none;
+      }
+      .rec.rec-arrow-left {
+        position: absolute;
+        left:25px;
+        bottom:4%;
+        z-index: 10;
+        border-radius: 0;
+        background-color: $darkGray;
+        color: $white;
+        height: 10%;
+        width: 45%;
+        cursor: pointer;
+        &:hover
+{
+          color: $white !important;
+          background-color: $primary !important;
+        }
+        &:focus {
+          color: $primary;
+          background-color: $darkGray !important;
+        }
+      }
+      .rec.rec-arrow-right {
+        position: absolute;
+        bottom:4%;
+        right:25px;
+        border-radius: 0;
+        background-color: $darkGray;
+        color: $white;
+        height: 10%;
+        width: 49%;
+        cursor: pointer;
+        &:hover{
+          color: $white !important;
+          background-color: $primary !important;
+        }
+        &:focus {
+          color: $primary;
+          background-color: $darkGray !important;
+        }
+      }
+    }
+  }
