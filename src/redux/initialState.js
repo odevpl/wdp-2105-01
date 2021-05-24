@@ -756,6 +756,69 @@ const initialState = {
     oldPrice: 350,
     price: 300,
   },
+
+  gallery: [
+    {
+      id: 'gallery1',
+      name: 'Aenean Ru Bristique 28',
+      image:
+        'https://media.istockphoto.com/photos/armchair-isolated-on-white-background-3d-rendering-picture-id869078270?k=6&m=869078270&s=612x612&w=0&h=vlZiqejf8mg7V_t9K1K6UU5820560QqETmIRXVTcfI4=',
+      oldPrice: 300,
+      price: 150,
+      stars: 2,
+      active: true,
+    },
+    {
+      id: 'gallery2',
+      name: 'Aenean Ru Bristique 24',
+      image:
+        'https://media.istockphoto.com/photos/armchair-isolated-on-white-background-3d-rendering-picture-id869080484?k=6&m=869080484&s=612x612&w=0&h=5Ioq7-GOIX0yPVQMXtiTMMlNZ3roO4OtSzc7N-I4sic=',
+      oldPrice: 500,
+      price: 250,
+      stars: 2,
+      active: false,
+    },
+    {
+      id: 'gallery3',
+      name: 'Aenean Ru Bristique 29',
+      image:
+        'https://media.istockphoto.com/photos/armchair-isolated-on-white-background-3d-rendering-picture-id869078170?k=6&m=869078170&s=612x612&w=0&h=huq8AkURZgYUidgi84oMbov7_PWy2vMkaYCkpQBP2DU=',
+      oldPrice: 600,
+      price: 300,
+      stars: 2,
+      active: false,
+    },
+    {
+      id: 'gallery4',
+      name: 'Aenean Ru Bristique 54',
+      image:
+        'https://media.istockphoto.com/photos/armchair-isolated-on-white-background-3d-rendering-picture-id869080512?k=6&m=869080512&s=612x612&w=0&h=Hx8HpJBMERcs06Itp_BdXTUI4RHLGfq2lqWquiFjWFY=',
+      oldPrice: 400,
+      price: 200,
+      stars: 2,
+      active: false,
+    },
+    {
+      id: 'gallery5',
+      name: 'Aenean Ru Bristique 37',
+      image:
+        'https://media.istockphoto.com/photos/armchair-isolated-on-white-background-3d-rendering-picture-id869079246?k=6&m=869079246&s=612x612&w=0&h=5lzGcMbpPjDf1yQsey0CSG6D6JwefrodvjWiBwFnpHM=',
+      oldPrice: 350,
+      price: 175,
+      stars: 2,
+      active: false,
+    },
+    {
+      id: 'gallery6',
+      name: 'Aenean Ru Bristique 77',
+      image:
+        'https://media.istockphoto.com/photos/armchair-isolated-on-white-background-3d-rendering-picture-id869080588?k=6&m=869080588&s=612x612&w=0&h=KdsgZ-yabtmnthVoyZnTHs2RiPWCEiF3UhTPrby1uz4=',
+      oldPrice: 550,
+      price: 275,
+      stars: 2,
+      active: false,
+    },
+  ],
 };
 
 export default initialState;
