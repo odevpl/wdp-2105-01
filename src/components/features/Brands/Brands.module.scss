@@ -1,42 +1,30 @@
 @import '../../../styles/settings.scss';
 
+
 .root {
 
-  .image {
-    display: flex;
-    flex-direction: row;
-    height: 148px;
-    padding-bottom: 27px;
-    padding-top: 27px;
+  .brands {
     border-top: 1px solid $feature-border-color;
     border-bottom: 1px solid $feature-border-color;
 
+    button[type='button'] {
+      outline: none;
+      background-color: $button-bg;
+      color: $button-color;
+      height: 92px;
+      max-width: 33px;
+      min-width: 33px;
+      font-size: small;
+      border-radius: 0;
 
-      .rec-item-wrapper {
-        height: 90px;
-        max-width: 135px;
-        border: 1px solid $feature-border-color;
-        padding: 20px;
+      &:hover {
+        color: $primary;
+        background-color: $button-bg;
 
+        &:enabled {
+          background-color: $button-bg;
+        }
       }
-
-
-
-
-
-
-    // img {
-    //   height: 90px;
-    //   max-width: 135px;
-    //   border: 1px solid $feature-border-color;
-    //   padding: 20px;
-
-    // }
+    }
   }
-
-  button.rec-arrow {
-    border-radius: 0;
-
-  }
-
 }
