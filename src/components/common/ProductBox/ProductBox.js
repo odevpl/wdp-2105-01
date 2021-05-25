@@ -31,7 +31,7 @@ const ProductBox = ({
       </Link>
       {promo && <div className={styles.sale}>{promo}</div>}
       <div className={styles.buttons}>
-        <Button onClick={() => handlePopupClick(id)} variant='small'>
+        <Button noJump onClick={() => handlePopupClick(id)} variant='small'>
           Quick View
         </Button>
         <Button onClick={() => handleAddClick(id)} variant='small'>

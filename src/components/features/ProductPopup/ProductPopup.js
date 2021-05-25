@@ -19,7 +19,7 @@ const ProductPopup = ({ product, closeProductPopup }) => {
         <div className='col-6'>
           <div className={styles.content}>
             <div className={styles.content_upper}>
-              <Button onClick={() => closeProductPopup()}>
+              <Button noJump onClick={() => closeProductPopup()}>
                 <FontAwesomeIcon icon={faWindowClose}></FontAwesomeIcon>
               </Button>
             </div>
