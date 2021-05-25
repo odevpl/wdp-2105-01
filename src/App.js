@@ -10,7 +10,7 @@ import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
-import Cart from './components/views/Cart/Cart';
+import Cart from './components/views/Cart/CartContainer';
 import Blog from './components/views/Blog/Blog';
 import Search from './components/views/Search/Search';
 import Login from './components/views/Login/Login';

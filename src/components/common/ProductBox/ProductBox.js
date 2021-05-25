@@ -22,6 +22,7 @@ const ProductBox = ({
   handlePopupClick,
   handleFavoriteClick,
   handleCompareClick,
+  handleAddClick,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -33,7 +34,7 @@ const ProductBox = ({
         <Button onClick={() => handlePopupClick(id)} variant='small'>
           Quick View
         </Button>
-        <Button variant='small'>
+        <Button onClick={() => handleAddClick(id)} variant='small'>
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
       </div>
@@ -89,6 +90,7 @@ ProductBox.propTypes = {
   compare: PropTypes.bool,
   handlePopupClick: PropTypes.func,
   handleCompareClick: PropTypes.func,
+  handleAddClick: PropTypes.func,
 };
 
 export default ProductBox;

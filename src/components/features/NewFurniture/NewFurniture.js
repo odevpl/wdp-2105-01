@@ -39,6 +39,10 @@ class NewFurniture extends React.Component {
     const { openProductPopup } = this.props;
     openProductPopup(id);
   };
+  handleAddClick = id => {
+    const { addToCart } = this.props;
+    addToCart(id);
+  };
   selectActualScreenType = () => {
     const width = window.innerWidth;
     if (width < 768) {
@@ -175,6 +179,7 @@ class NewFurniture extends React.Component {
                       handleFavoriteClick={this.handleFavoriteClick}
                       handleCompareClick={this.handleCompareClick}
                       handlePopupClick={this.handlePopupClick}
+                      handleAddClick={this.handleAddClick}
                       getCompared={this.getCompared}
                     />
                   </div>
@@ -224,6 +229,7 @@ NewFurniture.propTypes = {
   removeFromCompare: PropTypes.func,
   handleCompareClick: PropTypes.func,
   getCompared: PropTypes.array,
+  addToCart: PropTypes.func,
 };
 
 NewFurniture.defaultProps = {

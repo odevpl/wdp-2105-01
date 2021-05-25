@@ -633,7 +633,7 @@ const initialState = {
     },
   ],
   cart: {
-    products: [],
+    products: {},
   },
   brands: [
     {
