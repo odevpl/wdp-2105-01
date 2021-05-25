@@ -1,0 +1,191 @@
+@import "../../../styles/settings.scss";
+
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: $base-padding 0;
+
+  input {
+    margin-right: 20px;
+  }
+
+  .radios {
+    margin-right: 20px;
+    flex-direction: row;
+    font-weight: 500;
+
+    .radio > input[type='radio'] {
+      display: none;
+    }
+
+    .radio > input[type='radio'] + *::before {
+      content: "";
+      display: inline-block;
+      vertical-align: text-bottom;
+      cursor: pointer;
+      width: 1.3rem;
+      height: 1.3rem;
+      margin-right: 0.5rem;
+      border-radius: 50%;
+      border-style: solid;
+      border-width: 0.1rem;
+      border-color: $input-hover;
+    }
+
+    .radio > input[type='radio']:checked + *::before {
+      background: radial-gradient($input-checked 0%, $input-checked 40%, transparent 50%, transparent);
+      border-color: $input-checked;
+    }
+
+    .radio > input[type='radio']:checked + * {
+      color: $input-checked;
+    }
+
+  }
+
+  .fields{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    span {
+      font-weight: 500;
+    }
+    .field {
+      margin-top: 10px;
+
+      input {
+        width: 100%;
+        border: 1px solid $form-border-color;
+      }
+    }
+    .toggler {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      .toggle {
+        position : relative ;
+        display : inline-block;
+        cursor: pointer;
+        margin-top: 10px;
+        width : 40px;
+        height : 23px;
+        border-radius: 30px;
+        border: 1px solid $input-hover;
+      }
+
+      .toggle:after {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $input-checked;
+        top: 3px;
+        left: 1px;
+        transition:  all 0.5s;
+      }
+
+      span {
+        margin: 10px;
+      }
+
+      .checkbox:checked + .toggle::after {
+        left : 20px;
+      }
+
+      .checkbox:checked + .toggle {
+        border: 1px solid $input-checked;
+      }
+
+      .checkbox {
+        display : none;
+      }
+    }
+
+  }
+
+  .checkboxes {
+    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      color: $primary;
+    }
+
+    .checkbox {
+      cursor: pointer;
+      position: relative;
+      vertical-align: center;
+    }
+
+    .checkbox > span {
+      color: $input-checked;
+      padding: 0.1rem 0.25rem;
+    }
+
+    .checkbox > input {
+      height: 20px;
+      width: 20px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: 2px solid $input-checked;
+      border-radius: 4px;
+      outline: none;
+      transition-duration: 0.3s;
+      background-color: $input-after;
+      cursor: pointer;
+    }
+
+    .checkbox > input:checked {
+        border: 2px solid $input-checked;
+        background-color: $input-after;
+    }
+
+    .checkbox > input:checked + span::before {
+        content: '\2713';
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: $input-checked;
+        position: absolute;
+        left: 0.3rem;
+        top: -0.1rem;
+    }
+
+    .checkbox > input:active {
+        border: 2px solid $input-checked;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+
+    .regButton:first-of-type {
+      border: none;
+      background-color: $white;
+      color: $primary;
+    }
+
+    .regButton:last-of-type {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $primary;
+      border-radius: 2px;
+
+      a {
+        color: $button-color;
+        margin: 15px;
+      }
+
+    }
+  }
+}
