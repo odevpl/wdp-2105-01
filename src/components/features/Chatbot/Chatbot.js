@@ -6,6 +6,7 @@ import {
   faSync,
   faCommentDots,
   faPaperPlane,
+  faHeadset,
 } from '@fortawesome/free-solid-svg-icons';
 
 class Chatbot extends React.Component {
@@ -22,7 +23,7 @@ class Chatbot extends React.Component {
               className={styles.button}
               onClick={() => this.setState({ showChat: true })}
             >
-              Need help ? Contact us
+              Need help? Contact us
             </div>
           )}
           {this.state.showChat && (
@@ -44,10 +45,10 @@ class Chatbot extends React.Component {
               </div>
               <div className={styles.chatBody}>
                 <div className={styles.robot}>
-                  <img
-                    src='https://img-premium.flaticon.com/png/512/3421/3421082.png?token=exp=1621430936~hmac=a4b8542f74c140eba120e9ed902e5352'
-                    alt=''
-                  />
+                  <FontAwesomeIcon
+                    className={styles.user}
+                    icon={faHeadset}
+                  ></FontAwesomeIcon>
                   <p>Welcome in our shop! How can I help You?</p>
                 </div>
                 <a href='#'>Select a conversation topic</a>
