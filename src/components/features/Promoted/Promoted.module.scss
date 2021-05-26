@@ -50,6 +50,7 @@ $desktop-width: 1200px;
       position: absolute;
       justify-content: center;
       width: 100%;
+      visibility: hidden;
 
       .timeCircle {
         z-index:200;
@@ -60,8 +61,7 @@ $desktop-width: 1200px;
         margin: 2px;
         text-align: center;
         color: $white;
-        h2
-{
+        h2 {
           font-size: 24px;
           margin: 0;
           padding-top: 12px;
@@ -71,6 +71,10 @@ $desktop-width: 1200px;
           font-size: 16px;
         }
       }
+    }
+    &:hover{
+      .timeLeft{
+      visibility: visible;}
     }
   }
 
@@ -148,4 +152,18 @@ $desktop-width: 1200px;
     }
   }
 }
+
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s;
 }

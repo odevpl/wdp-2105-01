@@ -23,11 +23,12 @@ const Promoted = ({ promoted, products }) => {
               <div className={styles.top}>
                 <h5>HOT DEALS</h5>
               </div>
-              <div className='left_promoted'>
+              <div className={`left_promoted`}>
                 <Carousel
+                  transitionMs={3000}
                   ref={carouselRef}
                   enableAutoPlay
-                  autoPlaySpeed={3000}
+                  easing='cubic-bezier(.17,.67,1,.68)'
                   onNextEnd={({ index }) => {
                     clearTimeout(resetTimeout);
                     if (index + 1 === totalPages) {
@@ -37,6 +38,9 @@ const Promoted = ({ promoted, products }) => {
                     }
                   }}
                   itemsToShow={itemsPerPage}
+                  // onChange={(currentItem, pageIndex) =>
+                  //   alert(JSON.stringify({ currentItem, pageIndex }))
+                  // }
                 >
                   {products.map(product => (
                     <ProductBox
