@@ -1,37 +1,29 @@
 @import '../../../styles/settings.scss';
 
-$tablet-width: 768px;
-$desktop-width: 1200px;
-
-@mixin mobile {
-  @media (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
 .root {
-  .image {
-    display: flex;
-    flex-direction: row;
 
-    height: 148px;
-    padding-top: 27px;
+  .brands {
     border-top: 1px solid $feature-border-color;
     border-bottom: 1px solid $feature-border-color;
 
-    img {
-      height:100px;
-      width: 100%;
-      border: 1px solid $feature-border-color;
-      padding: 20px;
-    }
-    
-  }
+    button[type='button'] {
+      outline: none;
+      background-color: $button-bg;
+      color: $button-color;
+      height: 92px;
+      max-width: 33px;
+      min-width: 33px;
+      font-size: small;
+      border-radius: 0;
 
+      &:hover {
+        color: $primary;
+        background-color: $button-bg;
+
+        &:enabled {
+          background-color: $button-bg;
+        }
+      }
+    }
+  }
 }
