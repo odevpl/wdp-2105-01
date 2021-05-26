@@ -22,12 +22,10 @@ const CompanyClaim = () => (
           </Link>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <Link to='/#' className={styles.cartBox}>
-            <Link to={`/cart`}>
-              <div className={styles.cartIcon}>
-                <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
-              </div>
-            </Link>
+          <Link to='/Cart' className={styles.cartBox}>
+            <div className={styles.cartIcon}>
+              <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
+            </div>
             <div className={styles.cartCounter}>12345</div>
           </Link>
         </div>

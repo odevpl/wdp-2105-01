@@ -42,7 +42,7 @@ const TopBar = () => (
               </Link>
             </li>
             <li>
-              <Link href='/#'>
+              <Link to='/#'>
                 <FontAwesomeIcon className={styles.icon} icon={faBars} />
               </Link>
             </li>
