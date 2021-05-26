@@ -17,19 +17,19 @@ const CompanyClaim = () => (
           </p>
         </div>
         <div className={`col text-center ${styles.logo}`}>
-          <a href='/#'>
+          <Link to='/#'>
             <img src='/images/logo.png' alt='Bazar' />
-          </a>
+          </Link>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <a href='/#' className={styles.cartBox}>
+          <Link to='/#' className={styles.cartBox}>
             <Link to={`/cart`}>
               <div className={styles.cartIcon}>
                 <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>
             </Link>
             <div className={styles.cartCounter}>12345</div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

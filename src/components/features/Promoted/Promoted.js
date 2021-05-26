@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Promoted.module.scss';
 import initialState from '../../../redux/initialState';
 import Button from '../../common/Button/Button';
-
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faStar,
@@ -66,13 +66,13 @@ const Promoted = stars => {
                 <h5>{initialState.promoted.name}</h5>
                 <div className={styles.stars}>
                   {[1, 2, 3, 4, 5].map(i => (
-                    <a key={i} href='/#'>
+                    <Link key={i} to='/#'>
                       {i <= stars ? (
                         <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                       ) : (
                         <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
                       )}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
