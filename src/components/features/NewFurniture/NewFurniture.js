@@ -5,7 +5,7 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import { SIZE_TYPES } from '../../../settings';
 import CompareBox from '../CompareBox/CompareBoxContainer.js';
 import Swipeable from '../../common/Swipeable/Swipeable';
-
+import { Link } from 'react-router-dom';
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
@@ -146,8 +146,8 @@ class NewFurniture extends React.Component {
                   <ul>
                     {categories.map(item => (
                       <li key={item.id}>
-                        <a
-                          href='/#'
+                        <Link
+                          to='/#'
                           className={
                             item.id === activeCategory ? styles.active : undefined
                           }
@@ -156,7 +156,7 @@ class NewFurniture extends React.Component {
                           }}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
