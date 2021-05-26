@@ -12,29 +12,26 @@ const Register = () => {
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('repeatPass').value;
 
-    if (firstName.length < 3 || firstName.length > 30) {
-      window.alert('Your first name must be between 3 and 30 characters');
-      event.preventDefault();
-      return false;
-    } else if (lastName.length < 3 || lastName.length > 30) {
-      window.alert('Your last name must be between 3 and 30 characters');
-      event.preventDefault();
-      return false;
-    } else if (!email.includes('@')) {
-      window.alert('Please make sure your email contains "@" sign');
+    if (password !== confirmPassword) {
+      window.alert('Please make sure your passwords match');
       event.preventDefault();
       return false;
     } else if (
-      password !== confirmPassword ||
-      password.length < 3 ||
-      confirmPassword.length < 3
+      firstName.length >= 3 &&
+      firstName.length <= 30 &&
+      lastName.length >= 3 &&
+      lastName.length <= 30 &&
+      email.includes('@') &&
+      password.length >= 3 &&
+      confirmPassword.length >= 3 &&
+      password === confirmPassword
     ) {
-      window.alert(
-        'Please make sure your passwords match and consist of at least 3 characters'
-      );
+      return true;
+    } else {
+      window.alert('Please make sure you have filled in all required fields correctly');
       event.preventDefault();
       return false;
-    } else return true;
+    }
   };
 
   const [values, setValues] = React.useState({
@@ -82,9 +79,12 @@ const Register = () => {
                     id='first_name'
                     name='first_name'
                     placeholder='First name *'
-                    required
+                    minLength='3'
                     maxLength='30'
                   ></input>
+                  <p className={styles.error}>
+                    Your first name must be between 3 and 30 characters
+                  </p>
                 </div>
                 <div className={styles.field}>
                   <input
@@ -92,9 +92,12 @@ const Register = () => {
                     id='last_name'
                     name='last_name'
                     placeholder='Last name *'
-                    required
+                    minLength='3'
                     maxLength='30'
                   ></input>
+                  <p className={styles.error}>
+                    Your last name must be between 3 and 30 characters
+                  </p>
                 </div>
                 <div className={styles.field}>
                   <input
@@ -102,8 +105,10 @@ const Register = () => {
                     id='email'
                     name='email'
                     placeholder='E-mail *'
-                    required
                   ></input>
+                  <p className={styles.error}>
+                    Please make sure your email address is in correct format
+                  </p>
                 </div>
                 <div className={styles.field}>
                   <input
@@ -111,8 +116,12 @@ const Register = () => {
                     id='password'
                     name='password'
                     placeholder='Password *'
-                    required
+                    minLength='3'
                   ></input>
+                  <p className={styles.error}>
+                    Please make sure your passwords match and consist of at least 3
+                    characters
+                  </p>
                 </div>
                 <div className={styles.field}>
                   <input
@@ -120,8 +129,12 @@ const Register = () => {
                     id='repeatPass'
                     name='repeatPass'
                     placeholder='Confirm password *'
-                    required
+                    minLength='3'
                   ></input>
+                  <p className={styles.error}>
+                    Please make sure your passwords match and consist of at least 3
+                    characters
+                  </p>
                 </div>
                 <div className={styles.toggler}>
                   <input

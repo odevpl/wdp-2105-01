@@ -15,6 +15,7 @@ $gray-9:	#292929;
 $darkGray:	#2a2a2a;
 $darkOrange:	#d58e32;
 $green: #79AE30;
+$red: #FF0000;
 //end//
 
 $primary: $darkOrange;
@@ -101,3 +102,5 @@ $input-hover: $gray-6;
     opacity 0.25s;
 }
 
+$register-valid: $green;
+$register-invalid: $red;

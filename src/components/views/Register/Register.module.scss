@@ -1,6 +1,5 @@
 @import "../../../styles/settings.scss";
 
-
 .root {
   display: flex;
   justify-content: center;
@@ -47,7 +46,6 @@
     .radio > input[type='radio']:checked + * {
       color: $input-checked;
     }
-
   }
 
   .fields{
@@ -59,16 +57,39 @@
     span {
       font-weight: 500;
     }
+
     .field {
       margin-top: 20px;
-
 
       input {
         width: 100%;
         border: 1px solid $form-border-color;
         padding: 10px;
       }
+
+      .error {
+        display: none;
+        color: $register-invalid;
+        padding-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input:not(:focus):invalid {
+        border-color: $register-invalid;
+      }
+      input:not(:focus):invalid ~ .error {
+        display: block;
+      }
+
+      input:not(:focus):not(:placeholder-shown):valid {
+        border-color: $register-valid;
+      }
     }
+
     .toggler {
       display: flex;
       flex-direction: row;
@@ -154,23 +175,23 @@
     }
 
     .checkbox > input:checked {
-        border: 2px solid $input-checked;
-        background-color: $input-after;
+      border: 2px solid $input-checked;
+      background-color: $input-after;
     }
 
     .checkbox > input:checked + span::before {
-        content: '\2713';
-        display: block;
-        text-align: center;
-        font-weight: bold;
-        color: $input-checked;
-        position: absolute;
-        left: 0.3rem;
-        top: -0.1rem;
+      content: '\2713';
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      color: $input-checked;
+      position: absolute;
+      left: 0.3rem;
+      top: -0.1rem;
     }
 
     .checkbox > input:active {
-        border: 2px solid $input-checked;
+      border: 2px solid $input-checked;
     }
   }
 
@@ -195,7 +216,6 @@
         color: $button-color;
         margin: 15px;
       }
-
     }
   }
 }
