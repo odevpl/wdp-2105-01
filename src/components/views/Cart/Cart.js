@@ -1,12 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './Cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
 
-const Cart = () => {
+const Cart = props => {
+  const { cartProducts, removeProduct, clearCart } = props;
   return (
     <div className={styles.root}>
       <div className={styles.top}>
@@ -36,72 +37,36 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope='row' className={styles.product}>
-                <FontAwesomeIcon className={styles.delete} icon={faTimes} />
-                <div className={styles.image}></div>
-                Placeholder Product 7
-              </th>
-              <td className='align-middle'>$5.00</td>
-              <td className='align-middle'>
-                <div className={styles.quantity}>
-                  <Button className={styles.button1} variant='outline'>
-                    -
-                  </Button>
-                  <div className={styles.number}>
-                    <input></input>
+            {cartProducts.map(product => (
+              <tr key={product.id}>
+                <th scope='row' className={styles.product}>
+                  <FontAwesomeIcon
+                    onClick={() => removeProduct(product.id)}
+                    className={styles.delete}
+                    icon={faTimes}
+                  />
+                  <div className={styles.image}>
+                    <img src={product.image} alt={product.name} />
                   </div>
-                  <Button className={styles.button2} variant='outline'>
-                    +
-                  </Button>
-                </div>
-              </td>
-              <td className='align-middle text-center pl-5'>$5.00</td>
-            </tr>
-            <tr>
-              <th scope='row' className={styles.product}>
-                <FontAwesomeIcon className={styles.delete} icon={faTimes} />
-                <div className={styles.image}></div>
-                Placeholder Product 4
-              </th>
-              <td className='align-middle'>$67.00</td>
-              <td className='align-middle'>
-                <div className={styles.quantity}>
-                  <Button className={styles.button1} variant='outline'>
-                    -
-                  </Button>
-                  <div className={styles.number}>
-                    <input></input>
+                  {product.name}
+                </th>
+                <td className='align-middle'>{product.price}</td>
+                <td className='align-middle'>
+                  <div className={styles.quantity}>
+                    <Button className={styles.button1} variant='outline'>
+                      -
+                    </Button>
+                    <div className={styles.number}>
+                      <input></input>
+                    </div>
+                    <Button className={styles.button2} variant='outline'>
+                      +
+                    </Button>
                   </div>
-                  <Button className={styles.button2} variant='outline'>
-                    +
-                  </Button>
-                </div>
-              </td>
-              <td className='align-middle text-center pl-5'>$67.00</td>
-            </tr>
-            <tr>
-              <th scope='row' className={styles.product}>
-                <FontAwesomeIcon className={styles.delete} icon={faTimes} />
-                <div className={styles.image}></div>
-                Placeholder Product 8 - Black, Amber 65
-              </th>
-              <td className='align-middle'>$20.00</td>
-              <td className='align-middle'>
-                <div className={styles.quantity}>
-                  <Button className={styles.button1} variant='outline'>
-                    -
-                  </Button>
-                  <div className={styles.number}>
-                    <input></input>
-                  </div>
-                  <Button className={styles.button2} variant='outline'>
-                    +
-                  </Button>
-                </div>
-              </td>
-              <td className='align-middle text-center pl-5'>$20.00</td>
-            </tr>
+                </td>
+                <td className='align-middle text-center pl-5'>$5.00</td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <div className={styles.coupon}>
@@ -125,13 +90,19 @@ const Cart = () => {
           <p>$92.00</p>
         </div>
         <Link to={`/`} className={styles.checkout}>
-          <Button className={styles.checkoutButton}>PROCEED TO CHECKOUT</Button>
+          <Button onClick={() => clearCart()} className={styles.checkoutButton}>
+            PROCEED TO CHECKOUT
+          </Button>
         </Link>
       </div>
     </div>
   );
 };
 
-// Cart.propTypes = {};
+Cart.propTypes = {
+  cartProducts: PropTypes.array,
+  removeProduct: PropTypes.func,
+  clearCart: PropTypes.func,
+};
 
 export default Cart;

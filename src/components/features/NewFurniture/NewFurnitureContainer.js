@@ -13,6 +13,7 @@ import {
   removeFromCompare,
   getCompared,
 } from '../../../redux/productsRedux.js';
+import { addProduct } from '../../../redux/cartRedux';
 
 const mapStateToProps = state => ({
   categories: getAll(state),
@@ -28,6 +29,7 @@ const mapDispatcherToProps = dispatcher => ({
   setScreenType: payload => dispatcher(setScreenType(payload)),
   addToCompare: payload => dispatcher(addToCompare(payload)),
   removeFromCompare: payload => dispatcher(removeFromCompare(payload)),
+  addToCart: payload => dispatcher(addProduct(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatcherToProps)(NewFurniture);
