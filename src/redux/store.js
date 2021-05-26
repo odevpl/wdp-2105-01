@@ -9,6 +9,7 @@ import promotionsReducer from './promotionsRedux';
 import screenTypeReducer from './screenTypeRedux';
 import feedbacksReducer from './feedbacksRedux';
 import prodPopupReducer from './prodPopupRedux';
+import promotedReducer from './promotedRedux';
 
 // define reducers
 const reducers = {
@@ -20,6 +21,7 @@ const reducers = {
   screenType: screenTypeReducer,
   feedbacks: feedbacksReducer,
   prodPopup: prodPopupReducer,
+  promoted: promotedReducer,
 };
 
 // add blank reducers for initial state properties without reducers

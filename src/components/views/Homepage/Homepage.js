@@ -6,7 +6,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 import Promotions from '../../features/Promotions/PromotionsContainer';
 import Feedbacks from '../../features/Feedbacks/FeedbacksContainer';
-import Promoted from '../../features/Promoted/Promoted';
+import Promoted from '../../features/Promoted/PromotedContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 import BlogHomepage from '../../features/BlogHomepage/BlogHomepageContainer';
 
