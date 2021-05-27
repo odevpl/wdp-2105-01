@@ -3,6 +3,7 @@ import styles from './Reviews.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
+import { Link } from 'react-router-dom';
 
 class Reviews extends React.Component {
   render(stars) {
@@ -34,13 +35,13 @@ class Reviews extends React.Component {
                 <p>Bad</p>
                 <div className={styles.stars}>
                   {[1, 2, 3, 4, 5].map(i => (
-                    <a key={i} href='/#'>
+                    <Link key={i} to='/#'>
                       {i <= stars ? (
                         <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                       ) : (
                         <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                       )}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <p>Good</p>
