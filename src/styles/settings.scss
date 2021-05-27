@@ -94,9 +94,9 @@ $input-after: $white;
 $input-hover: $gray-6;
 
 %hover-params {
-  transition: background-color 1s,
-    border-color 1s,
-    color 1s,
+  transition: background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s,
     transform 0.25s,
     opacity 0.25s;
 }
