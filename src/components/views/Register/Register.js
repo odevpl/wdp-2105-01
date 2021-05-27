@@ -34,6 +34,21 @@ const Register = () => {
     }
   };
 
+  const passwordMatch = () => {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('repeatPass').value;
+
+    if (password !== confirmPassword) {
+      document.getElementById('message').style.color = '#FF0000';
+      document.getElementById('repeatPass').style.borderColor = '#FF0000';
+      document.getElementById('message').innerHTML = 'Passwords are not matching';
+    } else {
+      document.getElementById('message').style.color = '#79AE30';
+      document.getElementById('repeatPass').style.borderColor = '#79AE30';
+      document.getElementById('message').innerHTML = 'Passwords are matching';
+    }
+  };
+
   const [values, setValues] = React.useState({
     showPassword: false,
   });
@@ -113,6 +128,7 @@ const Register = () => {
                 <div className={styles.field}>
                   <input
                     type={values.showPassword ? 'text' : 'password'}
+                    onKeyUp={passwordMatch}
                     id='password'
                     name='password'
                     placeholder='Password *'
@@ -126,15 +142,12 @@ const Register = () => {
                 <div className={styles.field}>
                   <input
                     type={values.showPassword ? 'text' : 'password'}
+                    onKeyUp={passwordMatch}
                     id='repeatPass'
                     name='repeatPass'
                     placeholder='Confirm password *'
-                    minLength='3'
                   ></input>
-                  <p className={styles.error}>
-                    Please make sure your passwords match and consist of at least 3
-                    characters
-                  </p>
+                  <p className={styles.message} id='message'></p>
                 </div>
                 <div className={styles.toggler}>
                   <input
@@ -183,7 +196,6 @@ const Register = () => {
                 </div>
               </div>
             </div>
-
             <div className='row'>
               <div
                 className={'col-12 flex-row justify-content-between ' + styles.buttons}
