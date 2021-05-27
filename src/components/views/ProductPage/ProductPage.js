@@ -155,10 +155,9 @@ const ProductPage = stars => {
               </a>
             </div>
           </div>
-          <NewFurniture maxProductsOnPage={4} />
         </div>
-        <NewFurniture productsOnPage={4} />
         <Reviews />
+        <NewFurniture maxProductsOnPage={4} />
       </div>
     </div>
   );
