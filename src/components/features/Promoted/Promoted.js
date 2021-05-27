@@ -1,45 +1,35 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Promoted.module.scss';
 import Button from '../../common/Button/Button';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import Carousel from 'react-elastic-carousel';
+import ProductBox from '../../common/ProductBox/ProductBox';
+
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const Promoted = ({ promoted, products }) => {
-  const itemsPerPage = 1;
-  const items = [0, 1, 2];
-  const carouselRef = useRef(null);
-  const totalPages = Math.ceil(items.length / itemsPerPage);
-  let resetTimeout;
-
   return (
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='d-none d-md-block col-12 col-lg-4'>
+          <div className='d-none d-md-block col-12 col-lg-4 p-1'>
             <div className={styles.leftContainer}>
-              <div className={styles.top}>
+              <div className={`col-sm-12 btn ${styles.top}`}>
                 <h5>HOT DEALS</h5>
               </div>
               <div className={`left_promoted`}>
-                <Carousel
-                  transitionMs={3000}
-                  ref={carouselRef}
-                  enableAutoPlay
-                  easing='cubic-bezier(.17,.67,1,.68)'
-                  onNextEnd={({ index }) => {
-                    clearTimeout(resetTimeout);
-                    if (index + 1 === totalPages) {
-                      resetTimeout = setTimeout(() => {
-                        carouselRef.current.goTo(0);
-                      }, 3000);
-                    }
-                  }}
-                  itemsToShow={itemsPerPage}
-                  // onChange={(currentItem, pageIndex) =>
-                  //   alert(JSON.stringify({ currentItem, pageIndex }))
-                  // }
+                <OwlCarousel items={1}
+                  className="owl-theme"
+                  loop
+                  autoplay
+                  autoplayTimeout={3000}
+                  autoplayHoverPause={true}
+                  animateOut='fadeOut'
+                  dotsData={true}
                 >
                   {products.map(product => (
                     <ProductBox
@@ -48,7 +38,7 @@ const Promoted = ({ promoted, products }) => {
                       {...product}
                     />
                   ))}
-                </Carousel>
+                </OwlCarousel>
               </div>
 
               <div className={styles.cart}>
