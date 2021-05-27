@@ -1,6 +1,7 @@
 /* selectors */
 export const getAll = ({ cart }) => cart.products;
-export const getCount = ({ cart }) => cart.products.length;
+export const getCount = ({ cart }) =>
+  Object.keys(cart.products).reduce((p, c) => p + cart.products[c], 0);
 
 /* action name creator */
 const reducerName = 'cart';
