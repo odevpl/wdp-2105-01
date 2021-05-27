@@ -31,7 +31,9 @@ const Feedbacks = ({ feedbacks }) => (
                           <img alt=''></img>
                         </div>
                         <div className='col-8 flex-column d-flex align-items-center'>
-                          <span className='col-12 name '>{feedback.name}</span>
+                          <span className={'col-12 ' + styles.name}>
+                            {feedback.name}
+                          </span>
                           <span className='col-12'>{feedback.description}</span>
                         </div>
                       </div>
