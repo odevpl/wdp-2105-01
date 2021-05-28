@@ -10,26 +10,39 @@ const Login = () => {
 
     if (email === 'admin' && password === 'pass') {
       return true;
-    } else {
-      window.alert('Nieprawidłowe dane');
+    } else if (email === '') {
+      document.getElementById('message').style.color = '#FF0000';
+      document.getElementById('message').innerHTML = 'Empty login';
+      event.preventDefault();
+      return false;
+    } else if (email !== 'admin') {
+      document.getElementById('message').style.color = '#FF0000';
+      document.getElementById('message').innerHTML = 'Invalid login';
+      event.preventDefault();
+      return false;
+    } else if (password === '') {
+      document.getElementById('message').style.color = '#FF0000';
+      document.getElementById('message').innerHTML = 'Empty password';
+      event.preventDefault();
+      return false;
+    } else if (password !== 'pass') {
+      document.getElementById('message').style.color = '#FF0000';
+      document.getElementById('message').innerHTML = 'Invalid password';
       event.preventDefault();
       return false;
     }
   };
 
-  const passwordMatch = () => {
-    const password = document.getElementById('password').value;
+  const clearMessage = () => {
+    // const password = document.getElementById('password').value;
+    // const email = document.getElementById('email').value;
+    document.getElementById('message').innerHTML = '';
 
-    if (password === '') {
-      // document.getElementById('message').style.color = '#79AE30';
-      document.getElementById('message').innerHTML = '';
-    } else if (password !== 'pass') {
-      document.getElementById('message').style.color = '#FF0000';
-      document.getElementById('message').innerHTML = 'Wrong password';
-    } else {
-      document.getElementById('message').style.color = '#79AE30';
-      document.getElementById('message').innerHTML = 'Password Ok';
-    }
+    // if (email === '') {
+    //   document.getElementById('message').innerHTML = '';
+    // } else if (password === 'pas') {
+    //   document.getElementById('message').innerHTML = '';
+    // }
   };
 
   return (
@@ -38,14 +51,14 @@ const Login = () => {
         <div className={`col-11 ${styles.loginBox}`}>
           <div className={styles.contentBox}>
             <div className={styles.contentName}>Login</div>
-            <input type='email' id='email' required></input>
+            <input type='email' id='email' onKeyUp={clearMessage} required></input>
           </div>
           <div className={styles.contentBox}>
             <div className={styles.contentName}>Password</div>
             <input
               type='password'
               id='password'
-              onKeyUp={passwordMatch}
+              onKeyUp={clearMessage}
               required
             ></input>
           </div>
@@ -53,7 +66,7 @@ const Login = () => {
             <p>Forgot password?</p>
             <a href='#'>Remind password</a>
           </div>
-          <div id='message'></div>
+          <div id='message'> </div>
           <Link onClick={formValidation} to={`/`} className={styles.buttonBox}>
             <button className={styles.loginBtn}>Log in</button>
           </Link>
