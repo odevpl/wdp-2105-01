@@ -2,6 +2,8 @@
 $mobile-width: 640px;
 $tablet-width: 768px;
 $desktop-width: 980px;
+$mobile-width: 350px;
+
 
 @mixin mobile {
   @media  (max-width: #{$tablet-width - 1px}) {
@@ -31,7 +33,7 @@ $desktop-width: 980px;
     margin-bottom: 20px;
   }
   @include mobile {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .heading {
@@ -61,7 +63,7 @@ $desktop-width: 980px;
 
   .dots {
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 0;
     flex-direction: row;
 
@@ -101,12 +103,11 @@ $desktop-width: 980px;
     height: 100%;
     position: relative;
     @include tablet {
-      margin-bottom: 150px;
+      margin-bottom: 155px;
     }
     @include mobile {
-      margin-bottom: 220px;
+      margin-bottom: 155px;
     }
-
   }
 
   .post {
@@ -116,14 +117,14 @@ $desktop-width: 980px;
     position: absolute;
     top: 80%;
     @include tablet {
-      top:68%;
+      top:70%;
     }
     @include mobile {
-      top:44%;
+      top:35%;
     }
     left: 10%;
     background-color: $white;
-    padding: 20px 0;
+    padding: 10px 0 0 8px;
 
     .info {
       display: flex;
@@ -160,6 +161,9 @@ $desktop-width: 980px;
     p {
       padding-top: 8px;
       font-size: 13px;
+      @include mobile {
+        padding-top: 3px;
+      }
     }
 
     .button {
@@ -169,6 +173,10 @@ $desktop-width: 980px;
       width: 50%;
       padding: 10px 30px;
       font-size: 15px;
+     @include mobile {
+      padding: 2px 15px;
+
+     }
       font-weight: 500;
     }
 
