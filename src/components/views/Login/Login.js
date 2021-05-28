@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styles from './Login.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -34,15 +33,7 @@ const Login = () => {
   };
 
   const clearMessage = () => {
-    // const password = document.getElementById('password').value;
-    // const email = document.getElementById('email').value;
     document.getElementById('message').innerHTML = '';
-
-    // if (email === '') {
-    //   document.getElementById('message').innerHTML = '';
-    // } else if (password === 'pas') {
-    //   document.getElementById('message').innerHTML = '';
-    // }
   };
 
   return (
@@ -77,31 +68,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// const Login = () => (
-//   <div className={styles.root}>
-//     <div className={styles.loginContainer}>
-//       <div className={`col-11 ${styles.loginBox}`}>
-//         <div className={styles.contentBox}>
-//           <div className={styles.contentName}>Email</div>
-//           <input type='email' required></input>
-//         </div>
-//         <div className={styles.contentBox}>
-//           <div className={styles.contentName}>Hasło</div>
-//           <input type='password' required></input>
-//         </div>
-//         <div className={styles.contentBottom}>
-//           <p>Nie pamiętasz hasła?</p>
-//           <a href='#'>Przypomnij hasło</a>
-//         </div>
-//         <Link to={`/`} className={styles.buttonBox}>
-//           <button className={styles.loginBtn}>Zaloguj się</button>
-//         </Link>
-//       </div>
-//     </div>
-//   </div>
-// );
-
-// Login.propTypes = {};
-
-//export default Login;
