@@ -2,7 +2,56 @@
 
 .root {
   padding: $base-padding 0;
-  text-align: center;
-  font-size: 30px;
-  padding-bottom: $base-padding;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $darkGray;
+    padding: $base-padding 0;
+
+    h4 {
+      text-transform: uppercase;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .displayOptions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+      
+      .displayType {
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid $darkGray;
+        height: 30px;
+        width: 60px;
+        margin-left: $base-padding * 2;
+
+        .icon {
+          position: relative;
+          height: 100%;
+
+          &:hover {
+            cursor: pointer;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+  .list{
+  background-color: red;
+
+
+  
+  }
+  .products {
+    padding: $base-padding 0;
+  }
+
+
+
 }
