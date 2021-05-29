@@ -41,14 +41,9 @@ const ProductList = ({ categories, match, products }) => {
                           onClick={toggleClass}
                         >
                           <FontAwesomeIcon className={styles.icon} icon={faThLarge} />
-                        </Link>
-
-                        <Link
-                          to='#'
-                          onClick={toggleClass}
-                        >
                           <FontAwesomeIcon className={styles.icon} icon={faThList} />
                         </Link>
+
                       </div>
                     </div>
                   </div>
