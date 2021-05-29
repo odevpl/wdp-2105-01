@@ -49,10 +49,11 @@ const ProductList = ({ categories, match, products }) => {
                   </div>
                   <div className={isActive ? 'list' : null}>
                     <div className={styles.products}>
-                      <div className='row'>
+                      <div className='row grid'>
                         {products.map(item => (
-                          <div key={item.id} className='col-12 col-md-6 col-lg-4'>
+                          <div key={item.id} className='col-12 col-md-6 col-lg-4 red'>
                             <ProductBox {...item} />
+                            <div className={styles.grid_hidden}>opis</div>
                           </div>
                         ))}
                       </div>

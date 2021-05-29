@@ -42,5 +42,14 @@
   }
   .products {
     padding: $base-padding 0;
+
+    .grid_hidden { display: none;}
   }
 }
+
+.list {
+  .grid_hidden { display: flex; }
+}
+
+
+
