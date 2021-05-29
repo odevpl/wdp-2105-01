@@ -1,7 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styles from './Login.module.scss';
-//import { Link } from 'react-router-dom';
 
 function validate() {
   let email, passwd, text;
@@ -36,17 +34,14 @@ const Login = () => (
           <p>Nie pamiętasz hasła?</p>
           <a href='#'>Przypomnij hasło</a>
         </div>
-        {/* <Link to={`/`} className={styles.buttonBox}> */}
         <p id='alert'></p>
-        <button className={styles.loginBtn} onClick='validate()'>
+        <button className={styles.loginBtn} onClick={()=>validate()}>
           Zaloguj się
         </button>
-        {/* </Link> */}
       </div>
     </div>
   </div>
 );
 
-// Login.propTypes = {};
 
 export default Login;
