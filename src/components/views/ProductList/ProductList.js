@@ -10,11 +10,8 @@ import { Link } from 'react-router-dom';
 
 
 const ProductList = ({ categories, match, products }) => {
-
-  const [isActive, setActive] = useState(false);
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
+  const [showGrid, setShowGrid] = useState(true);
+  const [showList, setShowList] = useState(false);
 
   return (
     <div className={styles.root}
@@ -38,28 +35,48 @@ const ProductList = ({ categories, match, products }) => {
 
                         <Link
                           to='#'
-                          onClick={toggleClass}
+                          onClick={() => { setShowGrid(true); setShowList(false); }
+                          }
                         >
                           <FontAwesomeIcon className={styles.icon} icon={faThLarge} />
-                          <FontAwesomeIcon className={styles.icon} icon={faThList} />
                         </Link>
+                        <Link to="#" onClick={() => {
+                          setShowList(true);
+                          setShowGrid(false);
+                        }
+                        }> <FontAwesomeIcon className={styles.icon} icon={faThList} /></Link>
 
                       </div>
                     </div>
                   </div>
-                  <div className={isActive ? 'list' : null}>
-                    <div className={styles.products}>
-                      <div className='row grid'>
-                        {products.map(item => (
-                          <div key={item.id} className='col-12 col-md-6 col-lg-4 red'>
-                            <ProductBox {...item} />
-                            <div className={styles.grid_hidden}>opis</div>
+                  {showGrid && (
+                    <div>
+                      <div className={styles.products}>
+                        <div className='row grid'>
+                          {products.map(item => (
+                            <div key={item.id} className='col-12 col-md-6 col-lg-4 red'>
+                              <ProductBox {...item} />
+                              <div className={styles.grid_hidden}>opis</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {showList && (
+                    <div className={`${styles.box} `}>
+                      {products.map(item => (
+                        <div key={item.id} className={`${styles.productBox} `}>
+                          <div className={`${styles.boxdescription_left} `}>
+                            <ProductBox image={item.image} />
                           </div>
-                        ))}
-                      </div>
+                          <div className={`${styles.boxdescription_right} `}>   <h4>{item.name} </h4>
+                            <h3> ${item.price}</h3>
+                            <p>  {item.description}</p></div>
+                        </div>
+                      ))}
                     </div>
-                  </div>
-
+                  )}
                 </div>
 
               ) : (

@@ -25,9 +25,6 @@ const MenuBar = ({ children }) => (
                 <Link to={`/`}>
                   <li className={'nav-item' + styles.active}>Home</li>
                 </Link>
-                <Link to={`/shop/furniture`}>
-                  <li className='nav-item'>Furniture</li>
-                </Link>
                 <Link to={`/shop/chair`}>
                   <li className='nav-item'>Chair</li>
                 </Link>
