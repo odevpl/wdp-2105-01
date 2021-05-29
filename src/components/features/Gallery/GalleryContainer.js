@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import Gallery from './Gallery';
-import { getAllGallery, getActiveBestseller } from '../../../redux/galleryRedux';
+import { getAllGallery, getActives, setActive } from '../../../redux/galleryRedux';
 
 const mapStateToProps = state => ({
   gallery: getAllGallery(state),
-  getActiveBestseller: getActiveBestseller(state),
+  actives: getActives(state),
 });
 
-export default connect(mapStateToProps)(Gallery);
+const mapDispatcherToProps = dispatcher => ({
+  setActive: payload => dispatcher(setActive(payload)),
+});
+
+export default connect(mapStateToProps, mapDispatcherToProps)(Gallery);
