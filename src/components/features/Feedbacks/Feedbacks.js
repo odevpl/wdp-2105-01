@@ -22,13 +22,13 @@ const Feedbacks = ({ feedbacks }) => (
           <div className='row justify-content-center feedback'>
             <Carousel>
               {feedbacks.map(feedback => (
-                <div div className='col-10 ' key={feedback.id}>
+                <div className='col-10 ' key={feedback.id}>
                   <p className='d-block w-100 text-center'>{feedback.text}</p>
                   <div className='row flex-column align-items-center'>
                     <div className='col-3'>
                       <div className='row flex-row align-items-center'>
                         <div className='col-4 flex-grow-1'>
-                          <img alt=''></img>
+                          <img src={feedback.foto} alt=''></img>
                         </div>
                         <div className='col-8 flex-column d-flex align-items-center'>
                           <span className='col-12 name '>{feedback.name}</span>

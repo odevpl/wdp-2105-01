@@ -689,7 +689,8 @@ const initialState = {
       id: 'feedback1',
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
-      foto: '',
+      foto:
+        'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
       name: 'John Doe',
       description: 'Furniture client',
     },
@@ -697,7 +698,8 @@ const initialState = {
       id: 'feedback2',
       text:
         'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta',
-      foto: '',
+      foto:
+        'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       name: 'John Smith',
       description: 'New bed owner',
     },
@@ -705,7 +707,8 @@ const initialState = {
       id: 'feedback3',
       text:
         'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident',
-      foto: '',
+      foto:
+        'https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       name: 'Kristoff Koloski',
       description: 'Kitchen designer',
     },
