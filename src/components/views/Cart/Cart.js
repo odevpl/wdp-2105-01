@@ -61,6 +61,7 @@ const Cart = props => {
                   <td className='align-middle' datatitle='PRICE'>
                     {product.price}
                   </td>
+                  {/* <td className={'align-middle ' + styles.quantityContainer} datatitle='QUANTITY'> */}
                   <td className='align-middle' datatitle='QUANTITY'>
                     <div className={styles.quantity}>
                       <Button className={styles.button1} variant='outline'>

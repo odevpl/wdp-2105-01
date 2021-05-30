@@ -98,6 +98,7 @@ $tablet-width: 768px;
 
           @include mobile {
             text-align: left;
+            padding-top: 17px;
           }
 
           .delete {
@@ -118,20 +119,31 @@ $tablet-width: 768px;
         td {
           color: $primary;
           font-size: 14px;
+          padding-top: 20px;
 
           @include mobile {
             display: block;
             text-align: right;
+            min-height: 60px;
 
             &::before {
               content: attr(dataTitle) ": ";
               float: left;
               color: $text-color;
               font-weight: 700;
+              //padding-top: 7px;
             }
 
             &:first-child::before {
               content: attr(dataTitle);
+            }
+
+            &:nth-of-type(4) {
+              padding-top: 13px;
+            }
+
+            &:nth-of-type(4)::before {
+              padding-top: 9px;
             }
           }
 
@@ -143,7 +155,6 @@ $tablet-width: 768px;
             @include mobile {
               display: block;
             }
-
 
             .image {
               background-color: $gray-6;
@@ -164,24 +175,31 @@ $tablet-width: 768px;
             }
           }
 
-          .quantity {
-            width: 107.2px;
-            display: flex;
-            vertical-align: middle;
+          //.quantityContainer {
 
-            @include mobile {
-              float: right;
-            }
+            .quantity {
+              width: 107.2px;
+              display: flex;
+              vertical-align: middle;
+              position: relative;
 
-            .button1, .button2 {
-              border: solid 1px $gray-5;
-              margin: 0;
+              @include mobile {
+                float: right;
+                padding-bottom: 20px;
+                //vertical-align: middle;
 
-              &:hover {
-                background-color: $primary;
-                text-decoration: none;
               }
-            }
+
+              .button1, .button2 {
+                border: solid 1px $gray-5;
+                margin: 0;
+
+                &:hover {
+                  background-color: $primary;
+                  text-decoration: none;
+                }
+              }
+
 
             .number {
               border-top: solid 1px $gray-5;
