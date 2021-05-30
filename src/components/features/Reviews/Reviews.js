@@ -6,28 +6,45 @@ import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
 
 class Reviews extends React.Component {
-  render(stars) {
-    return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.wrapper}>
-            <div className={styles.tabs}>
-              <ul>
-                <li>
-                  <Button>DESCRIPTION</Button>
-                </li>
-                <li className={styles.active}>
-                  <Button>REVIEWS (0)</Button>
-                </li>
-                <li>
-                  <Button>SPECIFICATION</Button>
-                </li>
-                <li>
-                  <Button>CUSTOM TAB</Button>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.tabContent}>
+  state = {
+    activeTab: 'reviews',
+    tabSwitchingStyle: 'fadeIn',
+  };
+
+  handleTabChange(newTab) {
+    this.setState({ tabSwitchingStyle: styles.fadeOut });
+    setTimeout(() => {
+      this.setState({ activeTab: newTab, tabSwitchingStyle: styles.fadeIn });
+    }, 500);
+  }
+
+  render() {
+    const { stars, activeTab, showTabContent, tabSwitchingStyle } = this.state;
+
+    const tabs = [
+      { id: 'description', name: 'DESCRIPTION' },
+      { id: 'reviews', name: 'REVIEWS (0)' },
+      { id: 'specification', name: 'SPECIFICATION' },
+      { id: 'customTab', name: 'CUSTOM TAB' },
+    ];
+
+    tabs.filter(tabs => {
+      for (let tab in tabs) {
+        if (tabs[tab] === 'description' && tabs[tab] === this.state.activeTab) {
+          this.showTabContent = <div> Here is a card {tabs.name}</div>;
+          return showTabContent;
+        } else if (
+          tabs[tab] === 'specification' &&
+          tabs[tab] === this.state.activeTab
+        ) {
+          this.showTabContent = <div> Here is a card {tabs.name}</div>;
+          return showTabContent;
+        } else if (tabs[tab] === 'customTab' && tabs[tab] === this.state.activeTab) {
+          this.showTabContent = <div> Here is a card {tabs.name}</div>;
+          return showTabContent;
+        } else if (tabs[tab] === 'reviews' && tabs[tab] === this.state.activeTab) {
+          this.showTabContent = (
+            <div>
               <p>There are no reviews fot this product.</p>
               <p className={styles.add}>Add a review</p>
               <p>Your Rating</p>
@@ -57,6 +74,34 @@ class Reviews extends React.Component {
                   </Button>
                 </div>
               </form>
+            </div>
+          );
+          return showTabContent;
+        }
+      }
+      return 0;
+    });
+
+    return (
+      <div className={styles.root}>
+        <div className='container'>
+          <div className={styles.wrapper}>
+            <div className={styles.tabs}>
+              <ul>
+                {tabs.map(tab => (
+                  <li
+                    key={tab.id}
+                    className={tab.id === activeTab ? styles.active : ''}
+                  >
+                    <Button noJump onClick={() => this.handleTabChange(tab.id)}>
+                      {tab.name}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={tabSwitchingStyle}>
+              <div className={styles.tabContent}>{this.showTabContent}</div>
             </div>
           </div>
         </div>
