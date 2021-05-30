@@ -20,57 +20,68 @@ const Cart = props => {
       </div>
       <div className={styles.cartContainer}>
         <div className={styles.cart}>
+          {/* <div className='table-responsive'> */}
           <table className='table'>
             <thead className={styles.tableTop}>
               <tr>
-                <th scope='col' className='align-middle text-center'>
+                <th scope='col' className='align-middle text-left'></th>
+                <th scope='col' className='align-middle text-left'>
                   PRODUCT
                 </th>
-                <th scope='col' className='align-middle text-left pl-3'>
+                <th scope='col' className='align-middle text-left'>
                   PRICE
                 </th>
                 <th scope='col' className='align-middle text-left'>
                   QUANTITY
                 </th>
-                <th scope='col' className='align-middle text-center pl-3'>
+                <th scope='col' className='align-middle text-left'>
                   TOTAL
                 </th>
               </tr>
             </thead>
+
             <tbody>
               {cartProducts.map(product => (
                 <tr key={product.id}>
-                  <th scope='row' className={styles.product}>
+                  <td className={'align-middle ' + styles.product}>
                     <FontAwesomeIcon
                       onClick={() => removeProduct(product.id)}
                       className={styles.delete}
                       icon={faTimes}
                     />
-                    <div className={styles.image}>
-                      <img src={product.image} alt={product.name} />
+                  </td>
+                  <td className='align-middle flex-nowrap' datatitle='PRODUCT'>
+                    <div className={styles.productContainer}>
+                      <div className={styles.image}>
+                        <img src={product.image} alt={product.name} />
+                      </div>
+                      <div className={styles.productName}>{product.name}</div>
                     </div>
-                    {product.name}
-                  </th>
-                  <td className='align-middle'>{product.price}</td>
-                  <td className='align-middle'>
+                  </td>
+                  <td className='align-middle' datatitle='PRICE'>
+                    {product.price}
+                  </td>
+                  <td className='align-middle' datatitle='QUANTITY'>
                     <div className={styles.quantity}>
                       <Button className={styles.button1} variant='outline'>
                         -
                       </Button>
                       <div className={styles.number}>
-                        <input></input>
+                        <input defaultValue='2'></input>
                       </div>
                       <Button className={styles.button2} variant='outline'>
                         +
                       </Button>
                     </div>
                   </td>
-                  <td className='align-middle text-center pl-5'>$5.00</td>
+                  <td className='align-middle' datatitle='TOTAL'>
+                    $5.00
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
-
+          {/* </div> */}
           <div className={styles.couponContainer}>
             <div className={styles.couponSummary}>
               <input type='text' placeholder='Coupon code'></input>
