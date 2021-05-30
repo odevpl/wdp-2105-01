@@ -56,7 +56,6 @@ const ProductList = ({ categories, match, products }) => {
                           {products.map(item => (
                             <div key={item.id} className='col-12 col-md-6 col-lg-4 red'>
                               <ProductBox {...item} />
-                              <div className={styles.grid_hidden}>opis</div>
                             </div>
                           ))}
                         </div>

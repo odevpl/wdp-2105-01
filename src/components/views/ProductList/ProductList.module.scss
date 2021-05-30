@@ -42,15 +42,9 @@
 
   .productBox {
     padding: 10px;
-
     display: flex;
-    max-height: 400px;
     flex-direction: row;
-   min-height: -webkit-fit-content;
-   min-height: -moz-fit-content;
-   min-height: fit-content;
-  border-bottom: 1px solid $darkGray;
-
+    border-bottom: 1px solid $darkGray;
 }
   .boxdescription_left{
     width:30%;
