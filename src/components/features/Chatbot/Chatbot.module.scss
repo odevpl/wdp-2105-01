@@ -20,18 +20,27 @@
     padding: 10px;
     text-align: center;
     border-radius: 20px;
-    width: 30%;
+    width: 50%;
     color: $white;
 
     &:hover{
       cursor: pointer;
     }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  i {
+    display: none;
   }
 
   .chat{
     margin: 10px 0;
     border-radius: 5px;
     background-color: $white;
+
     .top {
       display: flex;
       flex-direction: row;
@@ -56,29 +65,30 @@
       align-items: flex-start;
       border: solid 4px $primary;
       border-bottom: none;
+      font-size: 14px;
 
       p {
         margin: 10px;
         padding: 4px;
         background-color: $gray-3;
         border-radius: 0 5px 5px 5px;
-        width: 70%;
         box-shadow: 0 0 5px rgb(209, 209, 209);
       }
 
-      .robot{
+      .robot {
         display: flex;
         align-items: center;
+
         .user {
           height: 50px;
           width: 50px;
         }
-
       }
+
       a {
-        margin: 20px;
+        margin-top: 10px;
         margin-bottom: 150px;
-        padding: 5px 30px;
+        padding: 5px 15px;
         border: solid 4px $primary;
         border-radius: 20px;
         align-self: center;
@@ -90,15 +100,22 @@
       display: flex;
       border-left: solid 4px $primary;
       border-right: solid 4px $primary;
+      align-content: center;
+
       textarea {
         width: 85%;
         border: none;
         outline: none;
         margin-bottom: 0;
-        padding: 0 10px;
+        padding: 10px 10px 0 10px;
         background-color: $gray-3;
         resize: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 45px;
       }
+
       .sendIcon {
         font-size: 20px;
         color: $primary;
@@ -114,5 +131,82 @@
       background-color: $primary;
       font-size: 40px;
     }
+  }
+}
+
+/* Media */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .chatbot {
+    width: 40%;
+  }
+
+  .button {
+    p {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .chatBody {
+    a, p {
+      font-size: 13px;
+    }
+  }
+
+  .message {
+    textarea {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+  .chatbot {
+    width: 50%;
+  }
+
+  .root {
+
+    .button {
+      width: 20%;
+
+      i {
+        display: block;
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    .chat .chatBody {
+      a, p {
+        font-size: 12px;
+      }
+
+      a {
+        margin-bottom: 80px;
+      }
+
+      .user {
+        display: none;
+      }
+    }
+  }
+
+  .message {
+    textarea {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .chatbot {
+    width: 70%;
   }
 }

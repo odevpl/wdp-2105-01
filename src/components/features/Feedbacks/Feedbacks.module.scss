@@ -7,6 +7,10 @@
   font-weight: 500;
   color: $footer-copyright-color;
 
+  .dotspace {
+    margin-right: 60px;
+  }
+
   .heading {
     position: relative;
     width: 94%;
@@ -47,6 +51,7 @@
     background-image: none;
     background-color: $header-topbar-bg;
     border-radius: 5px;
+    object-fit: cover;
   }
 
   span {
