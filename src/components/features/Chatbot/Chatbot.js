@@ -19,11 +19,19 @@ class Chatbot extends React.Component {
       <div className={styles.chatbot}>
         <div className={styles.root}>
           {!this.state.showChat && (
-            <div
-              className={styles.button}
-              onClick={() => this.setState({ showChat: true })}
-            >
-              Need help? Contact us
+            <div>
+              <div
+                className={styles.button}
+                onClick={() => this.setState({ showChat: true })}
+              >
+                <p>
+                  Need help?
+                  <span> Contact us</span>
+                </p>
+                <i className={styles.cloud}>
+                  <FontAwesomeIcon icon={faCommentDots}></FontAwesomeIcon>
+                </i>
+              </div>
             </div>
           )}
           {this.state.showChat && (
@@ -51,7 +59,9 @@ class Chatbot extends React.Component {
                   ></FontAwesomeIcon>
                   <p>Welcome in our shop! How can I help You?</p>
                 </div>
-                <Link to='/#'>Select a conversation topic</Link>
+                <Link className={styles.topic} to='/#'>
+                  Select a conversation topic
+                </Link>
               </div>
               <div className={styles.message}>
                 <textarea placeholder='Type your question...'></textarea>

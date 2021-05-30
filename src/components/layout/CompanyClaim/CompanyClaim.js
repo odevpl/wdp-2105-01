@@ -1,12 +1,12 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import styles from './CompanyClaim.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const CompanyClaim = () => (
+const CompanyClaim = ({ productsInCart }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className={`row align-items-center`}>
@@ -26,12 +26,16 @@ const CompanyClaim = () => (
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>
-            <div className={styles.cartCounter}>12345</div>
+            <div className={styles.cartCounter}>{productsInCart}</div>
           </Link>
         </div>
       </div>
     </div>
   </div>
 );
+
+CompanyClaim.propTypes = {
+  productsInCart: PropTypes.number,
+};
 
 export default CompanyClaim;
