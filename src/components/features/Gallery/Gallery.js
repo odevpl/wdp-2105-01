@@ -9,15 +9,40 @@ import Stars from '../../features/Stars/StarsContainer';
 import Carousel from 'react-elastic-carousel';
 
 class Gallery extends React.Component {
+  state = {
+    activeTab: 'topSeller',
+    tabSwitchingStyle: 'fadeIn',
+    productSwitchingStyle: 'fadeIn',
+  };
+  handleTabChange(newTab) {
+    this.setState({ tabSwitchingStyle: styles.fadeOut });
+    setTimeout(() => {
+      this.setState({ activeTab: newTab, tabSwitchingStyle: styles.fadeIn });
+    }, 1000);
+  }
+  handlePickProduct(id, tab) {
+    this.setState({ productSwitchingStyle: styles.fadeOut });
+    setTimeout(() => {
+      this.setState({ productSwitchingStyle: styles.fadeIn });
+      this.props.setActive({ id, tab });
+    }, 1000);
+  }
   render() {
-    const { gallery, getActiveBestseller, customStars } = this.props;
-
+    const { gallery, actives } = this.props;
+    const { activeTab, tabSwitchingStyle, productSwitchingStyle } = this.state;
+    const activeProduct = actives[activeTab];
     const breakPoints = [
       { width: 1, itemsToShow: 1, itemsToScroll: 1 },
       { width: 100, itemsToShow: 2, itemsToScroll: 2 },
       { width: 200, itemsToShow: 3, itemsToScroll: 3 },
       { width: 270, itemsToShow: 4, itemsToScroll: 4 },
       { width: 400, itemsToShow: 6, itemsToScroll: 6 },
+    ];
+    const tabs = [
+      { id: 'featured', name: 'FEATURED' },
+      { id: 'topSeller', name: 'TOP SELLER' },
+      { id: 'saleOff', name: 'SALE OFF' },
+      { id: 'topRated', name: 'TOP RATED' },
     ];
 
     return (
@@ -33,89 +58,96 @@ class Gallery extends React.Component {
               <div className={styles.wrapper}>
                 <div className={styles.tabs}>
                   <ul>
-                    <li>
-                      <Button>FEATURED</Button>
-                    </li>
-                    <li className={styles.active}>
-                      <Button>TOP SELLER</Button>
-                    </li>
-                    <li>
-                      <Button>SALE OFF</Button>
-                    </li>
-                    <li>
-                      <Button>TOP RATED</Button>
-                    </li>
+                    {tabs.map(tab => (
+                      <li
+                        key={tab.id}
+                        className={tab.id === activeTab ? styles.active : ''}
+                      >
+                        <Button noJump onClick={() => this.handleTabChange(tab.id)}>
+                          {tab.name}
+                        </Button>
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <div className={styles.tabContent}>
-                  {getActiveBestseller.map(product => (
-                    <div key={product.image} className={styles.image}>
-                      <img alt={'topseller'} src={product.image}></img>
+                <div className={tabSwitchingStyle}>
+                  <div className={styles.tabContent + ' ' + productSwitchingStyle}>
+                    <div key={activeProduct.image} className={styles.image}>
+                      <img alt={activeProduct.name} src={activeProduct.image}></img>
                     </div>
-                  ))}
-                  <div className={styles.actions}>
-                    <Button
-                      className={styles.selected}
-                      variant='outline'
-                      tooltip='Favourite'
-                    >
-                      <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-                    </Button>
-                    <Button
-                      className={styles.selected}
-                      variant='outline'
-                      tooltip='Add To Compare'
-                    >
-                      <FontAwesomeIcon icon={faExchangeAlt}>
-                        Add To Compare
-                      </FontAwesomeIcon>
-                    </Button>
-                    <Button
-                      className={styles.selected}
-                      variant='outline'
-                      tooltip='See Details'
-                    >
-                      <FontAwesomeIcon icon={faEye}>See Details</FontAwesomeIcon>
-                    </Button>
-                    <Button
-                      className={styles.selected}
-                      variant='outline'
-                      tooltip='Add To Cart'
-                    >
-                      <FontAwesomeIcon icon={faShoppingBasket}>
-                        Add To Cart
-                      </FontAwesomeIcon>
-                    </Button>
-                  </div>
-                  {getActiveBestseller.map(item => (
-                    <div key={item.id}>
-                      <div key={item.price} className={styles.price}>
-                        <div key={item.newPrice} className={styles.newPrice}>
-                          $ {item.price}
+                    <div className={styles.actions}>
+                      <Button
+                        className={styles.selected}
+                        variant='outline'
+                        tooltip='Favourite'
+                      >
+                        <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+                      </Button>
+                      <Button
+                        className={styles.selected}
+                        variant='outline'
+                        tooltip='Add To Compare'
+                      >
+                        <FontAwesomeIcon icon={faExchangeAlt}>
+                          Add To Compare
+                        </FontAwesomeIcon>
+                      </Button>
+                      <Button
+                        className={styles.selected}
+                        variant='outline'
+                        tooltip='See Details'
+                      >
+                        <FontAwesomeIcon icon={faEye}>See Details</FontAwesomeIcon>
+                      </Button>
+                      <Button
+                        className={styles.selected}
+                        variant='outline'
+                        tooltip='Add To Cart'
+                      >
+                        <FontAwesomeIcon icon={faShoppingBasket}>
+                          Add To Cart
+                        </FontAwesomeIcon>
+                      </Button>
+                    </div>
+                    <div key={activeProduct.id}>
+                      <div key={activeProduct.price} className={styles.price}>
+                        <div key={activeProduct.newPrice} className={styles.newPrice}>
+                          $ {activeProduct.price}
                         </div>
-                        <div key={item.oldPrice} className={styles.oldPrice}>
-                          $ {item.oldPrice}
+                        <div key={activeProduct.oldPrice} className={styles.oldPrice}>
+                          $ {activeProduct.oldPrice}
                         </div>
                       </div>
-                      <div key={item.details} className={styles.details}>
-                        <h5 key={item.name}>{item.name}</h5>
-                        <Stars customStars={customStars} stars={item.stars} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className={styles.slider}>
-                  <Carousel breakPoints={breakPoints}>
-                    {gallery.map(active => (
-                      <div key={active.id}>
-                        <img
-                          src={active.image}
-                          className={active.active ? styles.active : styles.img}
-                          alt=''
+                      <div key={activeProduct.details} className={styles.details}>
+                        <h5 key={activeProduct.name}>{activeProduct.name}</h5>
+                        <Stars
+                          id={activeProduct.id}
+                          customStars={activeProduct.customStars}
+                          stars={activeProduct.stars}
                         />
                       </div>
-                    ))}
-                  </Carousel>
+                    </div>
+                  </div>
+                  <div className={styles.slider}>
+                    <Carousel breakPoints={breakPoints}>
+                      {gallery[activeTab].map(product => (
+                        <div
+                          onClick={() => this.handlePickProduct(product.id, activeTab)}
+                          key={product.id}
+                        >
+                          <img
+                            src={product.image}
+                            className={
+                              product.id === activeProduct.id
+                                ? styles.active
+                                : styles.img
+                            }
+                            alt=''
+                          />
+                        </div>
+                      ))}
+                    </Carousel>
+                  </div>
                 </div>
               </div>
             </div>
@@ -144,10 +176,11 @@ class Gallery extends React.Component {
 }
 
 Gallery.propTypes = {
-  gallery: PropTypes.array,
-  getActiveBestseller: PropTypes.array,
+  gallery: PropTypes.object,
+  actives: PropTypes.object,
   stars: PropTypes.number,
   customStars: PropTypes.number,
+  setActive: PropTypes.func,
 };
 
 export default Gallery;

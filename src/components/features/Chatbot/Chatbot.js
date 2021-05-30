@@ -8,7 +8,7 @@ import {
   faPaperPlane,
   faHeadset,
 } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from 'react-router-dom';
 class Chatbot extends React.Component {
   state = {
     showChat: false,
@@ -19,11 +19,19 @@ class Chatbot extends React.Component {
       <div className={styles.chatbot}>
         <div className={styles.root}>
           {!this.state.showChat && (
-            <div
-              className={styles.button}
-              onClick={() => this.setState({ showChat: true })}
-            >
-              Need help? Contact us
+            <div>
+              <div
+                className={styles.button}
+                onClick={() => this.setState({ showChat: true })}
+              >
+                <p>
+                  Need help?
+                  <span> Contact us</span>
+                </p>
+                <i className={styles.cloud}>
+                  <FontAwesomeIcon icon={faCommentDots}></FontAwesomeIcon>
+                </i>
+              </div>
             </div>
           )}
           {this.state.showChat && (
@@ -51,13 +59,15 @@ class Chatbot extends React.Component {
                   ></FontAwesomeIcon>
                   <p>Welcome in our shop! How can I help You?</p>
                 </div>
-                <a href='#'>Select a conversation topic</a>
+                <Link className={styles.topic} to='/#'>
+                  Select a conversation topic
+                </Link>
               </div>
               <div className={styles.message}>
                 <textarea placeholder='Type your question...'></textarea>
-                <a className={styles.sendIcon} href='#'>
+                <Link to='/#' className={styles.sendIcon} href='#'>
                   <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
-                </a>
+                </Link>
               </div>
               <div className={styles.send}>
                 <FontAwesomeIcon icon={faCommentDots}></FontAwesomeIcon>

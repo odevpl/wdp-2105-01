@@ -1,6 +1,23 @@
 import React from 'react';
 import styles from './Login.module.scss';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+
+function validate() {
+  let email, passwd, text;
+
+  email = document.getElementById('email').value;
+  passwd = document.getElementById('passwd').value;
+
+  if (email !== 'admin') {
+    text = 'Invalid login';
+  } else if (passwd !== 'pass') {
+    text = 'Invalid passwdord';
+  } else {
+    text = 'Everything OK';
+  }
+
+  document.getElementById('alert').innerHTML = text;
+}
 
 const Login = () => {
   const formValidation = event => {
