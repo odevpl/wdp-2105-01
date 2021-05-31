@@ -1,0 +1,72 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+  padding-bottom: $base-padding;
+
+  .header {
+    h5 {
+      text-transform: uppercase;
+      font-size: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid;
+    }
+  }
+
+  .categories {
+    padding-top: 20px;
+
+    .category {
+      display: flex;
+      flex-direction: row;
+      padding-left: 0;
+      padding-bottom: 5px;
+
+      h6 {
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      &:hover {
+        padding-left: 10px;
+        cursor: pointer;
+
+        h6 {
+          color: $primary;
+        }
+      }
+
+      p {
+        border-radius: 20%;
+        background-color: $button-bg;
+        width: 13px;
+        height: 13px;
+        margin-right: 15px;
+      }
+
+      .red {
+        background-color: $filter-red;
+      }
+
+      .black {
+        background-color: $filter-black;
+      }
+
+      .green {
+        background-color: $filter-green;
+      }
+
+      .yellow {
+        background-color: $filter-yellow;
+      }
+
+      .blue {
+        background-color: $filter-blue;
+      }
+
+      .pink {
+        background-color: $filter-pink;
+      }
+    }
+  }
+}

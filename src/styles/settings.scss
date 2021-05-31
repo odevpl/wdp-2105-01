@@ -16,6 +16,11 @@ $darkGray:	#2a2a2a;
 $darkOrange:	#d58e32;
 $green: #79AE30;
 $red: #FF0000;
+$yellow: #e9e600;
+$blue: #0190d3;
+$pink: #f72fe4;
+$bright-green: #14d400;
+
 //end//
 
 $primary: $darkOrange;
@@ -106,3 +111,10 @@ $input-hover: $gray-6;
 
 $register-valid: $green;
 $register-invalid: $red;
+
+$filter-red: $red;
+$filter-black: $button-bg;
+$filter-blue: $blue;
+$filter-yellow: $yellow;
+$filter-pink: $pink;
+$filter-green: $bright-green;
