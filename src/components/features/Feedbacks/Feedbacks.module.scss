@@ -54,10 +54,8 @@
     object-fit: cover;
   }
 
-  span {
     .name {
       font-weight: 700;
-      color: $text-color;
+      color: $footer-copyright-color;
     }
-  }
 }
