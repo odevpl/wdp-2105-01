@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Login.module.scss';
-//import { Link } from 'react-router-dom';
 
 function validate() {
   let email, passwd, text;
@@ -55,33 +54,31 @@ const Login = () => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.loginContainer}>
-        <div className={`col-11 ${styles.loginBox}`}>
-          <div className={styles.contentBox}>
-            <div className={styles.contentName}>Login</div>
-            <input type='email' id='email' onKeyUp={clearMessage} required></input>
-          </div>
-          <div className={styles.contentBox}>
-            <div className={styles.contentName}>Password</div>
-            <input
-              type='password'
-              id='password'
-              onKeyUp={clearMessage}
-              required
-            ></input>
-          </div>
-          <div className={styles.contentBottom}>
-            <p>Forgot password?</p>
-            <a href='#'>Remind password</a>
-          </div>
-          <div id='message'> </div>
-          <Link onClick={formValidation} to={`/`} className={styles.buttonBox}>
-            <button className={styles.loginBtn}>Log in</button>
-          </Link>
+        <div className={styles.loginContainer}>
+            <div className={`col-11 ${styles.loginBox}`}>
+                <div className={styles.contentBox}>
+                    <div className={styles.contentName}>Login</div>
+                    <input type='email' id='email' onKeyUp={clearMessage} required></input>
+                </div>
+                <div className={styles.contentBox}>
+                    <div className={styles.contentName}>Password</div>
+                    <input type='password' id='password' onKeyUp={clearMessage} required></input>
+                </div>
+                <div className={styles.contentBottom}>
+                    <p>Forgot password?</p>
+                    <a href='#'>Remind password</a>
+                </div>
+                <div id='message'> </div>
+                <Link onClick={formValidation} to={`/`} className={styles.buttonBox}>
+                <button className={styles.loginBtn}>Log in</button>
+                </Link>
+            </div>
+            <p id='alert'></p>
+            <button className={styles.loginBtn} onClick={()=>validate()}>
+                Zaloguj się
+            </button>
         </div>
-      </div>
     </div>
-  );
-};
+);
 
 export default Login;
