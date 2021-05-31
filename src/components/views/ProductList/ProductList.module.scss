@@ -2,6 +2,7 @@
 
 .root {
   padding: $base-padding 0;
+  padding-bottom: $base-padding;
 
   .header {
     display: flex;
@@ -39,6 +40,6 @@
       }
     }
   }
-
-  
 }
+
+
