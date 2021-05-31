@@ -1,7 +1,7 @@
 @import '../../../styles/settings.scss';
 $mobile-width: 640px;
 $tablet-width: 768px;
-$desktop-width: 980px;
+$desktop-width: 992px;
 $mobile-width: 350px;
 
 
@@ -117,7 +117,7 @@ $mobile-width: 350px;
     position: absolute;
     top: 80%;
     @include tablet {
-      top:70%;
+      top:60%;
     }
     @include mobile {
       top:35%;
