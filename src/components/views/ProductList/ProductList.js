@@ -7,6 +7,7 @@ import styles from './ProductList.module.scss';
 import Banner from '../../features/Banner/Banner.js';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { Link } from 'react-router-dom';
+import ProductGridList from '../../views/ProductGridList/ProductGridList';
 
 
 const ProductList = ({ categories, match, products }) => {
@@ -67,11 +68,8 @@ const ProductList = ({ categories, match, products }) => {
                       {products.map(item => (
                         <div key={item.id} className={`${styles.productBox} `}>
                           <div className={`${styles.boxdescription_left} `}>
-                            <ProductBox image={item.image} />
+                            <ProductGridList {...item}/>
                           </div>
-                          <div className={`${styles.boxdescription_right} `}>   <h4>{item.name} </h4>
-                            <h3> ${item.price}</h3>
-                            <p>  {item.description}</p></div>
                         </div>
                       ))}
                     </div>

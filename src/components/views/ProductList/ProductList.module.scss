@@ -40,24 +40,5 @@
     }
   }
 
-  .productBox {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid $darkGray;
-}
-  .boxdescription_left{
-    width:30%;
-  }
-  .boxdescription_right{
-    width:70%;
-    padding: 20px 10px;
-
-    h4 {color: $primary;}
   
-    p{
-      font-size: 13px;
-    border-bottom: 1px solid $darkGray;
-  }
-  }
 }
