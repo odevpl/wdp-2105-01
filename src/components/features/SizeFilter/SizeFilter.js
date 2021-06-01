@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './Filters.module.scss';
+import styles from './SizeFilter.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
 
-const Filters = () => (
+const SizeFilter = () => (
   <div className={styles.root}>
     <div className={styles.header}>
       <h5>Filter by size</h5>
@@ -55,4 +55,4 @@ const Filters = () => (
   </div>
 );
 
-export default Filters;
+export default SizeFilter;
