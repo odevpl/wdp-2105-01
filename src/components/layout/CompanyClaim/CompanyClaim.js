@@ -1,12 +1,12 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import styles from './CompanyClaim.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const CompanyClaim = () => (
+const CompanyClaim = ({ productsInCart }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className={`row align-items-center`}>
@@ -17,23 +17,25 @@ const CompanyClaim = () => (
           </p>
         </div>
         <div className={`col text-center ${styles.logo}`}>
-          <a href='/#'>
+          <Link to='/#'>
             <img src='/images/logo.png' alt='Bazar' />
-          </a>
+          </Link>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <a href='/#' className={styles.cartBox}>
-            <Link to={`/cart`}>
-              <div className={styles.cartIcon}>
-                <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
-              </div>
-            </Link>
-            <div className={styles.cartCounter}>12345</div>
-          </a>
+          <Link to='/Cart' className={styles.cartBox}>
+            <div className={styles.cartIcon}>
+              <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
+            </div>
+            <div className={styles.cartCounter}>{productsInCart}</div>
+          </Link>
         </div>
       </div>
     </div>
   </div>
 );
+
+CompanyClaim.propTypes = {
+  productsInCart: PropTypes.number,
+};
 
 export default CompanyClaim;

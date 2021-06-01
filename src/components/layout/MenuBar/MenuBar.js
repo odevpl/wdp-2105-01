@@ -25,9 +25,6 @@ const MenuBar = ({ children }) => (
                 <Link to={`/`}>
                   <li className={'nav-item' + styles.active}>Home</li>
                 </Link>
-                <Link to={`/shop/furniture`}>
-                  <li className='nav-item'>Furniture</li>
-                </Link>
                 <Link to={`/shop/chair`}>
                   <li className='nav-item'>Chair</li>
                 </Link>
@@ -37,8 +34,8 @@ const MenuBar = ({ children }) => (
                 <Link to={`/shop/sofa`}>
                   <li className='nav-item'>Sofa</li>
                 </Link>
-                <Link to={`/shop/bedroom`}>
-                  <li className='nav-item'>Bedroom</li>
+                <Link to={`/shop/dining`}>
+                  <li className='nav-item'>Dining</li>
                 </Link>
                 <Link to={`/blog`}>
                   <li className='nav-item'>Blog</li>

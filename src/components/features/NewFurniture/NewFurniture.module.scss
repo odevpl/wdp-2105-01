@@ -115,6 +115,19 @@
   .fadeOut {
     opacity: 0;
     transition: opacity 1s;
-
 }
 
+@media (max-width: 575px) {
+  .root {
+    .panelBar {
+      .dots {
+        position: relative;
+        text-align: center;
+
+        ul {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

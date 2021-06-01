@@ -15,6 +15,7 @@ $gray-9:	#292929;
 $darkGray:	#2a2a2a;
 $darkOrange:	#d58e32;
 $green: #79AE30;
+$red: #FF0000;
 //end//
 
 $primary: $darkOrange;
@@ -54,6 +55,8 @@ $furniture-border-color:	$gray-2;
 $furniture-menu-color:	$darkGray;
 $furniture-dots-bg: $white;
 
+$feedback-dots-bg: $gray-2;
+
 $menubar-bg:	$white;
 $menubar-border-color:	$darkOrange;
 $menubar-color:	$darkGray;
@@ -92,3 +95,16 @@ $input-bg: $darkGray;
 $input-checked: $darkGray;
 $input-after: $white;
 $input-hover: $gray-6;
+
+$cart-border-color: $gray-4;
+
+%hover-params {
+  transition: background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s,
+    transform 0.25s,
+    opacity 0.25s;
+}
+
+$register-valid: $green;
+$register-invalid: $red;

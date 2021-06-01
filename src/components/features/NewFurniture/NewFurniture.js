@@ -5,7 +5,7 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import { SIZE_TYPES } from '../../../settings';
 import CompareBox from '../CompareBox/CompareBoxContainer.js';
 import Swipeable from '../../common/Swipeable/Swipeable';
-
+import { Link } from 'react-router-dom';
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
@@ -120,15 +120,15 @@ class NewFurniture extends React.Component {
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
         <li key={i}>
-          <a
-            href='/#'
+          <Link
+            to='/#'
             onClick={() => {
               this.handlePageChange(i);
             }}
             className={i === activePage ? styles.active : ''}
           >
             page {i}
-          </a>
+          </Link>
         </li>
       );
     }
@@ -146,8 +146,8 @@ class NewFurniture extends React.Component {
                   <ul>
                     {categories.map(item => (
                       <li key={item.id}>
-                        <a
-                          href='/#'
+                        <Link
+                          to='/#'
                           className={
                             item.id === activeCategory ? styles.active : undefined
                           }
@@ -156,12 +156,12 @@ class NewFurniture extends React.Component {
                           }}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className={'col-auto ' + styles.dots}>
+                <div className={'col-12 col-sm-auto ' + styles.dots}>
                   <ul>{dots}</ul>
                 </div>
               </div>

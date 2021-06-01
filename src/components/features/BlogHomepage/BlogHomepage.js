@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt, faComments } from '@fortawesome/free-solid-svg-icons';
 import styles from './BlogHomepage.module.scss';
@@ -18,23 +18,23 @@ const BlogHomepage = ({ blogPosts }) => (
             <div className={'col-auto ' + styles.dots}>
               <ul>
                 <li>
-                  <a href='/#' className={styles.active}>
+                  <Link to='/#' className={styles.active}>
                     page
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/#'>page</a>
+                  <Link to='/#'>page</Link>
                 </li>
                 <li>
-                  <a href='/#'>page</a>
+                  <Link to='/#'>page</Link>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className='row justify-content-center'>
+          <div className='row'>
             {blogPosts.map(item => (
-              <div className='col-lg-4' key={item.id}>
+              <div className='col-lg-4 col-12 p-3' key={item.id}>
                 <div>
                   <img src={item.image} alt='' />
                 </div>
@@ -65,7 +65,7 @@ const BlogHomepage = ({ blogPosts }) => (
 );
 
 BlogHomepage.propTypes = {
-  blogPosts: PropTypes.object,
+  blogPosts: PropTypes.array,
   text: PropTypes.string,
 };
 

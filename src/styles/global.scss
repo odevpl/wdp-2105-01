@@ -2,6 +2,21 @@
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
+$tablet-width: 768px;
+$desktop-width: 1200px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
 
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -9,51 +24,126 @@
 
 body {
   font-family: "Poppins", sans-serif;
-}
-.rec.rec-arrow {
-  border-radius: 0;
-  background-color: $darkGray;
-  color: $white;
-  font-size: 1rem;
-  height: 100%;
-  cursor: pointer;
+  
+    .feedback{
+      .rec.rec-dot {
+        display: block;
+          &:focus {
+          box-shadow: 0 0 1px 3px $primary;
+        }
+          &:hover {
+          box-shadow: 0 0 1px 3px $primary;
+        }
+        };
+        .rec.rec-dot.rec-dot_active{
+          background-color: $primary;
+          box-shadow: 0 0 1px 3px $primary;
+        };
+        .rec.rec-arrow {
+          display: none;
+        }
+        .rec.rec-pagination{
+        position: absolute;
+        top: 15px;
+        right:20px;
+      }
+    }
 
-  &:hover {
-    color: $primary !important;
-    background-color: $darkGray !important;
+  
+    .right_promoted {
+      .rec.rec-dot{
+        display: none;
+      }
+      .rec.rec-arrow-left {
+        position: absolute;
+        left:25px;
+        bottom:47px;
+        @include mobile {bottom:-20px;}
+        z-index: 10;
+        border-radius: 0;
+        background-color: $darkGray;
+        color: $white;
+        width: 45%;
+        cursor: pointer;
+        &:hover {
+          color: $white !important;
+          background-color: $primary !important;
+        }
+        &:focus {
+          color: $primary;
+          background-color: $darkGray !important;
+        }
+      }
+      .rec.rec-arrow-right {
+        position: absolute;
+        bottom:47px;
+        @include mobile {bottom:-20px;}
+        right:25px;
+        border-radius: 0;
+        background-color: $darkGray;
+        color: $white;
+        width: 49%;
+        cursor: pointer;
+        &:hover{
+          color: $white !important;
+          background-color: $primary !important;
+        }
+        &:focus {
+          color: $primary;
+          background-color: $darkGray !important;
+        }
+      }
+    }
   }
-  &:focus {
-    color: $primary;
-    background-color: $darkGray !important;
-  }
-};
-
-.rec.rec-dot {
-display: none;
-};
-
-.feedback{
-  .rec.rec-dot {
-    display: block;
-      &:focus {
-      box-shadow: 0 0 1px 3px $primary;
-    }
-      &:hover {
-      box-shadow: 0 0 1px 3px $primary;
-    }
-    };
-
-    .rec.rec-dot.rec-dot_active{
-      background-color: $primary;
-      box-shadow: 0 0 1px 3px $primary;
-    };
-
-    .rec.rec-arrow {
-      display: none;
-    }
-    .rec.rec-pagination{
+  .owl-theme .owl-nav.disabled + .owl-dots {
     position: absolute;
-    top: 15px;
-    right:20px;
+    top:-38px;
+    right: 25px;
   }
+
+  .left_promoted{
+    .owl-carousel .active span {
+      width:10px;
+      height:10px;
+      margin:5px 7px;
+      background:$primary !important;
+      display:none;
+      transition:opacity 200ms ease;
+      border-radius:30px;
+      -webkit-transition:opacity 200ms ease;
+      -moz-transition:opacity 200ms ease;
+      -ms-transition:opacity 200ms ease;
+      -o-transition:opacity 200ms ease;
+    }
+      };
+
+      // .owl-theme .owl-nav [class*='owl-'] {
+      //   color:red !important;
+      // }
+
+      .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next  {
+    background-color: $darkGray !important;
+    padding: 0 190px !important;
+    margin: 0 1px !important;
+    font-size: 40px!important;
 }
+
+.owl-carousel .owl-nav .owl-prev{
+  bottom: 0% !important;
+  left: 0% !important;
+
+  position: absolute !important;
+}
+.owl-carousel .owl-nav .owl-next{
+  bottom: 0% !important;
+  right: 0% !important;
+  position: absolute !important;
+}
+.owl-carousel .owl-nav .owl-next:hover{
+
+background-color: $primary !important;
+}
+.owl-carousel .owl-nav .owl-prev:hover{
+  background-color: $primary !important;
+  }
