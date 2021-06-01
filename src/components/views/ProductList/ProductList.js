@@ -9,6 +9,7 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import { Link } from 'react-router-dom';
 import ProductGridList from '../../views/ProductGridList/ProductGridList';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
+import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 
 const ProductList = ({ categories, match, products }) => {
   const [showGrid, setShowGrid] = useState(true);
@@ -20,7 +21,6 @@ const ProductList = ({ categories, match, products }) => {
       <div className='container'>
         <Banner />
         <div className='row'>
-
           <div className={'col-9'}>
             {categories.map(category =>
               category.id === match.params.categoryId ? (
@@ -81,11 +81,12 @@ const ProductList = ({ categories, match, products }) => {
               )
             )}
           </div>
-
           <div className={'col-3'}>
             <ColorFilter />
+            <CategoryFilter />
           </div>
         </div>
+        <div className='col-12'>BRANDS</div>
       </div>
     </div>
   );
