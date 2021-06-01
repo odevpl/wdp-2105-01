@@ -117,4 +117,33 @@ body {
     }
       };
 
+      // .owl-theme .owl-nav [class*='owl-'] {
+      //   color:red !important;
+      // }
 
+      .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next  {
+    background-color: $darkGray !important;
+    padding: 0 190px !important;
+    margin: 0 1px !important;
+    font-size: 40px!important;
+}
+
+.owl-carousel .owl-nav .owl-prev{
+  bottom: 0% !important;
+  left: 0% !important;
+
+  position: absolute !important;
+}
+.owl-carousel .owl-nav .owl-next{
+  bottom: 0% !important;
+  right: 0% !important;
+  position: absolute !important;
+}
+.owl-carousel .owl-nav .owl-next:hover{
+
+background-color: $primary !important;
+}
+.owl-carousel .owl-nav .owl-prev:hover{
+  background-color: $primary !important;
+  }
