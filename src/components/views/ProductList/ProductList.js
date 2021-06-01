@@ -8,6 +8,7 @@ import Banner from '../../features/Banner/Banner.js';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { Link } from 'react-router-dom';
 import ProductGridList from '../../views/ProductGridList/ProductGridList';
+import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 
 const ProductList = ({ categories, match, products }) => {
@@ -20,7 +21,7 @@ const ProductList = ({ categories, match, products }) => {
       <div className='container'>
         <Banner />
         <div className='row'>
-          <div className='col-9'>
+          <div className={'col-9'}>
             {categories.map(category =>
               category.id === match.params.categoryId ? (
                 <div key={category.id}>
@@ -80,7 +81,8 @@ const ProductList = ({ categories, match, products }) => {
               )
             )}
           </div>
-          <div className='col-3'>
+          <div className={'col-3'}>
+            <ColorFilter />
             <CategoryFilter />
           </div>
         </div>
