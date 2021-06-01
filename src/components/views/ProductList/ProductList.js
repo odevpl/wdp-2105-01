@@ -11,14 +11,14 @@ import ProductGridList from '../../views/ProductGridList/ProductGridList';
 import SizeFilter from '../../features/SizeFilter/SizeFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
+import PriceFilter from '../../features/PriceFilter/PriceFilter';
 
 const ProductList = ({ categories, match, products }) => {
   const [showGrid, setShowGrid] = useState(true);
   const [showList, setShowList] = useState(false);
 
   return (
-    <div className={styles.root}
-    >
+    <div className={styles.root}>
       <div className='container'>
         <Banner />
         <div className='row'>
@@ -86,6 +86,7 @@ const ProductList = ({ categories, match, products }) => {
             <SizeFilter />
             <ColorFilter />
             <CategoryFilter />
+            <PriceFilter />
           </div>
         </div>
         <div className='col-12'>BRANDS</div>
