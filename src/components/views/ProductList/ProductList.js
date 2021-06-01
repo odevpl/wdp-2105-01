@@ -8,6 +8,7 @@ import Banner from '../../features/Banner/Banner.js';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { Link } from 'react-router-dom';
 import ProductGridList from '../../views/ProductGridList/ProductGridList';
+import SizeFilter from '../../features/SizeFilter/SizeFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 
@@ -82,6 +83,7 @@ const ProductList = ({ categories, match, products }) => {
             )}
           </div>
           <div className={'col-3'}>
+            <SizeFilter />
             <ColorFilter />
             <CategoryFilter />
           </div>
