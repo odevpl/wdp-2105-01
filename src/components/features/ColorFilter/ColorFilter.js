@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Filters.module.scss';
+import styles from './ColorFilter.module.scss';
 
-const Filters = () => (
+const ColorFilter = () => (
   <div className={styles.root}>
     <div className={styles.header}>
       <h5>Filter by color</h5>
@@ -36,4 +36,4 @@ const Filters = () => (
   </div>
 );
 
-export default Filters;
+export default ColorFilter;

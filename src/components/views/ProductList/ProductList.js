@@ -8,7 +8,7 @@ import Banner from '../../features/Banner/Banner.js';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { Link } from 'react-router-dom';
 import ProductGridList from '../../views/ProductGridList/ProductGridList';
-import Filters from '../../features/Filters/Filters';
+import ColorFilter from '../../features/ColorFilter/ColorFilter';
 
 const ProductList = ({ categories, match, products }) => {
   const [showGrid, setShowGrid] = useState(true);
@@ -83,7 +83,7 @@ const ProductList = ({ categories, match, products }) => {
           </div>
 
           <div className={'col-3'}>
-            <Filters />
+            <ColorFilter />
           </div>
         </div>
       </div>
