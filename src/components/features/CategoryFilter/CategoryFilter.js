@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Filters.module.scss';
+import styles from './CategoryFilter.module.scss';
 
-const Filters = () => (
+const CategoryFilter = () => (
   <div className={styles.root}>
     <div className={styles.header}>
       <h5>Filter by categories</h5>
@@ -35,4 +35,4 @@ const Filters = () => (
   </div>
 );
 
-export default Filters;
+export default CategoryFilter;
