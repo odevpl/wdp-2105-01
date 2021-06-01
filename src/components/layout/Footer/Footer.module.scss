@@ -89,3 +89,27 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .root {
+    .footerMenu {
+      .menuWrapper {
+        text-align: center;
+      }
+
+      .creditCards {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .root {
+    .bottomBar {
+      .socialMedia {
+        text-align: center !important;
+      }
+    }
+  }
+}

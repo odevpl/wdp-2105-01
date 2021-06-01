@@ -32,9 +32,9 @@ const BlogHomepage = ({ blogPosts }) => (
             </div>
           </div>
 
-          <div className='row justify-content-center'>
+          <div className='row'>
             {blogPosts.map(item => (
-              <div className='col-lg-4' key={item.id}>
+              <div className='col-lg-4 col-12 p-3' key={item.id}>
                 <div>
                   <img src={item.image} alt='' />
                 </div>
@@ -65,7 +65,7 @@ const BlogHomepage = ({ blogPosts }) => (
 );
 
 BlogHomepage.propTypes = {
-  blogPosts: PropTypes.object,
+  blogPosts: PropTypes.array,
   text: PropTypes.string,
 };
 

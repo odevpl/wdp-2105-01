@@ -2,7 +2,7 @@
 
 .root {
   background-color: $productbox-bg;
-  border: 1px solid $productbox-border-color;
+  border: 2px solid $productbox-border-color;
   margin-bottom: 2rem;
 
   .photo {
@@ -31,7 +31,7 @@
       background-color: $productbox-sale-bg;
       border-radius: 50%;
       color: $productbox-sale-color;
-      padding: 30px 15px 5px 15px;
+      padding: 30px 14px 5px 15px;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;

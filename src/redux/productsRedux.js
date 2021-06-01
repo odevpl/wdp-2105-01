@@ -9,6 +9,9 @@ export const getNew = ({ products }) =>
 export const getCompared = ({ products }) =>
   products.filter(product => product.compare === true);
 
+export const getOnSale = ({ products }) =>
+  products.filter(product => product.promo === 'sale');
+
 /* action name creator */
 const reducerName = 'product';
 const createActionName = name => `app/${reducerName}/${name}`;

@@ -15,6 +15,7 @@ const initialState = {
     {
       id: 'aenean-ru-bristique-1',
       name: 'Aenean Ru Bristique 1',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       category: 'bed',
       price: 30,
       oldPrice: 100,
@@ -28,6 +29,7 @@ const initialState = {
     },
     {
       id: 'aenean-ru-bristique-2',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       name: 'Aenean Ru Bristique 2',
       category: 'bed',
       price: 30,
@@ -41,6 +43,7 @@ const initialState = {
     },
     {
       id: 'aenean-ru-bristique-3',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       name: 'Aenean Ru Bristique 3',
       category: 'bed',
       price: 30,
@@ -668,6 +671,27 @@ const initialState = {
     },
   ],
 
+  promoted: [
+    {
+      img: 'https://cdn.pixabay.com/photo/2018/10/28/12/37/bedroom-3778695__340.jpg',
+      name: 'Indoor furniture',
+      h1: 'INDOOR FURNITURE',
+      h2: 'save up to 50% of all furniture',
+    },
+    {
+      img: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940168__340.jpg',
+      name: 'Guest room chairs',
+      h1: 'GUEST ROOM CHAIRS',
+      h2: 'save up to 50% of all furniture',
+    },
+    {
+      img: 'https://cdn.pixabay.com/photo/2018/10/28/12/37/bedroom-3778695__340.jpg',
+      name: 'Bedroom collection',
+      h1: 'BEDROOM collection',
+      h2: '$200 off',
+    },
+  ],
+
   promotion: {
     leftImage:
       'https://media.istockphoto.com/photos/interior-with-armchair-and-coffee-table-3d-rendering-picture-id1158575634?k=6&m=1158575634&s=612x612&w=0&h=Fkh9dLz9W8TKkKwJstagndsCu92badT0y6m-w8iqB-g=',
@@ -752,13 +776,6 @@ const initialState = {
         'https://images.pexels.com/photos/1676037/pexels-photo-1676037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
-
-  promoted: {
-    name: 'Blanditiis Rerum Incidunt',
-    image: 'https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg',
-    oldPrice: 350,
-    price: 300,
-  },
 
   gallery: {
     topSeller: [

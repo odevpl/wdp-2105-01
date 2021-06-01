@@ -31,9 +31,11 @@ const Feedbacks = ({ feedbacks }) => (
                         <div className='col-2 col-lg-1 flex-grow-1'>
                           <img src={feedback.foto} alt=''></img>
                         </div>
-                        <div className='col-8 col-md-6 flex-column d-flex align-items-center'>
-                          <span className='col-12 name'>{feedback.name}</span>
-                          <span className='col-12 '>{feedback.description}</span>
+                        <div className='col-8 flex-column d-flex align-items-center'>
+                          <span className={'col-12 ' + styles.name}>
+                            {feedback.name}
+                          </span>
+                          <span className='col-12'>{feedback.description}</span>
                         </div>
                       </div>
                     </div>

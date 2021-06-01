@@ -161,7 +161,7 @@ class NewFurniture extends React.Component {
                     ))}
                   </ul>
                 </div>
-                <div className={'col-auto ' + styles.dots}>
+                <div className={'col-12 col-sm-auto ' + styles.dots}>
                   <ul>{dots}</ul>
                 </div>
               </div>

@@ -1,0 +1,78 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+  padding-bottom: $base-padding;
+
+  .header {
+    h5 {
+      text-transform: uppercase;
+      font-size: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid;
+    }
+  }
+
+  .sizes {
+    padding-top: 20px;
+
+    .size {
+      display: flex;
+      flex-direction: row;
+      padding-left: 0;
+      justify-content: space-between;
+
+      h6 {
+        font-size: 13px;
+        font-weight: 300;
+        display: flex;
+        align-content: center;
+
+        .iconSquare {
+          height: 15px;
+          width: 15px;
+          margin-right: 10px;
+        }
+
+        .iconCheck {
+          height: 15px;
+          width: 15px;
+          display: none;
+          margin-right: 10px;
+        }
+      }
+
+      &:hover {
+        h6 {
+          color: $primary;
+          cursor: pointer;
+          padding-left: 15px;
+
+          .iconSquare {
+            display: none;
+          }
+
+          .iconCheck {
+            display: inline-block;
+          }
+        }
+
+        p {
+          background-color: $primary;
+        }
+      }
+
+      p {
+        border-radius: 50%;
+        background-color: $button-bg;
+        width: 22px;
+        height: 22px;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        padding-top: 2px;
+        color: $button-color;
+      }
+    }
+  }
+}
