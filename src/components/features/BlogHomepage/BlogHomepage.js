@@ -65,7 +65,7 @@ const BlogHomepage = ({ blogPosts }) => (
 );
 
 BlogHomepage.propTypes = {
-  blogPosts: PropTypes.object,
+  blogPosts: PropTypes.array,
   text: PropTypes.string,
 };
 
