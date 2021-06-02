@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 import { faThList } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductList.module.scss';
+import Brands from '../../features/Brands/BrandsContainer';
 import Banner from '../../features/Banner/Banner.js';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { Link } from 'react-router-dom';
@@ -90,6 +91,13 @@ const ProductList = ({ categories, match, products }) => {
           </div>
         </div>
         <div className='col-12'>BRANDS</div>
+      </div>
+      <div className='row'>
+        <div className='col-9'>PRODUCT LIST</div>
+        <div className='col-3'>FILTERS</div>
+      </div>
+      <div className='col-12'>
+        <Brands />
       </div>
     </div>
   );
