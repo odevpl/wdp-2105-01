@@ -27,8 +27,8 @@ const ProductPage = stars => {
   return (
     <div className={styles.root}>
       <div className='container'>
-        <div className='row'>
-          <div className='col-lg-5'>
+        <div className={'row ' + styles.product}>
+          <div className={'col-lg-5 ' + styles.galleryContainer}>
             <img
               className={styles.image}
               src='https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg'
@@ -38,7 +38,7 @@ const ProductPage = stars => {
               <Button variant='outline' className={styles.arrow}>
                 <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
               </Button>
-              <div>
+              <div className={styles.imageRow}>
                 <img
                   className={styles.smallImage}
                   src='https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg'
@@ -55,15 +55,18 @@ const ProductPage = stars => {
               </Button>
             </div>
           </div>
-          <div className='col-lg-7'>
+
+          <div className={'col-lg-7 ' + styles.descriptionContainer}>
             <div className={styles.title}>
-              <h3>Product page</h3>
-              <Button variant='outline' className={styles.arrow}>
-                <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
-              </Button>
-              <Button variant='outline' className={styles.arrow}>
-                <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
-              </Button>
+              <h3 className='col-10'>Product page</h3>
+              <div className={'col-2 ' + styles.pageArrows}>
+                <Button variant='outline' className={styles.arrow}>
+                  <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
+                </Button>
+                <Button variant='outline' className={styles.arrow}>
+                  <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
+                </Button>
+              </div>
             </div>
             <div className={styles.rewievs}>
               {[1, 2, 3, 4, 5].map(i => (
@@ -121,12 +124,12 @@ const ProductPage = stars => {
               </p>
             </div>
             <div className={styles.details}>
-              <div className='row'>
-                <div className='col-lg-2'>
+              <div className='row col-12'>
+                <div className='col-auto'>
                   <p>Availability: </p>
                   <p>Category: </p>
                 </div>
-                <div className='col-lg-2'>
+                <div className='col-auto'>
                   <p className={styles.one}>In stock</p>
                   <p className={styles.one}>Furnitures</p>
                 </div>
