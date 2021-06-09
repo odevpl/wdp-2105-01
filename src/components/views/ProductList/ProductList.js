@@ -70,7 +70,7 @@ const ProductList = ({ categories, match, products }) => {
                       {products.map(item => (
                         <div key={item.id} className={`${styles.productBox} `}>
                           <div className={`${styles.boxdescription_left} `}>
-                            <ProductGridList {...item}/>
+                            <ProductGridList {...item} />
                           </div>
                         </div>
                       ))}

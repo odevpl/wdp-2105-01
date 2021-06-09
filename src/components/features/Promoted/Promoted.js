@@ -35,7 +35,7 @@ const Promoted = ({ promoted, products, stars }) => {
                       autoplayTimeout={3000}
                       autoplayHoverPause={true}
                       animateOut='fadeOut'
-                      dotsData={true}
+                      // dotsData={true}
                     >
                       {products.map(product => (
                         <img src={product.image} alt='pic' key={product.id}
@@ -120,7 +120,7 @@ const Promoted = ({ promoted, products, stars }) => {
                   className="owl-theme"
                   autoplayHoverPause={true}
                   animateOut='fadeOut'
-                  dotsData={true}
+                  // dotsData={true}
                   dots={false}
                   nav
                   loop
