@@ -10,19 +10,19 @@ const ProductPopup = ({ product, closeProductPopup }) => {
   const { id, customStars, stars, image, name, price } = product;
   return (
     <div className={styles.root}>
+      <div className={styles.closeWindow}>
+        <Button noJump onClick={() => closeProductPopup()}>
+          <FontAwesomeIcon icon={faWindowClose}></FontAwesomeIcon>
+        </Button>
+      </div>
       <div className='row no-gutters'>
-        <div className='col-6'>
+        <div className='col-12 col-sm-6'>
           <div className={styles.photo}>
             <img className={styles.image} src={image} alt={name} />
           </div>
         </div>
-        <div className='col-6'>
+        <div className='col-12 col-sm-6'>
           <div className={styles.content}>
-            <div className={styles.content_upper}>
-              <Button noJump onClick={() => closeProductPopup()}>
-                <FontAwesomeIcon icon={faWindowClose}></FontAwesomeIcon>
-              </Button>
-            </div>
             <div className={styles.content_bottom}>
               <div className={styles.header}>
                 <h5>{product.name}</h5>
